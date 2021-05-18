@@ -1,21 +1,21 @@
 import React from 'react';
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 
-// import UserInformation from './components/UserInformation';
-// import Recommendation from './components/Recommendation'
+import UserInformation from './components/UserInformation';
+import Recommendation from './components/Recommendation'
 
-// import hamburger from './images/hamburger.png';
+import hamburger from './images/hamburger.png';
 
 class App extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    constructor(props) {
+        super(props);
+    }
 
     render(){
         return ( 
             <div className = "App" >
-                {/* <div id = "logo">
+                <div id = "logo">
                     <p className='text'><img id = "icon" src={ hamburger } />
                      Hello Burger!</p>
                 </div>
@@ -27,7 +27,7 @@ class App extends React.Component {
                     <div className = "cart">
                     Cart
                     </div>
-                </div> */}
+                </div>
                 Hello!
             </div>
             
