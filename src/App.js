@@ -1,16 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-import UserInformation from './components/UserInformation';
-import Recommendation from './components/Recommendation'
+// import UserInformation from './components/UserInformation';
+// import Recommendation from './components/Recommendation'
 
-import hamburger from './images/hamburger.png';
+// import hamburger from './images/hamburger.png';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render(){
         return ( 
