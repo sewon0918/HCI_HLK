@@ -15,7 +15,7 @@ class App extends React.Component {
     render(){
         return ( 
             <div className = "App" >
-                <div id = "logo">
+                {/* <div id = "logo">
                     <p className='text'><img id = "icon" src={ hamburger } />
                      Hello Burger!</p>
                 </div>
@@ -27,8 +27,8 @@ class App extends React.Component {
                     <div className = "cart">
                     Cart
                     </div>
-                </div>
-                
+                </div> */}
+                Hello!
             </div>
             
         );
