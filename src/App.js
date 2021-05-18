@@ -7,9 +7,6 @@ import Recommendation from './components/Recommendation'
 import hamburger from './images/hamburger.png';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render(){
         return ( 
