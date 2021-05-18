@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import UserInformation from './components/UserInformation';
@@ -16,7 +15,7 @@ class App extends React.Component {
         return ( 
             <div className = "App" >
                 <div id = "logo">
-                    <p className='text'><img id = "icon" src={ hamburger } />
+                    <p className='text'><img id = "icon" src={ hamburger } alt="icon"/>
                      Hello Burger!</p>
                 </div>
                 <div className = 'layout'>
