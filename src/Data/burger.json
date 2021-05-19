@@ -33,7 +33,7 @@
         "name": "사각새우더블버거",
         "image":"d",
         "description":"새우패티 2장으로 더욱 푸짐한 새우버거",
-        "ingredient":"치킨",
+        "ingredient":"새우",
         "singleprice":4500,
         "setprice": 6500,
         "patty_num":1,
