@@ -1,0 +1,62 @@
+[
+    {
+        "name": "리얼와퍼",
+        "image":"d",
+        "description":"순쇠고기 패티에 싱싱한 야채가 들어있는 해피버거의 시그니처 메뉴",
+        "ingredient":"소",
+        "singleprice":6100,
+        "setprice": 8100,
+        "patty_num":1,
+        "cheeze":0,
+        "onion": true,
+        "pickle": true,
+        "sauce": true,
+        "raddish": true,
+        "tomato": true
+    },
+    {
+        "name": "콰트로 치즈와퍼",
+        "image":"d",
+        "description":"순쇠고기 패티에 싱싱한 야채가 들어있는 해피버거의 시그니처 메뉴",
+        "ingredient":"소",
+        "singleprice":6100,
+        "setprice": 8100,
+        "patty_num":1,
+        "cheeze":0,
+        "onion": true,
+        "pickle": true,
+        "sauce": true,
+        "raddish": true,
+        "tomato": true
+    },
+    {
+        "name": "뉴올리언스 치킨버거",
+        "image":"d",
+        "description":"두툼한 치킨 통가슴살에 잠발라야 시즈닝을 더해 매콤한 치킨버거",
+        "ingredient":"치킨",
+        "singleprice":4900,
+        "setprice": 5900,
+        "patty_num":1,
+        "cheeze":0,
+        "onion": true,
+        "pickle": true,
+        "sauce": true,
+        "raddish": false,
+        "tomato": false
+    },
+    {
+        "name": "BLT 뉴올리언스 치킨 버거",
+        "image":"d",
+        "description":"두툼한 치킨 통가슴살에 잠발라야 시즈닝을 더하고 BLT를 매콤한 치킨버거",
+        "ingredient":"치킨",
+        "singleprice":4900,
+        "setprice": 5900,
+        "patty_num":1,
+        "cheeze":0,
+        "onion": false,
+        "pickle": false,
+        "sauce": true,
+        "raddish": true,
+        "tomato": true
+    }
+]
