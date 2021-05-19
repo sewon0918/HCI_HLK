@@ -18,7 +18,6 @@ class App extends React.Component {
                 <div className = 'layout'>
                     <div className = "chatContainer">
                         <UserInformation  />
-                        <Recommendation />
                     </div>
                     <div className = "cart">
                     Cart
