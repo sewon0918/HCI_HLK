@@ -17,8 +17,6 @@ class Recommendation extends React.Component {
         }
         console.log(id)
         document.getElementById(id).style.backgroundColor = 'yellow';
-    
-        // console.log("jj")
     }
 
     render(){

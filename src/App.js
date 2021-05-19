@@ -1,14 +1,27 @@
 import React from 'react';
 import './App.css';
-
+import ScrollToBottom from 'react-scroll-to-bottom';
 import UserInformation from './components/UserInformation';
-import Recommendation from './components/Recommendation'
-
+import Recommendation from './components/Recommendation';
+import Cart from './components/Cart';
 import hamburger from './images/hamburger.png';
+import Payment from './components/Payment';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {paymessage: null};
+        this.handleCreate = this.handleCreate.bind(this);
+    }
+
+    handleCreate = (paym) => {
+        if (paym){
+            this.setState({paymessage: <Payment />})
+        }
+    }
 
     render(){
+        const paymessage = this.state.paymessage;
         return ( 
             <div className = "App" >
                 <div id = "logo">
@@ -16,19 +29,17 @@ class App extends React.Component {
                      Hello Burger!</p>
                 </div>
                 <div className = 'layout'>
-                    <div className = "chatContainer">
-                        <UserInformation  />
-                    </div>
+                    <ScrollToBottom className = "chatContainer">
+                        <UserInformation />
+                        {paymessage}
+                    </ScrollToBottom>
                     <div className = "cart">
-                    Cart
+                        <Cart onCreate={this.handleCreate}/>
                     </div>
                 </div>
-                Hello!
             </div>
-            
         );
     }
-    
 }
 
 export default App;
