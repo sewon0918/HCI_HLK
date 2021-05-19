@@ -1,8 +1,56 @@
 [
     {
-        "name": "너겟킹(4개)",
+        "name": "치킨 너겟",
+        "r_price": 1500,
+        "description":"육즙 가득 치킨 너겟",
+        "image":"put link in here"
+    },
+    {
+        "name": "감자튀김(R)",
+        "r_price": 1500,
+        "description":"신선도 높은 후라잉 오일에 바로 튀겨낸 바삭바삭하고 감칠맛 나는 맛의 후렌치 포테이토",
+        "image":"put link in here"
+    },
+    {
+        "name": "감자튀김(L)",
+        "r_price": 1900,
+        "description":"신선도 높은 후라잉 오일에 바로 튀겨낸 바삭바삭하고 감칠맛 나는 맛의 후렌치 포테이토",
+        "image":"put link in here"
+    },
+    {
+        "name": "양념감자",
         "r_price": 2000,
-        "description":"치킨 너겟",
+        "description":"시즈닝과 같이 먹는 감자튀김",
+        "image":"put link in here"
+    },
+    {
+        "name": "치즈스틱",
+        "r_price": 2000,
+        "description":"치즈에 파슬리를 첨가한 튀김옷을 입혀 바삭바삭하고 부드럽고 고소한 서구풍의 디저트 메뉴",
+        "image":"put link in here"
+    },
+    {
+        "name": "소프트콘",
+        "r_price": 700,
+        "description":"부드러운 바닐라 맛과 시원한 소프트 타입의 아이스콘 제품",
+        "image":"put link in here"
+    },
+    {
+        "name": "치즈인더에그",
+        "r_price": 3000,
+        "description":"고소짭짤한 체다치즈와 달콤한 맛이 조화로운 '단짠' 맛의 계란 모양 치즈볼",
+        "image":"put link in here"
+    },
+    {
+        "name": "쉑쉑치킨(치즈)",
+        "r_price": 2500,
+        "description":"담백한 치킨 가슴살과 치즈 시즈닝이 조화로운 제품",
+        "image":"put link in here"
+    },
+    {
+        "name": "쉑쉑치킨(어니언)",
+        "r_price": 2500,
+        "description":"담백한 치킨 가슴살과 어니언 시즈닝이 조화로운 제품",
         "image":"put link in here"
     }
 ]
