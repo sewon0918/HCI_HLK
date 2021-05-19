@@ -2,7 +2,9 @@ import React from 'react';
 import './index.css';
 
 import '../Recommendation'
+import '../OptionChange'
 import Recommendation from '../Recommendation';
+import OptionChange from '../OptionChange';
 
 class UserInformation extends React.Component {
     constructor(props) {
@@ -44,12 +46,18 @@ class UserInformation extends React.Component {
         const isLoggedIn = this.state.isLoggedIn;
         const phone = this.state.phone
         let recommend = null;
+        let option=null;
         if (isLoggedIn > 0) {
             recommend = <Recommendation phone={phone}></Recommendation>
         }
         if (isLoggedIn < 0) {
             recommend = <div>hihi</div>
         }
+        /*if(BurgerSelected>0){
+            let option=<OptionChange></OptionChange>
+        }*/
+
+        option=<OptionChange></OptionChange>
         return(
             <div>
                 {this.state.show && <div className = 'dialog'><h3>Welcome to Hello Burger!</h3></div>}
@@ -60,6 +68,7 @@ class UserInformation extends React.Component {
                     <button onClick = {this.onSkip}> Skip </button>
                 </div>
                 {recommend}
+                {option}
             </div>
         )
     }
