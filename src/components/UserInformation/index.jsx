@@ -53,11 +53,8 @@ class UserInformation extends React.Component {
         if (isLoggedIn < 0) {
             recommend = <div>hihi</div>
         }
-        /*if(BurgerSelected>0){
-            let option=<OptionChange></OptionChange>
-        }*/
 
-        option=<OptionChange></OptionChange>
+
         return(
             <div>
                 {this.state.show && <div className = 'dialog'><h3>Welcome to Hello Burger!</h3></div>}
@@ -68,7 +65,6 @@ class UserInformation extends React.Component {
                     <button onClick = {this.onSkip}> Skip </button>
                 </div>
                 {recommend}
-                {option}
             </div>
         )
     }
