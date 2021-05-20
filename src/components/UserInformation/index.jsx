@@ -16,6 +16,7 @@ class UserInformation extends React.Component {
         this.state = {isLoggedIn: 0, phone: "", show: false, show2: false};
     }
     componentDidMount(){
+        console.log("component");
         setTimeout(()=>{
            this.setState({show: true})
         },1000)

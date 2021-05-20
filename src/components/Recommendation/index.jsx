@@ -10,7 +10,7 @@ class Recommendation extends React.Component {
         super(props);
         this.yesOption = this.yesOption.bind(this);
         this.noOption = this.noOption.bind(this);
-        this.state = {isLoggedIn: [], optionSelected:0};
+        this.state = {isLoggedIn: [], optionSelected:0, name:''};
     }
 
     menuClick(id){
@@ -27,21 +27,22 @@ class Recommendation extends React.Component {
 
     yesOption(){
         console.log("yes");
-        this.setState({optionSelected: 1}); 
+        this.setState({optionSelected: 1, name: "불고기버거"}); 
     }
 
     noOption(){
         console.log("no");
-        this.setState({optionSelected:0}); 
+        this.setState({optionSelected:0, name: "불고기버거"}); 
     }
     
     render(){
         const {phone} = this.props;
             console.log({phone})
         const optionSelected = this.state.optionSelected;
+        const name=this.state.name;
         let option=null;
         if (optionSelected > 0) {
-            option = <OptionChange></OptionChange>
+            option = <OptionChange name={name} ></OptionChange>
             console.log("to option change");
         }
         if (optionSelected < 0) {

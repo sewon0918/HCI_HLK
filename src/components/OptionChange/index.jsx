@@ -20,6 +20,7 @@ class OptionChange extends React.Component {
             sauce_state:0,
             OptionSelected: []
         }
+        this.basicoption=this.basicoption.bind(this);
     }
     Add_patty(){
         console.log("add");
@@ -60,7 +61,32 @@ class OptionChange extends React.Component {
             })
         }
     }
+    basicCheck(tomato, onion, lettuce, sauce){
+        const telements = document.getElementsByClassName("tomato");
+        const oelements = document.getElementsByClassName("onion");
+        const lelements = document.getElementsByClassName("lettuce");
+        const selements = document.getElementsByClassName("sauce");
+        let id=null;
+        for (var i = 0; i < 4; i++) {
+            telements[i].style.backgroundColor="white";
+            oelements[i].style.backgroundColor="white";
+            lelements[i].style.backgroundColor="white";
+            selements[i].style.backgroundColor="white";
+        }
+        if(tomato==2){document.getElementById("mid_tomato").style.backgroundColor = 'yellow';}
+        else if(tomato==0){document.getElementById("no_tomato").style.backgroundColor = 'yellow';}
 
+        if(onion==2){document.getElementById("mid_onion").style.backgroundColor = 'yellow';}
+        else if(onion==0){document.getElementById("no_onion").style.backgroundColor = 'yellow';}
+
+        if(lettuce==2){document.getElementById("mid_lettuce").style.backgroundColor = 'yellow';}
+        else if(lettuce==0){document.getElementById("no_lettuce").style.backgroundColor = 'yellow';}
+
+        if(sauce==2){document.getElementById("mid_sauce").style.backgroundColor = 'yellow';}
+        else if(sauce==0){document.getElementById("no_sauce").style.backgroundColor = 'yellow';}
+
+        return;
+    }
     menuClick(id, cla){
         //id: much_sa cla: sauce
         const elements = document.getElementsByClassName(cla);
@@ -96,10 +122,45 @@ class OptionChange extends React.Component {
         }
     }
 
+    basicoption(){
+        console.log("hihi");
+        const {name} = this.props;
+        console.log(name);
+        let burger_info=null;
+        const burger_num=0;
+        const burgerlist=(null);
+        burgers.map(burger=>{
+            //console.log(burger.name);
+            if(burger.name==name){
+                burger_info=burger;
+            }
+        });
+        //console.log(burger_info);
+        return burger_info;   
+    }
+
     render(){
+        const {name} = this.props;
+        const information=this.basicoption();       //{this.basicoption.bind(this)}
+        console.log(information);
+        this.state.patty_count=information.patty_num;
+        this.state.cheeze_count=information.cheeze;
+        if(information.onion==true){this.state.onion_state=2;}
+        else{this.state.onion_state=0;}
+
+        if(information.sauce==true){this.state.sauce_state=2;}
+        else{this.state.sauce_state=0;}
+
+        if(information.tomato==true){this.state.tomato_state=2;}
+        else{this.state.tomato_state=0;}
+
+        if(information.raddish==true){this.state.lettuce_state=2;}
+        else{this.state.lettuce_state=0;}
+        //각각 양파/토마토/.... 가 있는지 확인해서 있으면 보통에 없으면 기본에 체크. -> 함수를 만들었는데, button이 뒤에 선언되어 있어서 안된다함;
+        
         return(
             <div>
-                <div  className='dialog'>원하시는 옵션을 선택해주세요.</div>
+                <div  className='dialog'>{name}에서 원하시는 옵션을 선택해주세요.</div>
                 <div className='selection'>
                     <img id="patty" className="photo" src={패티}></img>
                     <button id="add_but" className="button" onClick={this.Add_patty.bind(this)}>+</button>
@@ -140,6 +201,7 @@ class OptionChange extends React.Component {
                     <button id="less_sauce" className="sauce" onClick={this.menuClick.bind(this,"less_sauce","sauce")}>소스 조금</button>
                     <button id="no_sauce" className="sauce" onClick={this.menuClick.bind(this,"no_sauce","sauce")}>소스 없음</button>
                 </div>
+                
                 <div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
                 <button>단품</button><button>세트</button>
             </div>
