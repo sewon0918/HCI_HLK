@@ -6,10 +6,10 @@ import SelectMethod from './components/SelectMethod';
 
 import hamburger from './images/hamburger.png';
 import cart from './images/cart.png';
-import ScrollToBottom from 'react-scroll-to-bottom';
+// import ScrollToBottom from 'react-scroll-to-bottom';
 import Recommendation from './components/Recommendation';
 import Cart from './components/Cart';
-import hamburger from './images/hamburger.png';
+// import hamburger from './images/hamburger.png';
 import Payment from './components/Payment';
 import NameSearch from './components/NameSearch';
 
@@ -44,12 +44,10 @@ class App extends React.Component {
                             <div ><img id = "icon" src={ cart } alt="icon"/></div>
                             <div className='text'>Cart</div>
                         </div>
-                        <UserInformation />
                         {paymessage}
-                    {/* </ScrollToBottom> */}
-                    <div className = "cart">
+                    {/* <div className = "cart">
                         <Cart onCreate={this.handleCreate}/>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             </div>

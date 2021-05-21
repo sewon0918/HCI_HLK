@@ -32,12 +32,7 @@ class Recommendation extends React.Component {
         console.log(this.state.focused)
 
         var cart = document.getElementById('cartContainer');
-        // var myImage = '<img src = {고추장}/>'
-
-        // var myImage = React.createElement(Menu, this.props, null);
-        // const cartstyle ={
-        //     width:"30%"
-        // }
+        console.log('adksbvkj'+cart);
         var myImage = new Image();
         myImage.src = selectedMenu.src;
         myImage.style.width = "50%";
@@ -96,8 +91,8 @@ class Recommendation extends React.Component {
                     <img id = "menu1" className={['menu', this.state.focused && 'menu-focused'].join(' ')} src={ 고추장 } onClick={this.menuClick.bind(this, "menu1")} alt="menu1"/>
                     </div> */}
                 
-                {/* <img id = "menu1" className={['menu', this.state.focused && 'menu-focused'].join(' ')} src={ 고추장 } onClick={this.menuClick.bind(this, "menu1")} alt="menu1"/> */}
-                    <img id = "menu1" className="menu" src={ 고추장 } onClick={this.menuClick.bind(this, "menu1")} alt="menu1"/>
+                <img id = "menu1" className={['menu', this.state.focused && 'menu-focused'].join(' ')} src={ 고추장 } onClick={this.menuClick.bind(this, "menu1")} alt="menu1"/>
+                    {/* <img id = "menu1" className="menu" src={ 고추장 } onClick={this.menuClick.bind(this, "menu1")} alt="menu1"/> */}
                     <img id = "menu2" className="menu" src={ 직화 } onClick={this.menuClick.bind(this, "menu2")} alt="menu_class"/>
                     <button id="others" className="button" > 다른 메뉴 보러 가기 </button>
                 </div>

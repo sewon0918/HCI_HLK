@@ -74,8 +74,8 @@ class UserInformation extends React.Component {
                     {/* <button className = 'button' onClick = {this.onSkip}> Skip </button> */}
                 </div>}
                 <div>
-                    <button onClick = {this.onSubmit}> Sumbit </button>
-                    <button onClick = {this.onSkip}> Skip </button>
+                    {/* <button onClick = {this.onSubmit}> Sumbit </button>
+                    <button onClick = {this.onSkip}> Skip </button> */}
                     <br/>
                     <button onClick = {this.onDrinkOrSide}>음료/사이드</button> {/* 음료 부분 */}
                 </div>

@@ -12,7 +12,7 @@
     width: 30%;
     border: 1px solid black;
     border-radius: 10px;
-    transition: .5s;
+    transition: 1s ease-out;
     z-index: 2;
     /* margin-left: 100px */
 }
@@ -28,7 +28,7 @@
 .menu-focused {
     /* width: 240px; */
     /* margin-left: 500px; */
-    transform: translate(450px, -350px);
+    transform: translate(600px, -350px);
 }
 
 #others {

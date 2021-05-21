@@ -48,7 +48,7 @@ class SelectMethod extends React.Component {
                 
                 
                 </div>}
-                {this.state.show2 &&<div  className = 'dialog2' id="select" >
+                {this.state.show2 &&<div  className = 'dialog2'  >
                     <button id="name" className = 'button'> 이름으로 찾기 </button>
                     <button id="ingredient" className = 'button'> 주재료로 찾기 </button>
                     <button id="recommend" className = 'button' onClick = {this.recommend}> 추천받기 </button>
