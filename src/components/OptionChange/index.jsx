@@ -87,6 +87,41 @@ class OptionChange extends React.Component {
 
         return;
     }
+
+    neocheck(cla){
+        console.log("neocheck");
+        const elements = document.getElementsByClassName(cla);
+        let id=null;
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.backgroundColor="white";
+        }
+        if(cla=="tomato"){
+            if(this.state.tomato_state==0){id="no_tomato"}
+            else if(this.state.tomato_state==1){id="less_tomato"}
+            else if(this.state.tomato_state==2){id="mid_tomato"}
+            else if(this.state.tomato_state==3){id="more_tomato"}
+        }
+        if(cla=="onion"){
+            if(this.state.onion_state==0){id="no_onion"}
+            else if(this.state.onion_state==1){id="less_onion"}
+            else if(this.state.onion_state==2){id="mid_onion"}
+            else if(this.state.onion_state==2){id="more_onion"}
+        }
+        if(cla=="lettuce"){
+            if(this.state.lettuce_state==0){id="no_lettuce"}
+            else if(this.state.lettuce_state==1){id="less_lettuce"}
+            else if(this.state.lettuce_state==2){id="mid_lettuce"}
+            else if(this.state.lettuce_state==3){id="more_lettuce"}
+        }
+        if(cla=="sauce"){
+            if(this.state.sauce_state==0){id="no_sauce"}
+            else if(this.state.sauce_state==1){id="less_sauce"}
+            else if(this.state.sauce_state==2){id="mid_sauce"}
+            else if(this.state.sauce_state==3){id="more_sauce"}
+        }
+
+        document.getElementById(id).style.backgroundColor = 'yellow';
+    }
     menuClick(id, cla){
         //id: much_sa cla: sauce
         const elements = document.getElementsByClassName(cla);
@@ -179,6 +214,7 @@ class OptionChange extends React.Component {
                     <button id="mid_onion" className="onion" onClick={this.menuClick.bind(this,"mid_onion","onion")}>양파 기본</button>
                     <button id="less_onion" className="onion" onClick={this.menuClick.bind(this,"less_onion","onion")}>양파 조금</button>
                     <button id="no_onion" className="onion" onClick={this.menuClick.bind(this,"no_onion", "onion")}>양파 없음</button>
+                    
                 </div>
                 <div className='selection'>
                     <img id="tomato" className="photo" src={토마토}></img>

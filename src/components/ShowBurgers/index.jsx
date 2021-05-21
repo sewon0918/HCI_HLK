@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import 고추장 from '../../images/1.png';
 import 직화 from '../../images/2.png';
-import burgers from '../../Data/burger.json'
+import burgers from '../../Data/burger.json';
 
 class ShowBurgers extends React.Component {
     constructor(props) {

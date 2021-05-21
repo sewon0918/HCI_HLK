@@ -1,7 +1,5 @@
 import React from 'react';
 import './index.css';
-import 고추장 from '../../images/1.png';
-import 직화 from '../../images/2.png';
 import ShowBurgers from '../ShowBurgers';
 
 class NameSearch extends React.Component {

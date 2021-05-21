@@ -11,13 +11,10 @@ import Menu from '../Menu'
 class Recommendation extends React.Component {
     constructor(props) {
         super(props);
-// <<<<<<< HEAD
         this.state = {focused: ''};
-// =======
         this.yesOption = this.yesOption.bind(this);
         this.noOption = this.noOption.bind(this);
         this.state = {isLoggedIn: [], optionSelected:0, name:''};
-// >>>>>>> 2f938690f87bbbeff8025dd2f2070d7f56eeb739
     }
 
    
@@ -56,6 +53,8 @@ class Recommendation extends React.Component {
         },1000) 
         
 
+        console.log(id)
+        document.getElementById(id).style.backgroundColor = 'yellow';
     }
 
     yesOption(){
@@ -70,7 +69,6 @@ class Recommendation extends React.Component {
     
     render(){
         const {phone} = this.props;
-// <<<<<<< HEAD
         console.log({phone})
         let recommendSelect = null;
         if (this.state.focused) {
@@ -78,7 +76,6 @@ class Recommendation extends React.Component {
             // <Recommendation phone={phone}></Recommendation>
         }
         
-// =======
             console.log({phone})
         const optionSelected = this.state.optionSelected;
         const name=this.state.name;
@@ -90,7 +87,6 @@ class Recommendation extends React.Component {
         if (optionSelected < 0) {
             option = <div>hoho</div>
         }
-// >>>>>>> 2f938690f87bbbeff8025dd2f2070d7f56eeb739
         return(
             <div>
                 <div  className='dialog'>"{phone}" 님의 추천메뉴입니다. 원하시는 메뉴를 선택해주세요.</div>
@@ -105,18 +101,15 @@ class Recommendation extends React.Component {
                     <img id = "menu2" className="menu" src={ 직화 } onClick={this.menuClick.bind(this, "menu2")} alt="menu_class"/>
                     <button id="others" className="button" > 다른 메뉴 보러 가기 </button>
                 </div>
-{/* <<<<<<< HEAD */}
                 {recommendSelect}
                 
                 
                
 
                 
-{/* ======= */}
                 <div  className='dialog'>Do you want option change?</div>
                 <button onClick = {this.yesOption}> Yes </button><button onClick = {this.noOption}> No </button>
                 {option}
-{/* >>>>>>> 2f938690f87bbbeff8025dd2f2070d7f56eeb739 */}
             </div>
         )
     }
