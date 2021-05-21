@@ -1,13 +1,7 @@
 import React from 'react';
 import './index.css';
-<<<<<<< HEAD
 import burgers from '../../Data/burger.json'
 import OptionChange from '../OptionChange';
-=======
-import 고추장 from '../../images/1.png';
-import 직화 from '../../images/2.png';
-import burgers from '../../Data/burger.json';
->>>>>>> 4049d6ae3a21eaa247150e96f98750a52adf3bf6
 
 class ShowBurgers extends React.Component {
     constructor(props) {
