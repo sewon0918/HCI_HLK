@@ -1,9 +1,30 @@
 
 .menu {
     margin-right: 10px;
+    margin-top: 4px;
     width: 30%;
-    border: 1px solid black;
+    border: 3px solid white;
     border-radius: 10px;
+}
+.showBurger {
+    margin-right: 7px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 7px;
+    width: 30%;
+    padding-top: 3px;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: white;
+    float: left;
+}
+.image {
+    width: 80%;
+}
+#menuShower{
+    content: '';
+    display: block;
+    clear: both;
 }
 
 #others {

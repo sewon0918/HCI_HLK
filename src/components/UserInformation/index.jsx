@@ -16,6 +16,7 @@ class UserInformation extends React.Component {
         this.state = {isLoggedIn: 0, phone: "", show: false, show2: false};
     }
     componentDidMount(){
+        console.log("component");
         setTimeout(()=>{
            this.setState({show: true})
         },500)
@@ -59,6 +60,8 @@ class UserInformation extends React.Component {
         if (isLoggedIn == -2){     {/* 음료 부분 */}
             recommend = <DrinkOrSide />
         }
+
+
         return(
             <div>
                 {this.state.show && <div className = 'dialog'><h3>Welcome to Hello Burger!</h3></div>}
@@ -71,7 +74,6 @@ class UserInformation extends React.Component {
                     <button onClick = {this.onDrinkOrSide}>음료/사이드</button> {/* 음료 부분 */}
                 </div>
                 {recommend}
-                {option}
             </div>
         )
     }

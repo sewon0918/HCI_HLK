@@ -2,11 +2,15 @@ import React from 'react';
 import './index.css';
 import 고추장 from '../../images/1.png';
 import 직화 from '../../images/2.png';
+import '../OptionChange'
+import OptionChange from '../OptionChange';
 
 class Recommendation extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isLoggedIn: []};
+        this.yesOption = this.yesOption.bind(this);
+        this.noOption = this.noOption.bind(this);
+        this.state = {isLoggedIn: [], optionSelected:0, name:''};
     }
 
     menuClick(id){
@@ -19,9 +23,29 @@ class Recommendation extends React.Component {
         document.getElementById(id).style.backgroundColor = 'yellow';
     }
 
+    yesOption(){
+        console.log("yes");
+        this.setState({optionSelected: 1, name: "불고기버거"}); 
+    }
+
+    noOption(){
+        console.log("no");
+        this.setState({optionSelected:0, name: "불고기버거"}); 
+    }
+    
     render(){
         const {phone} = this.props;
             console.log({phone})
+        const optionSelected = this.state.optionSelected;
+        const name=this.state.name;
+        let option=null;
+        if (optionSelected > 0) {
+            option = <OptionChange name={name} ></OptionChange>
+            console.log("to option change");
+        }
+        if (optionSelected < 0) {
+            option = <div>hoho</div>
+        }
         return(
             <div>
                 <div  className='dialog'>{phone}These are the recommendation. Select among these or you can click "Others" button</div>
@@ -31,7 +55,8 @@ class Recommendation extends React.Component {
                     <button id="others"> Go to see other menus </button>
                 </div>
                 <div  className='dialog'>"고추장불고기버거" is selected. Do you want option change?</div>
-                <button> Yes </button><button> No </button>
+                <button onClick = {this.yesOption}> Yes </button><button onClick = {this.noOption}> No </button>
+                {option}
             </div>
         )
     }
