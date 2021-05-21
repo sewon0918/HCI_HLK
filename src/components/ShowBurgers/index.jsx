@@ -1,7 +1,5 @@
 import React from 'react';
 import './index.css';
-import 고추장 from '../../images/1.png';
-import 직화 from '../../images/2.png';
 import burgers from '../../Data/burger.json'
 import OptionChange from '../OptionChange';
 
@@ -32,7 +30,7 @@ class ShowBurgers extends React.Component {
         const {name} = this.props;
         const {ingredient} = this.props;
         let num = 0;
-        if (this.state.query != name) {
+        if (this.state.query !== name) {
             this.setState({query: name, show: false, show2: false, show3: false, order: false});
             setTimeout(()=>{
                this.setState({show: true})
@@ -48,6 +46,7 @@ class ShowBurgers extends React.Component {
         const burgerlist = burgers.map((key, index) => {
             const burgername = key.name;
             if (name != null) {
+                console.log("name");
                 if (name != "" && burgername.includes(name)) {
                     num += 1;
                     return (
@@ -58,7 +57,8 @@ class ShowBurgers extends React.Component {
                 }
                 else return (null);
             }
-            else if (ingredient != null) {
+            else if (ingredient !== null) {
+                console.log("ingred");
                 if (key.ingredient === ingredient){
                     num += 1;
                     return (
@@ -78,7 +78,7 @@ class ShowBurgers extends React.Component {
                     </div>);
             }
         })
-        if (name != null && num == 0) 
+        if (name != null && num === 0) 
             return (<>
                 {this.state.show && <div className="dialog">검색 결과가 없습니다. 입력한 내용을 다시 확인해주세요</div>}
             </>)
