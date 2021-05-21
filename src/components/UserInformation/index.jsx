@@ -1,9 +1,11 @@
 import React from 'react';
 import './index.css';
 
+import DrinkOrSide from '../DrinkOrSide';
 import '../Recommendation'
 import '../OptionChange'
 import Recommendation from '../Recommendation';
+import '../../App'
 import OptionChange from '../OptionChange';
 
 class UserInformation extends React.Component {
@@ -11,18 +13,18 @@ class UserInformation extends React.Component {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
         this.onSkip = this.onSkip.bind(this);
+        this.onDrinkOrSide = this.onDrinkOrSide.bind(this);  {/* 음료 부분 */}
         this.componentDidMount = this.componentDidMount.bind(this);
-        // this.componentDidMount2 = this.componentDidMount2.bind(this);
         this.state = {isLoggedIn: 0, phone: "", show: false, show2: false};
     }
     componentDidMount(){
         console.log("component");
         setTimeout(()=>{
            this.setState({show: true})
-        },1000)
+        },500)
         setTimeout(()=>{
             this.setState({show2: true})
-        },3000) 
+        },1000) 
      }
     loginClick() {
         this.setState({isLoggedIn: true});
@@ -40,6 +42,9 @@ class UserInformation extends React.Component {
     onSkip(){
         this.setState({isLoggedIn: -1, phone: '-1'}); 
     }
+    onDrinkOrSide(){ {/* 음료 부분 */}
+        this.setState({isLoggedIn: -2, phone: '-1'}); 
+    }
     next(){
         document.getElementById("recommendMenu")
     }
@@ -54,16 +59,25 @@ class UserInformation extends React.Component {
         if (isLoggedIn < 0) {
             recommend = <div>hihi</div>
         }
+        if (isLoggedIn == -2){     {/* 음료 부분 */}
+            recommend = <DrinkOrSide />
+        }
 
 
         return(
             <div>
-                {this.state.show && <div className = 'dialog'><h3>Welcome to Hello Burger!</h3></div>}
-                {this.state.show2 && <div className = 'dialog'><h3>Please type your number</h3></div>}
-                <div> 
+                {/* {this.state.show && <div className = 'dialog'><h3>Welcome to Hello Burger!</h3></div>} */}
+                {this.state.show && <div className = 'dialog'>전화번호를 입력해주세요.</div>}
+                {this.state.show &&<div className = 'dialog2'> 
                     <input id = "number"/> 
+                    <button className = 'button' onClick = {this.onSubmit}> Sumbit </button>
+                    {/* <button className = 'button' onClick = {this.onSkip}> Skip </button> */}
+                </div>}
+                <div>
                     <button onClick = {this.onSubmit}> Sumbit </button>
                     <button onClick = {this.onSkip}> Skip </button>
+                    <br/>
+                    <button onClick = {this.onDrinkOrSide}>음료/사이드</button> {/* 음료 부분 */}
                 </div>
                 {recommend}
             </div>

@@ -2,11 +2,33 @@
     width: 500px;
 } */
 
+.box {
+    width: 30%;
+    float: left;
+}
+
 .menu {
     margin-right: 10px;
     width: 30%;
     border: 1px solid black;
     border-radius: 10px;
+    transition: .5s;
+    z-index: 2;
+    /* margin-left: 100px */
+}
+
+.menuBack {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 30%;
+    z-index: 1;
+}
+
+.menu-focused {
+    /* width: 240px; */
+    /* margin-left: 500px; */
+    transform: translate(450px, -350px);
 }
 
 #others {

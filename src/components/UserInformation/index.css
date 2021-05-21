@@ -3,15 +3,38 @@
     margin: 10px;
     width: 400px;
     height: auto;
-    padding-top: 10px;
+    padding: 10px;
+    /* padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
-    padding-left: 10px;
-    background: #dbd57b;
-    border-radius: 10px;
+    padding-left: 10px; */
+    /* background: #dbd57b; */
+    background: #ffffff;
+    border-radius: 10px 10px 10px 3px;
+    box-shadow: 1px 1px 1px 1px gray;
+    font-weight: bold;
 }
 
-.dialog:after {
+.dialog2 {
+    position: relative;
+    margin: 10px;
+    width: 400px;
+    height: auto;
+    padding: 10px;
+    /* padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px; */
+    /* background: #dbd57b; */
+    background: #ececec;
+    /* border: 1px solid; */
+    border-radius: 10px 10px 10px 3px;
+    /* box-shadow: 1px 1px 1px 1px gray; */
+    font-weight: bold;
+}
+
+
+/* .dialog:after {
     border-top: 15px solid #dbd57b;
     border-left: 15px solid transparent;
     border-right: 0px solid transparent;
@@ -21,4 +44,4 @@
     position: absolute;
     top: 10px;
     left: -15px;
-}
+} */
