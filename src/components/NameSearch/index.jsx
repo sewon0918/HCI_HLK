@@ -30,7 +30,7 @@ class NameSearch extends React.Component {
         document.getElementById(id).style.backgroundColor = 'yellow';
     }
     onSubmit() {
-        const name = document.getElementById("name").value;
+        const name = document.getElementById("search").value;
         console.log(name);
         this.setState({name: name, submitted: true}); 
     }
@@ -46,7 +46,7 @@ class NameSearch extends React.Component {
                 {this.state.show && <div  className='dialog'>"이름으로 찾기"를 선택했습니다. </div>}
                 {this.state.show2 && <div  className='dialog'>버거 이름을 아래 칸에 입력하고 확인버튼을 눌러주세요. </div>}
                 {this.state.show3 && <div> 
-                    <input id = "name"/> 
+                    <input id = "search"/> 
                     <button onClick = {this.onSubmit.bind(this)}> 확인 </button>
                 </div>}
                 {showResult}
