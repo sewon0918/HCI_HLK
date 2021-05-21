@@ -12,7 +12,7 @@ class SelectMethod extends React.Component {
         this.ingredient = this.ingredient.bind(this);
         this.recommend = this.recommend.bind(this);
         this.all = this.all.bind(this);
-        this.state = {isName: 0, isAll: 0, isIngredient: 0, isAll: 0, phone: "", show: false, show2: false};
+        this.state = {isName: 0, isIngredient: 0, isRecommend: 0, isAll: 0, phone: "", show: false, show2: false};
     }
     componentDidMount(){
         setTimeout(()=>{
@@ -36,22 +36,22 @@ class SelectMethod extends React.Component {
     }
     name(){
         console.log("name")
-        this.setState({isName: 1}); 
+        this.setState({isName: 1, isIngredient: 0, isRecommend: 0, isAll: 0}); 
     }
 
     ingredient(){
         console.log("ingredient")
-        this.setState({isIngredient: 1}); 
+        this.setState({isName: 0, isIngredient: 1, isRecommend: 0, isAll: 0}); 
     }
 
     recommend(){
         console.log("recommend")
-        this.setState({isRecommend: 1}); 
+        this.setState({isName: 0, isIngredient: 0, isRecommend: 1, isAll: 0}); 
     }
 
     all(){
         console.log("all")
-        this.setState({isAll: 1}); 
+        this.setState({isName: 0, isIngredient: 0, isRecommend: 0, isAll: 1}); 
     }
 
     render(){
