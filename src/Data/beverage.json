@@ -1,0 +1,74 @@
+[
+    {
+        "name": "사이다(R)",
+        "price": 1700,
+        "description": "스프라이트가 제공됩니다.",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "사이다(L)",
+        "price": 1900,
+        "description": "스프라이트가 제공됩니다.",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "콜라(R)",
+        "price": 1700,
+        "description": "코카콜라가 제공됩니다.",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "콜라(L)",
+        "price": 1900,
+        "description": "펩시가 제공됩니다.",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "아이스 아메리카노",
+        "price": 2500,
+        "description": "대용량으로 즐기는 3샷 아메리카노",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "아이스티",
+        "price": 2200,
+        "description": "복숭아 맛의 시원한 아이스 드링크",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "우유",
+        "price": 1500,
+        "description": "신선한 해피밀크 우유.",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "밀크쉐이크(바닐라)",
+        "price": 2100,
+        "description": "달콤한 바닐라 향이 느껴지는 제품",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "밀크쉐이크(초코)",
+        "price": 2100,
+        "description": "달콤한 바닐라와 초코향이 느껴지는 제품.",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "오렌지 주스(400mL)",
+        "price": 2500,
+        "description": "해피 푸드에서 나오는 갓 딴 신선한 오렌지 주스.",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "레몬에이드",
+        "price": 2500,
+        "description": "신선한 짜릿함을 즐길 수 있는 레몬 에이드",
+        "image":"ㅇㅇ"
+    },
+    {
+        "name": "아이스 카페라떼",
+        "price": 2500,
+        "description": "2샷 에스프레소 커피와 시원한 우유가 어우러진 라떼.",
+        "image":"ㅇㅇ"
+    }
+]

@@ -1,0 +1,14 @@
+.photo{
+    height: 100px;
+    width: 100px; 
+}
+
+.selection {
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#others {
+    font-size: 20px;
+}

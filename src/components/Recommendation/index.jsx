@@ -2,6 +2,8 @@ import React from 'react';
 import './index.css';
 import 고추장 from '../../images/1.png';
 import 직화 from '../../images/2.png';
+import '../OptionChange'
+import OptionChange from '../OptionChange';
 
 import '../../App'
 import Menu from '../Menu'
@@ -9,7 +11,13 @@ import Menu from '../Menu'
 class Recommendation extends React.Component {
     constructor(props) {
         super(props);
+// <<<<<<< HEAD
         this.state = {focused: ''};
+// =======
+        this.yesOption = this.yesOption.bind(this);
+        this.noOption = this.noOption.bind(this);
+        this.state = {isLoggedIn: [], optionSelected:0, name:''};
+// >>>>>>> 2f938690f87bbbeff8025dd2f2070d7f56eeb739
     }
 
    
@@ -50,8 +58,19 @@ class Recommendation extends React.Component {
 
     }
 
+    yesOption(){
+        console.log("yes");
+        this.setState({optionSelected: 1, name: "불고기버거"}); 
+    }
+
+    noOption(){
+        console.log("no");
+        this.setState({optionSelected:0, name: "불고기버거"}); 
+    }
+    
     render(){
         const {phone} = this.props;
+// <<<<<<< HEAD
         console.log({phone})
         let recommendSelect = null;
         if (this.state.focused) {
@@ -59,6 +78,19 @@ class Recommendation extends React.Component {
             // <Recommendation phone={phone}></Recommendation>
         }
         
+// =======
+            console.log({phone})
+        const optionSelected = this.state.optionSelected;
+        const name=this.state.name;
+        let option=null;
+        if (optionSelected > 0) {
+            option = <OptionChange name={name} ></OptionChange>
+            console.log("to option change");
+        }
+        if (optionSelected < 0) {
+            option = <div>hoho</div>
+        }
+// >>>>>>> 2f938690f87bbbeff8025dd2f2070d7f56eeb739
         return(
             <div>
                 <div  className='dialog'>"{phone}" 님의 추천메뉴입니다. 원하시는 메뉴를 선택해주세요.</div>
@@ -73,12 +105,18 @@ class Recommendation extends React.Component {
                     <img id = "menu2" className="menu" src={ 직화 } onClick={this.menuClick.bind(this, "menu2")} alt="menu_class"/>
                     <button id="others" className="button" > 다른 메뉴 보러 가기 </button>
                 </div>
+{/* <<<<<<< HEAD */}
                 {recommendSelect}
                 
                 
                
 
                 
+{/* ======= */}
+                <div  className='dialog'>Do you want option change?</div>
+                <button onClick = {this.yesOption}> Yes </button><button onClick = {this.noOption}> No </button>
+                {option}
+{/* >>>>>>> 2f938690f87bbbeff8025dd2f2070d7f56eeb739 */}
             </div>
         )
     }
