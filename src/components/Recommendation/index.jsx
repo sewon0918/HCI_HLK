@@ -32,14 +32,6 @@ class Recommendation extends React.Component {
                 </div>
                 <div  className='dialog'>"고추장불고기버거" is selected. Do you want option change?</div>
                 <button> Yes </button><button> No </button>
-                <div  className='dialog'>These are the recommendation. Select among these or you can click "Others" button</div>
-                <div  className='dialog'>These are the recommendation. Select among these or you can click "Others" button</div>
-                <div  className='dialog'>These are the recommendation. Select among these or you can click "Others" button</div>
-                <div  className='dialog'>These are the recommendation. Select among these or you can click "Others" button</div>
-                <div  className='dialog'>These are the recommendation. Select among these or you can click "Others" button</div>
-                <div  className='dialog'>These are the recommendation. Select among these or you can click "Others" button</div>
-
-                
             </div>
         )
     }

@@ -6,6 +6,7 @@ import Recommendation from './components/Recommendation';
 import Cart from './components/Cart';
 import hamburger from './images/hamburger.png';
 import Payment from './components/Payment';
+import NameSearch from './components/NameSearch';
 
 class App extends React.Component {
     constructor(props) {

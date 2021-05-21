@@ -3,6 +3,7 @@ import './index.css';
 
 import DrinkOrSide from '../DrinkOrSide';
 import '../Recommendation'
+import '../OptionChange'
 import Recommendation from '../Recommendation';
 
 class UserInformation extends React.Component {
@@ -48,6 +49,7 @@ class UserInformation extends React.Component {
         const isLoggedIn = this.state.isLoggedIn;
         const phone = this.state.phone
         let recommend = null;
+        let option=null;
         if (isLoggedIn > 0) {
             recommend = <Recommendation phone={phone}></Recommendation>
         }
@@ -69,6 +71,7 @@ class UserInformation extends React.Component {
                     <button onClick = {this.onDrinkOrSide}>음료/사이드</button> {/* 음료 부분 */}
                 </div>
                 {recommend}
+                {option}
             </div>
         )
     }
