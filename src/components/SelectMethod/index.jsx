@@ -42,7 +42,7 @@ class SelectMethod extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <div className = 'dialog'>어서오세요. 헬로버거입니다!</div>}
+                {this.state.show && <div className = 'dialog'>버거를 선택하셨습니다.</div>}
                 {this.state.show2 && <div className = 'dialog'>주문하실 방식을 선택해주세요.
                 
                 

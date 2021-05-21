@@ -1,6 +1,7 @@
 import React from 'react';
 import Drink from '../Drink';
 import Side from '../Side';
+import './index.css';
 
 class DrinkOrSide extends React.Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class DrinkOrSide extends React.Component {
             <div>
                 {this.state.show && <div className = 'dialog'><h3>음료/사이드를 선택하셨습니다.</h3></div>}
                 {this.state.show2 && <div className = 'dialog'><h3>음료, 사이드 중 선택하실 것을 클릭해주세요.</h3></div>}
-                {this.state.show2 && <div><button onClick={this.onDrink}>음료</button><button onClick={this.onSide}>사이드</button></div>}
+                {this.state.show2 && <div><button className='button' onClick={this.onDrink}>음료</button><button className='button' onClick={this.onSide}>사이드</button></div>}
                 {chosen_category}
             </div>
         );
