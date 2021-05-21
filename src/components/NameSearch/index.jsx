@@ -34,6 +34,11 @@ class NameSearch extends React.Component {
         console.log(name);
         this.setState({name: name, submitted: true}); 
     }
+    handlePress = (e) => {
+        if (e.key === "Enter") {
+            this.onSubmit();
+        }
+    }
 
     render(){
         const submitted = this.state.submitted;
@@ -43,13 +48,16 @@ class NameSearch extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <div  className='dialog'>"이름으로 찾기"를 선택했습니다. </div>}
+                {this.state.show && <><div  className='dialog' id='answer'>이름으로 찾기 </div>
+                <br className='clear'/>
+                <br className='clear'/>
+                <br className='clear'/></>}
                 {this.state.show2 && <div  className='dialog'>버거 이름을 아래 칸에 입력하고 확인버튼을 눌러주세요. </div>}
-                {this.state.show3 && <div> 
-                    <input id = "search"/> 
+                {this.state.show3 && <><div> 
+                    <input id = "search" onKeyPress={this.handlePress.bind(this)} autoFocus/> 
                     <button onClick = {this.onSubmit.bind(this)}> 확인 </button>
-                </div>}
-                {showResult}
+                </div>{showResult}</>}
+                
                 
             </div>
         )

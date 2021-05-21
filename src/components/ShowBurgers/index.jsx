@@ -6,8 +6,22 @@ import OptionChange from '../OptionChange';
 class ShowBurgers extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {menu: "", results: 0, order: false, show: false, show2: false, show3: false, query:"", info: null};
+        this.state = {menu: "", results: 0, order: false, show0: false, show: false, show2: false, show3: false, query:null, info: null};
     }
+    componentDidMount(){
+        setTimeout(()=>{
+           this.setState({show0: true})
+        },200)
+        setTimeout(()=>{
+           this.setState({show: true})
+        },500)
+        setTimeout(()=>{
+            this.setState({show2: true})
+        },1500) 
+        setTimeout(()=>{
+            this.setState({show3: true})
+        },2500) 
+     }
 
 
     menuClick(id, json){
@@ -81,24 +95,27 @@ class ShowBurgers extends React.Component {
         })
         if (name != null && num === 0) 
             return (<>
-                {this.state.show && <div className="dialog">검색 결과가 없습니다. 입력한 내용을 다시 확인해주세요</div>}
+                {this.state.show && <div className="dialog">"{name}"에 대한 검색 결과가 없습니다. 입력한 내용을 다시 확인해주세요</div>}
             </>)
         if (name != null)
             return (<>
+                {this.state.show0 && <><div  className='dialog' id='answer'>{name}</div><br/><br/><br/></>}
                 {this.state.show && <div  className='dialog'>"{name}"에 대한 검색 결과입니다. </div>}
                 {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 주문하기를 눌러주세요. </div>}
-                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button onClick={this.orderMenu.bind(this)}>주문하기</button></>}
+                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>주문하기</button></>}
             </>)
         if (ingredient != null) 
             return (<>
+                {this.state.show0 && <><div  className='dialog' id='answer'>{ingredient}</div><br/><br/><br/></>}
                 {this.state.show && <div  className='dialog'>주재료가 {ingredient}인 햄버거입니다. </div>}
                 {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 주문하기를 눌러주세요. </div>}
-                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button onClick={this.orderMenu.bind(this)}>주문하기</button></>}
+                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>주문하기</button></>}
             </>)
         if (name == null && ingredient == null) return (<>
+                {this.state.show0 && <><div  className='dialog' id='answer'>모든 메뉴 보기</div><br/><br/><br/></>}
                 {this.state.show && <div  className='dialog'>"모든 메뉴 보기"를 선택했습니다. </div>}
                 {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 주문하기를 눌러주세요. </div>}
-                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button onClick={this.orderMenu.bind(this)}>주문하기</button></>}
+                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>주문하기</button></>}
             </>)
     }
 
@@ -110,7 +127,7 @@ class ShowBurgers extends React.Component {
             order = <OptionChange name={this.state.menu} patty_count={this.state.info.patty_num} cheeze_count={this.state.info.cheeze} onion_state={this.state.info.onion} tomato_state={this.state.info.tomato} lettuce_state={this.state.info.lettuce} sauce_state={this.state.info.sauce} ></OptionChange>
         }
         return(
-            <div>
+            <div id='contain'>
                 {this.results()} 
                 {order}
 

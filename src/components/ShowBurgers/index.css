@@ -25,6 +25,7 @@
     content: '';
     display: block;
     clear: both;
+    float: left;
 }
 
 #others {

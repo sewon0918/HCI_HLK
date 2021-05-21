@@ -62,15 +62,16 @@ class Ingredient extends React.Component {
 
     render(){
         const submitted = this.state.submitted;
-        const name = this.state.name;
-        const Q1 = "소"
         let showResult = null;
         if (submitted) {
             showResult = <ShowBurgers ingredient={this.state.ingredient}></ShowBurgers>
         }
         return(
             <div>
-                {this.state.show && <div  className='dialog'>"주재료로 찾기"를 선택했습니다. </div>}
+                {this.state.show && <><div  className='dialog' id='answer'>주재료로 찾기</div>
+                <br className='clear'/>
+                <br className='clear'/>
+                <br className='clear'/></>}
                 {this.state.show2 && <div  className='dialog'>원하시는 재료를 선택하고 확인버튼을 눌러주세요. </div>}
                 {this.state.show3 && <><table width="70%"> 
                     <tr>
@@ -85,7 +86,7 @@ class Ingredient extends React.Component {
                     </tr>
 
                 </table>
-                <button onClick={this.submit.bind(this)}>확인</button>
+                <button id='ingredChoice'onClick={this.submit.bind(this)}>확인</button>
                 {showResult}</>}
                 
             </div>
