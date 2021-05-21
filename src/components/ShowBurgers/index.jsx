@@ -87,7 +87,7 @@ class ShowBurgers extends React.Component {
             else {
                 console.log("show all");
                 return (
-                    <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername)}>
+                    <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
                         <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
                         <div className="name">{burgername}</div>
                     </div>);
