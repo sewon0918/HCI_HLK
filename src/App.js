@@ -1,10 +1,12 @@
-import React from 'react';
+import React  from 'react';
 import './App.css';
 
 import UserInformation from './components/UserInformation';
-import Recommendation from './components/Recommendation'
+import SelectMethod from './components/SelectMethod';
 
 import hamburger from './images/hamburger.png';
+import cart from './images/cart.png';
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 class App extends React.Component {
 
@@ -12,18 +14,21 @@ class App extends React.Component {
         return ( 
             <div className = "App" >
                 <div id = "logo">
-                    <p className='text'><img id = "icon" src={ hamburger } alt="icon"/>
-                     Hello Burger!</p>
+                    <div ><img id = "icon" src={ hamburger } alt="icon"/></div>
+                    <div className='text'>Hello Burger!</div>
                 </div>
                 <div className = 'layout'>
-                    <div className = "chatContainer">
-                        <UserInformation  />
-                    </div>
-                    <div className = "cart">
-                    Cart
+                    <ScrollToBottom className = "chatContainer">
+                        <SelectMethod />
+                        {/* <UserInformation  /> */}
+                    </ScrollToBottom>
+                    <div className = "cartContainer" id='cartContainer'>
+                        <div id='cart'>
+                            <div ><img id = "icon" src={ cart } alt="icon"/></div>
+                            <div className='text'>Cart</div>
+                        </div>
                     </div>
                 </div>
-                Hello!
             </div>
             
         );

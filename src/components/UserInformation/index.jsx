@@ -3,6 +3,7 @@ import './index.css';
 
 import '../Recommendation'
 import Recommendation from '../Recommendation';
+import '../../App'
 
 class UserInformation extends React.Component {
     constructor(props) {
@@ -52,13 +53,13 @@ class UserInformation extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <div className = 'dialog'><h3>Welcome to Hello Burger!</h3></div>}
-                {this.state.show2 && <div className = 'dialog'><h3>Please type your number</h3></div>}
-                <div> 
+                {/* {this.state.show && <div className = 'dialog'><h3>Welcome to Hello Burger!</h3></div>} */}
+                {this.state.show && <div className = 'dialog'>전화번호를 입력해주세요.</div>}
+                {this.state.show &&<div className = 'dialog2'> 
                     <input id = "number"/> 
-                    <button onClick = {this.onSubmit}> Sumbit </button>
-                    <button onClick = {this.onSkip}> Skip </button>
-                </div>
+                    <button className = 'button' onClick = {this.onSubmit}> Sumbit </button>
+                    {/* <button className = 'button' onClick = {this.onSkip}> Skip </button> */}
+                </div>}
                 {recommend}
             </div>
         )

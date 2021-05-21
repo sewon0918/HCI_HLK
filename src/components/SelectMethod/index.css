@@ -1,0 +1,12 @@
+.button {
+    padding: 5px;
+    margin: 3px;
+    background-color: #f5d682;
+    border: 1px solid;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+#select {
+    margin-top: 10px;
+}
