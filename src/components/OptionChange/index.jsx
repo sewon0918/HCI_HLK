@@ -12,15 +12,14 @@ class OptionChange extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            patty_count:0,
-            cheeze_count:0,
-            onion_state:0,
-            tomato_state:0,
-            lettuce_state:0,
-            sauce_state:0,
+            patty_count:this.props.patty_count,
+            cheeze_count:this.props.cheeze_count,
+            onion_state:this.props.onion_state,
+            tomato_state:this.props.tomato_state,
+            lettuce_state:this.props.lettuce_state,
+            sauce_state:this.props.sauce_state,
             OptionSelected: []
         }
-        this.basicoption=this.basicoption.bind(this);
     }
     Add_patty(){
         console.log("add");
@@ -157,40 +156,10 @@ class OptionChange extends React.Component {
         }
     }
 
-    basicoption(){
-        console.log("hihi");
-        const {name} = this.props;
-        console.log(name);
-        let burger_info=null;
-        const burger_num=0;
-        const burgerlist=(null);
-        burgers.map(burger=>{
-            //console.log(burger.name);
-            if(burger.name==name){
-                burger_info=burger;
-            }
-        });
-        //console.log(burger_info);
-        return burger_info;   
-    }
 
     render(){
         const {name} = this.props;
-        const information=this.basicoption();       //{this.basicoption.bind(this)}
-        console.log(information);
-        this.state.patty_count=information.patty_num;
-        this.state.cheeze_count=information.cheeze;
-        if(information.onion==true){this.state.onion_state=2;}
-        else{this.state.onion_state=0;}
 
-        if(information.sauce==true){this.state.sauce_state=2;}
-        else{this.state.sauce_state=0;}
-
-        if(information.tomato==true){this.state.tomato_state=2;}
-        else{this.state.tomato_state=0;}
-
-        if(information.raddish==true){this.state.lettuce_state=2;}
-        else{this.state.lettuce_state=0;}
         //각각 양파/토마토/.... 가 있는지 확인해서 있으면 보통에 없으면 기본에 체크. -> 함수를 만들었는데, button이 뒤에 선언되어 있어서 안된다함;
         
         return(

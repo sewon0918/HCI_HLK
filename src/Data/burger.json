@@ -8,11 +8,11 @@
         "setprice": 7400,
         "patty_num":1,
         "cheeze":0,
-        "onion": true,
-        "pickle": false,
-        "sauce": true,
-        "raddish": true,
-        "tomato": true
+        "onion": 2,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato": 2
     },
     {
         "name": "새우버거",
@@ -23,11 +23,11 @@
         "setprice": 5900,
         "patty_num":1,
         "cheeze":0,
-        "onion": false,
-        "pickle": false,
-        "sauce": true,
-        "raddish": true,
-        "tomato": false
+        "onion": 0,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato": 0
     },
     {
         "name": "사각새우더블버거",
@@ -38,11 +38,11 @@
         "setprice": 6500,
         "patty_num":1,
         "cheeze":0,
-        "onion": false,
-        "pickle": false,
-        "sauce": true,
-        "raddish": true,
-        "tomato": false
+        "onion": 0,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato": 0
     },
     {
         "name": "와규 에디션 2",
@@ -53,11 +53,11 @@
         "setprice": 7600,
         "patty_num":1,
         "cheeze":1,
-        "onion": true,
-        "pickle": false,
-        "sauce": true,
-        "raddish": true,
-        "tomato": true
+        "onion": 2,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato": 2
     },
     {
         "name": "더블X2",
@@ -68,11 +68,11 @@
         "setprice": 7600,
         "patty_num":2,
         "cheeze":2,
-        "onion": true,
-        "pickle": true,
-        "sauce": true,
-        "raddish": true,
-        "tomato":false
+        "onion": 2,
+        "pickle": 2,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato":0
     },
     {
         "name": "원조빅불",
@@ -83,11 +83,11 @@
         "setprice": 7600,
         "patty_num":2,
         "cheeze":1,
-        "onion": true,
-        "pickle": true,
-        "sauce": true,
-        "raddish": true,
-        "tomato":false
+        "onion": 2,
+        "pickle": 2,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato":0
     },
     {
         "name": "핫크리스피버거",
@@ -98,11 +98,11 @@
         "setprice": 6700,
         "patty_num":1,
         "cheeze":0,
-        "onion": false,
-        "pickle": false,
-        "sauce": true,
-        "raddish": true,
-        "tomato":true
+        "onion": 0,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato":2
     },
     {
         "name": "한우불고기버거",
@@ -113,11 +113,11 @@
         "setprice": 8900,
         "patty_num":1,
         "cheeze":0,
-        "onion": true,
-        "pickle": true,
-        "sauce": true,
-        "raddish": true,
-        "tomato":true
+        "onion": 2,
+        "pickle": 2,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato":2
     },
     {
         "name": "치즈No.5",
@@ -128,11 +128,11 @@
         "setprice": 6200,
         "patty_num":1,
         "cheeze":5,
-        "onion": true,
-        "pickle": false,
-        "sauce": true,
-        "raddish": true,
-        "tomato":false
+        "onion": 2,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato":0
     },
     {
         "name": "클래식치즈버거",
@@ -143,11 +143,11 @@
         "setprice": 6500,
         "patty_num":1,
         "cheeze":1,
-        "onion": true,
-        "pickle": true,
-        "sauce": true,
-        "raddish": false,
-        "tomato":false
+        "onion": 2,
+        "pickle": 2,
+        "sauce": 2,
+        "raddish": 0,
+        "tomato":0
     },
     {
         "name": "모짜렐라 인 더 버거-베이컨",
@@ -158,11 +158,11 @@
         "setprice": 7700,
         "patty_num":1,
         "cheeze":1,
-        "onion": false,
-        "pickle": false,
-        "sauce": true,
-        "raddish": true,
-        "tomato":false
+        "onion": 0,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato":0
     },
     {
         "name": "불고기버거",
@@ -173,11 +173,11 @@
         "setprice": 5900,
         "patty_num":1,
         "cheeze":0,
-        "onion": true,
-        "pickle": false,
-        "sauce": true,
-        "raddish": false,
-        "tomato": false
+        "onion": 2,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 0,
+        "tomato": 0
     },
     {
         "name": "폴더버거",
@@ -188,11 +188,11 @@
         "setprice": 7500,
         "patty_num":1,
         "cheeze":1,
-        "onion": true,
-        "pickle": true,
-        "sauce": true,
-        "raddish": false,
-        "tomato": false
+        "onion": 2,
+        "pickle": 2,
+        "sauce": 2,
+        "raddish": 0,
+        "tomato": 0
     },
     {
         "name": "치킨버거",
@@ -203,11 +203,11 @@
         "setprice": 5100,
         "patty_num":1,
         "cheeze":0,
-        "onion": false,
-        "pickle": false,
-        "sauce": true,
-        "raddish": true,
-        "tomato": false
+        "onion": 0,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato": 0
     },
     {
         "name": "데리버거",
@@ -218,11 +218,11 @@
         "setprice": 4900,
         "patty_num":1,
         "cheeze":0,
-        "onion": true,
-        "pickle": false,
-        "sauce": true,
-        "raddish": false,
-        "tomato": false
+        "onion": 2,
+        "pickle": 0,
+        "sauce": 2,
+        "raddish": 0,
+        "tomato": 0
     },
     {
         "name": "T-Rex",
@@ -233,10 +233,10 @@
         "setprice": 5900,
         "patty_num":1,
         "cheeze":0,
-        "onion": true,
-        "pickle": true,
-        "sauce": true,
-        "raddish": true,
-        "tomato": false
+        "onion": 2,
+        "pickle": 2,
+        "sauce": 2,
+        "raddish": 2,
+        "tomato": 0
     }
 ]

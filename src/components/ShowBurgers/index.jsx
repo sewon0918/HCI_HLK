@@ -6,11 +6,12 @@ import OptionChange from '../OptionChange';
 class ShowBurgers extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {menu: "", results: 0, order: false, show: false, show2: false, show3: false, query:"", key: null};
+        this.state = {menu: "", results: 0, order: false, show: false, show2: false, show3: false, query:"", info: null};
     }
 
 
     menuClick(id, json){
+        console.log(json);
         const elements = document.getElementsByClassName("showBurger");
 
         for (var i = 0; i < elements.length; i++) {
@@ -18,7 +19,7 @@ class ShowBurgers extends React.Component {
         }
         console.log(id)
         document.getElementById(id).style.border = '3px solid red';
-        this.setState({menu: id, order: false, key: json}); 
+        this.setState({menu: id, order: false, info: json}); 
     
         // console.log("jj")
     }
@@ -31,7 +32,7 @@ class ShowBurgers extends React.Component {
         const {ingredient} = this.props;
         let num = 0;
         if (this.state.query !== name) {
-            this.setState({query: name, show: false, show2: false, show3: false, order: false, key: null});
+            this.setState({query: name, show: false, show2: false, show3: false, order: false});
             setTimeout(()=>{
                this.setState({show: true})
             },500)
@@ -62,7 +63,7 @@ class ShowBurgers extends React.Component {
                 if (key.ingredient === ingredient){
                     num += 1;
                     return (
-                        <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername)}>
+                        <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
                             <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
                             <div className="name">{burgername}</div>
                         </div>);
@@ -102,17 +103,17 @@ class ShowBurgers extends React.Component {
     }
 
     render(){
+        console.log(this.state.info);
         let order = null;
         if (this.state.order) {
-            order = <OptionChange name={this.state.menu} key={this.state.key} ></OptionChange>
+            console.log(this.state.info);
+            order = <OptionChange name={this.state.menu} patty_count={this.state.info.patty_num} cheeze_count={this.state.info.cheeze} onion_state={this.state.info.onion} tomato_state={this.state.info.tomato} lettuce_state={this.state.info.lettuce} sauce_state={this.state.info.sauce} ></OptionChange>
         }
         return(
             <div>
                 {this.results()} 
                 {order}
 
-
-                
             </div>
         )
     }
