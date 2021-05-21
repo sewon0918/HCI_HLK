@@ -3,6 +3,7 @@ import './index.css';
 import 고추장 from '../../images/1.png';
 import 직화 from '../../images/2.png';
 import burgers from '../../Data/burger.json'
+import OptionChange from '../OptionChange';
 
 class ShowBurgers extends React.Component {
     constructor(props) {
@@ -103,7 +104,7 @@ class ShowBurgers extends React.Component {
     render(){
         let order = null;
         if (this.state.order) {
-            order = <div>PLACEHOLDER FOR ORDER {this.state.menu}</div>
+            order = <OptionChange name={this.state.menu} ></OptionChange>
         }
         return(
             <div>
