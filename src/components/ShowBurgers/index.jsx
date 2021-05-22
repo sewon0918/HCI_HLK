@@ -149,7 +149,7 @@ class ShowBurgers extends React.Component {
             button2=<button onClick={this.optionno.bind(this)}>아니요.</button>
             console.log(this.state.optionSelect);
             if(this.state.optionSelect){
-                order = <OptionChange name={this.state.menu} patty_count={this.state.info.patty_num} cheeze_count={this.state.info.cheeze} onion_state={this.state.info.onion} tomato_state={this.state.info.tomato} lettuce_state={this.state.info.lettuce} sauce_state={this.state.info.sauce} single={this.state.info.singleprice} set={this.state.info.setprice}></OptionChange>
+                order = <OptionChange name={this.state.menu} patty_count={this.state.info.patty_num} cheeze_count={this.state.info.cheeze} onion_state={this.state.info.onion} tomato_state={this.state.info.tomato} lettuce_state={this.state.info.lettuce} sauce_state={this.state.info.sauce} single_price={this.state.info.singleprice} set_price={this.state.info.setprice}></OptionChange>
             }
         }
 

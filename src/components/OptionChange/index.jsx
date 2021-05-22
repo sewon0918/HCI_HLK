@@ -21,7 +21,9 @@ class OptionChange extends React.Component {
             tomato_state:this.props.tomato_state,
             lettuce_state:this.props.lettuce_state,
             sauce_state:this.props.sauce_state,
-            set: false
+            set: false,
+            single_price: this.props.single_price,
+            set_price: this.props.set_price
         }
     }
     componentDidMount(){
@@ -172,11 +174,12 @@ class OptionChange extends React.Component {
     render(){
         const {name} = this.props;
         let ifset=null;
+        console.log(this.state.set_price);
         if(this.state.set){
-            ifset=<Setmenu>price: {this.props.set}</Setmenu>
+            ifset=<Setmenu set_price={this.state.set_price}></Setmenu>
         }
         else{
-            ifset=<Payment>price: {this.props.single}</Payment>
+            ifset=<Payment total_price={this.state.single_price}></Payment>
         }
         //각각 양파/토마토/.... 가 있는지 확인해서 있으면 보통에 없으면 기본에 체크. -> 함수를 만들었는데, button이 뒤에 선언되어 있어서 안된다함;
         
