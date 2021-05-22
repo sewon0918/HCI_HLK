@@ -8,25 +8,28 @@ class ShowSides extends React.Component {
         super(props);
         this.results = this.results.bind(this);
         this.onSelect = this.onSelect.bind(this);
-        this.state = {select: false, menu: ''};
+        this.state = {select: false, menu: '', price:0};
     }
 
-    menuClick(id){
+    menuClick(id, price){
         const elements = document.getElementsByClassName("showmenu");
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.border="1px solid black";
             elements[i].style.boxShadow = '0 0 0 0px red inset';
         }
         document.getElementById(id).style.boxShadow = '0 0 0 3px red inset';
-        this.setState({menu: id});
+        this.setState({menu: id, price: price});
     }
 
     results() {
         const sidelist = sides.map((key, index) => {
             const sidename = key.name;
-            return (<div key={sidename} id={sidename} className="showmenu" onClick={this.menuClick.bind(this, sidename)}>
+            const price=key.r_price;
+            console.log(key);
+            return (<div key={sidename} id={sidename} className="showmenu" onClick={this.menuClick.bind(this, sidename, price)}>
                         <img className="image" src={ require(`../../Data/Image/sides/${sidename}.jpg`).default } alt="menu_class"/>
                         <div className="name">{sidename}</div>
+                        <div className="price">{price}</div>
                     </div>)
         })
         return (<div id="recommendMenu">{sidelist}</div>)
@@ -41,12 +44,14 @@ class ShowSides extends React.Component {
         let menuList = this.results();
         let button = <button id='select' onClick={this.onSelect}>선택</button>;
         const sidename = this.state.menu;
+        let price=this.state.price;
         if (this.state.select){
             finish = <HowMany menu={sidename} />
             menuList = null;
             button = <div id="recommendMenu1"><div key={sidename} id={sidename} className="showmenu1" >
             <img className="image" src={ require(`../../Data/Image/sides/${sidename}.jpg`).default } alt="menu_class"/>
             <div className="name">{sidename}</div>
+            <div className="price">{price}</div>
         </div></div>;
         }
         return(

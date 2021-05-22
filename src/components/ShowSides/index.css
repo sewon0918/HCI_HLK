@@ -11,6 +11,9 @@
     float: left;
 }
 
+.price{
+    text-size-adjust: 10px;
+}
 .image {
     width: 80%;
 }

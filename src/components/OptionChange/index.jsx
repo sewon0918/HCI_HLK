@@ -7,18 +7,21 @@ import 토마토 from '../../images/tomato.png';
 import 양상추 from '../../images/lettuce.png';
 import 소스 from '../../images/sauce.png';
 import burgers from '../../Data/burger.json'
+import Setmenu from '../Setmenu';
+import Payment from '../Payment'
 
 class OptionChange extends React.Component {
     constructor(props) {
         super(props);
         this.state={
+            name : this.props.name,
             patty_count:this.props.patty_count,
             cheeze_count:this.props.cheeze_count,
             onion_state:this.props.onion_state,
             tomato_state:this.props.tomato_state,
             lettuce_state:this.props.lettuce_state,
             sauce_state:this.props.sauce_state,
-            OptionSelected: []
+            set: false
         }
     }
     componentDidMount(){
@@ -159,10 +162,22 @@ class OptionChange extends React.Component {
         }
     }
 
+    setmenu(){
+        this.setState({set: true});
+    }
+    singlemenu(){
+        this.setState({set: false});
+    }
 
     render(){
         const {name} = this.props;
-
+        let ifset=null;
+        if(this.state.set){
+            ifset=<Setmenu>price: {this.props.set}</Setmenu>
+        }
+        else{
+            ifset=<Payment>price: {this.props.single}</Payment>
+        }
         //각각 양파/토마토/.... 가 있는지 확인해서 있으면 보통에 없으면 기본에 체크. -> 함수를 만들었는데, button이 뒤에 선언되어 있어서 안된다함;
         
         return(
@@ -211,7 +226,8 @@ class OptionChange extends React.Component {
                 </div>
                 
                 <div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
-                <button>단품</button><button>세트</button>
+                <button onClick={this.singlemenu.bind(this)}>단품</button><button onClick={this.setmenu.bind(this)}>세트</button>
+                {ifset}
             </div>
         )
     }
