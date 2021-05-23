@@ -7,6 +7,7 @@ import cart from './images/cart.png';
 import Payment from './components/Payment';
 import SelectCategory from './components/SelectCategory';
 
+
 class App extends React.Component {
     constructor(props) {
         super(props);

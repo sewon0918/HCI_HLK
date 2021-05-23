@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import ShowBurgers from '../ShowBurgers';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import burger from '../../Data/burger.json';
+import { useSpeechRecognition } from 'react-speech-kit';
+
+function Voice() {
+    const [value, setValue] = useState('');
+    const { listen, listening, stop } = useSpeechRecognition({
+      onResult: (result) => {
+        // 음성인식 결과가 value 상태값으로 할당됩니다.
+        setValue(result);
+      },
+    });
+  
+    return (
+      <div>
+        <div>{value}</div>
+        <button onMouseDown={listen} onMouseUp={stop}>
+          🎤
+        </button>
+        {listening && <div>음성인식 활성화 중</div>}
+      </div>
+    );
+  }
 
 class NameSearch extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {name: "", submitted: false, show: false, show2: false, show3: false};
+        this.state = {name: "", submitted: false, show: false, show2: false, show3: false, transcript:""};
     }
     componentDidMount(){
         setTimeout(()=>{
@@ -30,7 +54,7 @@ class NameSearch extends React.Component {
         document.getElementById(id).style.backgroundColor = 'yellow';
     }
     onSubmit() {
-        const name = document.getElementById("search").value;
+        const name = document.getElementById("auto").value;
         console.log(name);
         this.setState({name: name, submitted: true}); 
     }
@@ -41,19 +65,29 @@ class NameSearch extends React.Component {
         if (submitted) {
             showResult = <ShowBurgers name={this.state.name}></ShowBurgers>
         }
+        let voice = Voice;
         return(
             <div>
                 {this.state.show && <div  className='dialog'>"이름으로 찾기"를 선택했습니다. </div>}
                 {this.state.show2 && <div  className='dialog'>버거 이름을 아래 칸에 입력하고 확인버튼을 눌러주세요. </div>}
                 {this.state.show3 && <div> 
-                    <input id = "search"/> 
+                    {<Autocomplete
+                        id='auto'
+                        freeSolo={true}
+                        options={menulist}
+                        getOptionLabel={(option) => option.name}
+                        style={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} label="버거 이름" variant="outlined" />}
+                    />}
                     <button onClick = {this.onSubmit.bind(this)}> 확인 </button>
+                    <Voice />
                 </div>}
                 {showResult}
-                
             </div>
         )
     }
 }
 
+
+const menulist = burger;
 export default NameSearch;
