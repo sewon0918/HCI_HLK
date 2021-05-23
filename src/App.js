@@ -10,7 +10,6 @@ import SelectCategory from './components/SelectCategory';
 
 import Menu from './components/Menu';
 import Cart from './components/Cart';
-import firebase from "./firebase";
 
 const cartElement = [];
 cartElement.push(<><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>

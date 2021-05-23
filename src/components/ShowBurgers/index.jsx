@@ -198,7 +198,7 @@ class ShowBurgers extends React.Component {
             }
             if(this.state.optionSelect < 0){
                 order = <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
-                <div className="dialog2"><button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button>{ifset}</div></>
+                <div className="dialog2"><button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button></div>{ifset}</>
             }
         }
 
