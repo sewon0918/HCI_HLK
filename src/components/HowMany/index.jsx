@@ -55,6 +55,7 @@ class HowMany extends React.Component{
         let finish = null;
         let cartlist = null;
         let num = 0;
+        
         if (this.state.finish){
             const cart = document.getElementById("cart");
             // const img = new Image(200);
@@ -65,9 +66,14 @@ class HowMany extends React.Component{
             //     cart.appendChild(img);
             //     num += 1;
             // }
+            //writeJsonFile(jsonFile, {name: menu,price: price, drinkOrSide: drinkOrSide}).catch(err=>console.log(err));
+            const cartinfo=cartData;
+            const newcart=[...cartinfo,{name: menu,price: price, drinkOrSide: drinkOrSide} ]
 
-            cartData.push({name: menu,price: price, drinkOrSide: drinkOrSide});
+            //cartData.push({name: menu,price: price, drinkOrSide: drinkOrSide});
             console.log("새로들어간거", menu, price, drinkOrSide);
+            console.log(cartData);
+            console.log(newcart);
 
             cartlist = cartData.map((key, index) => {
                 console.log("cartlist");

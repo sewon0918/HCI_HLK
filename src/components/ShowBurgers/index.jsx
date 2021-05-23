@@ -191,16 +191,15 @@ class ShowBurgers extends React.Component {
             ifset=<Payment total_price={this.state.info.singleprice}></Payment>
         }
         if(this.state.order){
-            option=<div className="dialog">{this.state.menu}를 선택하셨습니다. 옵션을 선택하시겠습니까?</div>
-            button1=<button onClick={this.optionyes.bind(this)}>네.</button>
-            button2=<button onClick={this.optionno.bind(this)}>아니요.</button>
+            option=<><div className="dialog">{this.state.menu}를 선택하셨습니다. 옵션을 선택하시겠습니까?</div>
+                    <button onClick={this.optionyes.bind(this)}>네.</button><button onClick={this.optionno.bind(this)}>아니요.</button></>
             console.log(this.state.optionSelect);
             if(this.state.optionSelect > 0){
                 order = <OptionChange name={this.state.menu} patty_count={this.state.info.patty_num} cheeze_count={this.state.info.cheeze} onion_state={this.state.info.onion} tomato_state={this.state.info.tomato} lettuce_state={this.state.info.raddish} sauce_state={this.state.info.sauce} single_price={this.state.info.singleprice} set_price={this.state.info.setprice}></OptionChange>
             }
             if(this.state.optionSelect < 0){
                 order = <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
-                <button onClick={this.singlemenu.bind(this)}>단품</button><button onClick={this.setmenu.bind(this)}>세트</button>{ifset}</>
+                <button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button>{ifset}</>
             }
         }
 
@@ -208,7 +207,6 @@ class ShowBurgers extends React.Component {
             <div id='contain'>
                 {this.results()}
                 {option}
-                {button1}{button2}
                 {order}
 
             </div>
