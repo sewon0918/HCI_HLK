@@ -6,20 +6,26 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import burger from '../../Data/burger.json';
 import { useSpeechRecognition } from 'react-speech-kit';
 
+var word = '';
 function Voice() {
     const [value, setValue] = useState('');
     const { listen, listening, stop } = useSpeechRecognition({
       onResult: (result) => {
         // 음성인식 결과가 value 상태값으로 할당됩니다.
+        result = result.split(' ').join('')
         setValue(result);
+        word = result;
       },
     });
   
     return (
       <div>
         <div>{value}</div>
-        <button onMouseDown={listen} onMouseUp={stop}>
-          🎤
+        <button onClick={listen}>
+          시작
+        </button>
+        <button onClick={stop}>
+          끝
         </button>
         {listening && <div>음성인식 활성화 중</div>}
       </div>
@@ -54,8 +60,10 @@ class NameSearch extends React.Component {
         document.getElementById(id).style.backgroundColor = 'yellow';
     }
     onSubmit() {
-        const name = document.getElementById("auto").value;
-        console.log(name);
+        var name = document.getElementById("auto").value;
+        if (word !== ''){
+            name = word;
+        }
         this.setState({name: name, submitted: true}); 
     }
     handlePress = (e) => {
@@ -70,7 +78,6 @@ class NameSearch extends React.Component {
         if (submitted) {
             showResult = <ShowBurgers name={this.state.name}></ShowBurgers>
         }
-        let voice = Voice;
         return(
             <div>
                 {this.state.show && <div  className='dialog' id='answer'>이름으로 찾기 </div>}
