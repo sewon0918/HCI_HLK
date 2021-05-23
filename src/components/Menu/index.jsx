@@ -1,9 +1,7 @@
 import React from 'react';
 import './index.css';
-import 고추장 from '../../images/1.png';
-import 직화 from '../../images/2.png';
 
-import '../../App'
+
 
 class Menu extends React.Component {
     constructor(props) {
@@ -12,13 +10,19 @@ class Menu extends React.Component {
     }
 
     render(){
-
+        const {menu} = this.props;
+        const {price} = this.props;
+        const {drinkOrSide} = this.props;
+        console.log(menu, price, drinkOrSide);
         
         return(
+            
             <div>
-                
-                    <img className="menu" src={this.props.menu} alt="menu_class"/>
-                
+                <div key={menu} id={menu} className="showBurger" >
+                        <img className="image" src={ require(`../../Data/Image/${drinkOrSide}/${menu}.jpg`).default } alt="menu_class"/>
+                        <div className="name">{menu}</div>
+                        <div className="price">{price}</div>
+                    </div>
                 
             </div>
         )

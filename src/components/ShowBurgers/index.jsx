@@ -46,6 +46,11 @@ class ShowBurgers extends React.Component {
     results() {
         const {name} = this.props;
         const {ingredient} = this.props;
+        const {recommend} = this.props;
+        const {phone} = this.props;
+        console.log("name", name);
+        console.log("ingredient", ingredient);
+        console.log("phone", phone);
         let num = 0;
         if (this.state.query !== name) {
             this.setState({query: name, show: false, show2: false, show3: false, order: false});
@@ -78,8 +83,8 @@ class ShowBurgers extends React.Component {
                 }
                 else return (null);
             }
-            else if (ingredient !== null) {
-                //console.log("ingred");
+            else if (ingredient !== undefined && ingredient !== null) {
+                console.log("ingred");
                 if (key.ingredient === ingredient){
                     num += 1;
                     return (
@@ -91,6 +96,18 @@ class ShowBurgers extends React.Component {
                         </div>);
                 }
                 else return (null);
+            }
+            else if (phone!==null && recommend){
+                console.log("recommend")
+                if (burgername.includes("불고기")){
+                    return (
+                        <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
+                            <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
+                            <div className="name">{burgername}</div>
+                            <div className="price">단품: {singleprice}</div>
+                            <div className="price">세트: {setprice} </div>
+                        </div>);
+                }
             }
             else {
                 console.log("show all");
@@ -109,23 +126,29 @@ class ShowBurgers extends React.Component {
             </>)
         if (name != null)
             return (<>
-                {this.state.show0 && <><div  className='dialog' id='answer'>{name}</div><br/><br/><br/></>}
+                {this.state.show0 && <div  className='dialog' id='answer'>{name}</div>}
                 {this.state.show && <div  className='dialog'>"{name}"에 대한 검색 결과입니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 주문하기를 눌러주세요. </div>}
-                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>주문하기</button></>}
+                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>다음</button></>}
             </>)
         if (ingredient != null) 
             return (<>
-                {this.state.show0 && <><div  className='dialog' id='answer'>{ingredient}</div><br/><br/><br/></>}
+                {this.state.show0 && <div  className='dialog' id='answer'>{ingredient}</div>}
                 {this.state.show && <div  className='dialog'>주재료가 {ingredient}인 햄버거입니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 주문하기를 눌러주세요. </div>}
-                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>주문하기</button></>}
+                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>다음</button></>}
+            </>)
+        if (recommend)
+            return(<>
+                {this.state.show0 &&<div  className='dialog'>"{phone}" 님의 추천메뉴입니다.</div>}
+                {this.state.show && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show2 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>다음</button></>}
             </>)
         if (name == null && ingredient == null) return (<>
-                {this.state.show0 && <><div  className='dialog' id='answer'>모든 메뉴 보기</div><br/><br/><br/></>}
+                {this.state.show0 && <div  className='dialog' id='answer'>모든 메뉴 보기</div>}
                 {this.state.show && <div  className='dialog'>"모든 메뉴 보기"를 선택했습니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 주문하기를 눌러주세요. </div>}
-                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>주문하기</button></>}
+                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show3 && <><div id="menuShower">{burgerlist}</div><button id='select' onClick={this.orderMenu.bind(this)}>다음</button></>}
             </>)
     }
 

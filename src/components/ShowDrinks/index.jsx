@@ -8,7 +8,7 @@ class ShowDrinks extends React.Component {
         super(props);
         this.results = this.results.bind(this);
         this.onSelect = this.onSelect.bind(this);
-        this.state = {select: false, menu: '', price:0};
+        this.state = {select: false, menu: '', price:0, drinkOrSide : 'beverages'};
     }
 
     menuClick(id, price){
@@ -43,9 +43,10 @@ class ShowDrinks extends React.Component {
         let menuList = this.results();
         let button = <button id='select' onClick={this.onSelect}>선택</button>;
         const drinkname = this.state.menu;
-        let price=this.state.price;
+        const drinkOrSide = this.state.drinkOrSide;
+        const price=this.state.price;
         if (this.state.select){
-            finish = <HowMany menu={drinkname} />
+            finish = <HowMany menu={drinkname} price = {price} drinkOrSide = {drinkOrSide}/>
             menuList = null;
             button = <div id="recommendMenu1"><div key={drinkname} id={drinkname} className="showmenu1" onClick={this.menuClick.bind(this, drinkname)}>
             <img className="image" src={ require(`../../Data/Image/beverages/${drinkname}.jpg`).default } alt="menu_class"/>

@@ -1,6 +1,7 @@
 import React from 'react';
 import SelectMethod from '../SelectMethod';
 import DrinkOrSide from '../DrinkOrSide';
+import './index.css';
 
 class SelectCategory extends React.Component {
     constructor(props){
