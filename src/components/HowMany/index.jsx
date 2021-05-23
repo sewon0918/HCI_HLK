@@ -7,7 +7,7 @@ import App from '../../App';
 import aaa from '../../images/1.png'
 import cartIcon from '../../images/cart.png';
 import cartData from '../../Data/cart.json';
-import firebase from '../../Firebase';
+import firebase from '../../FIrebase';
 
   // Initialize Firebase
 

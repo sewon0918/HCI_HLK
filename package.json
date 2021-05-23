@@ -8,10 +8,6 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.1.9",
-<<<<<<< HEAD
-    "browserify-fs": "^1.0.0",
-=======
->>>>>>> 0b9616460e2309fbd56c681e9274ae978850bd96
     "firebase": "^8.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

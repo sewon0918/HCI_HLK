@@ -2,12 +2,14 @@ import firebase from "firebase";
 // import "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCiHqqW2KmDb8jYrTWPlLz8nO_k2KII-Ro",
-        authDomain: "helloburger-1508d.firebaseapp.com",
-        projectId: "helloburger-1508d",
-        storageBucket: "helloburger-1508d.appspot.com",
-        messagingSenderId: "566629365401",
-        appId: "1:566629365401:web:e170df1d413fa0ab062a08"
+    apiKey: "AIzaSyB4DHLmx6UfS5vnwIgpsyWVWmshXG54Jss",
+    authDomain: "hci-hlk-f2fb4.firebaseapp.com",
+    databaseURL: "https://hci-hlk-f2fb4-default-rtdb.firebaseio.com",
+    projectId: "hci-hlk-f2fb4",
+    storageBucket: "hci-hlk-f2fb4.appspot.com",
+    messagingSenderId: "107533714020",
+    appId: "1:107533714020:web:9d788582b11733b01f9571",
+    measurementId: "G-X9MWCVJ3L1"
 };
 
 // firebaseConfig 정보로 firebase 시작
