@@ -9,11 +9,12 @@ import Payment from './components/Payment';
 import SelectCategory from './components/SelectCategory';
 
 import Menu from './components/Menu';
+import Cart from './components/Cart';
 
 
-// const cartElement = [];
-// cartElement.push(<><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
-//  <div className='text'>장바구니</div></>);
+const cartElement = [];
+cartElement.push(<><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
+ <div className='text'>장바구니</div></>);
 
 class App extends React.Component {
     constructor(props) {
@@ -47,19 +48,19 @@ class App extends React.Component {
                 <div className = 'layout'>
                     <ScrollToBottom className = "chatContainer">
                         <SelectCategory />
-                        {/* <UserInformation  /> */}
                     </ScrollToBottom>
                     <div className = "cartContainer" id='cartContainer'>
-                        <div id='cart'>
-                            <div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
-                            <div className='text'>장바구니</div>
-                            
-                        </div>
-                        {/* {add} */}
-                        {paymessage}
-                    {/* <div className = "cart">
+                        
+                            <div id='cart'>
+                                <div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
+                                <div className='text'>장바구니</div>
+                                
+                            </div>
+                           
+                            {paymessage}
+                    <div >
                         <Cart onCreate={this.handleCreate}/>
-                    </div> */}
+                    </div> 
                 </div>
             </div>
             </div>

@@ -6,6 +6,7 @@ import Menu from '../Menu';
 import App from '../../App';
 import aaa from '../../images/1.png'
 import cartIcon from '../../images/cart.png';
+import cartData from '../../Data/cart.json';
 
 class HowMany extends React.Component{
     constructor(props){
@@ -52,24 +53,54 @@ class HowMany extends React.Component{
         const {drinkOrSide} = this.props;
         const number = this.state.number;
         let finish = null;
+        let cartlist = null;
+        let num = 0;
         if (this.state.finish){
-            var z = React.createElement('p', null, price);
-            const img = new Image();
-            console.log(img);
-            // console.log('../../Data/Image/sides/' + menu + '.jpg');
-            // img.src = '../../Data/Image/sides/' + menu + '.jpg';
-            // img.src=aaa;
+            const cart = document.getElementById("cart");
+            // const img = new Image(200);
+            // img.src = require(`../../Data/Image/${drinkOrSide}/${menu}.jpg`).default;
+            // img.style.borderRadius = "10px";
             // console.log(img.src);
-            finish = <Menu menu={menu} price = {price} number={number} drinkOrSide = {drinkOrSide}/>;
-            const cart = document.getElementById("cartContainer");
-            const cartTitle = <><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
-                                    <div className='text'>장바구니</div></>
-            // cart.appendChild(z);
+            // if (num==0){
+            //     cart.appendChild(img);
+            //     num += 1;
+            // }
+
+            cartData.push({name: menu,price: price, drinkOrSide: drinkOrSide});
+            console.log("새로들어간거", menu, price, drinkOrSide);
+
+            cartlist = cartData.map((key, index) => {
+                console.log("cartlist");
+                const name1 = key.name;
+                const price1 = key.price;
+                const drinkOrSide1 = key.drinkOrSide;
+                console.log(index, name1, price1, drinkOrSide1);
+                
+                return (<Menu menu={name1} price = {price1} drinkOrSide = {drinkOrSide1}/>
+                );
+                    // <div className="showBurger" >
+                    //     <img className="image" src={ require(`../../Data/Image/${drinkOrSide}/${name}.jpg`).default } alt="menu_class"/>
+                    //     <div className="name">{name}</div>
+                    //     <div className="price">{price}</div>
+                    // </div>);
+                
+            })
+            // this.setState({finish: false});
+            // const cartTitle = <><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
+            //                          <div className='text'>장바구니</div></>
+            // ReactDOM.render([cartTitle, cartlist], cart);
+                
+
+            // finish = <Menu menu={menu} price = {price} number={number} drinkOrSide = {drinkOrSide}/>;
+            
+            
+            
             // var cartElement = window.$cartElement;
+            
+            // console.log("cartElement: ", cartElement);
             // cartElement.push(finish);
-            // console.log(cartElement);
             // ReactDOM.render(cartElement, cart);
-            ReactDOM.render([cartTitle, finish], cart);
+            // ReactDOM.render([cartTitle, finish], cart);
             // finish = <App menu={menu} price = {price} number={number}/>
             
 
@@ -86,7 +117,8 @@ class HowMany extends React.Component{
                         <br className='clear' />
                     </div>
                 }
-                {finish}
+                {/* {finish} */}
+                {cartlist}
             </div>
         )
     }
