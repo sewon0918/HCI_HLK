@@ -3,11 +3,12 @@ import './index.css';
 import burgers from '../../Data/burger.json'
 import OptionChange from '../OptionChange';
 import Payment from '../Payment';
+import Setmenu from '../Setmenu';
 
 class ShowBurgers extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {menu: "", results: 0, order: false, show0: false, show: false, show2: false, show3: false, query:null, info: null, optionSelect:false};
+        this.state = {menu: "", results: 0, order: false, show0: false, show: false, show2: false, show3: false, query:null, info: null, optionSelect:0, set: 0};
     }
     componentDidMount(){
         setTimeout(()=>{
@@ -124,6 +125,12 @@ class ShowBurgers extends React.Component {
             return (<>
                 {this.state.show && <div className="dialog">"{name}"에 대한 검색 결과가 없습니다. 입력한 내용을 다시 확인해주세요</div>}
             </>)
+            if (this.state.order)
+                return (
+                <div id = 'answer' className="resultBurger">
+                    <img className="image" src={ require(`../../Data/Image/burgers/${this.state.menu}.jpg`).default } alt="menu_class"/>
+                    <div className="name">{this.state.menu}</div>
+                </div>)
         if (name != null)
             return (<>
                 {this.state.show0 && <div  className='dialog' id='answer'>{name}</div>}
@@ -154,11 +161,17 @@ class ShowBurgers extends React.Component {
 
     optionyes(){
         //console.log(this.state.optionSelect);
-        this.setState({optionSelect: true});
+        this.setState({optionSelect: 1});
     }
     optionno(){
         //console.log(this.state.optionSelect);
-        this.setState({optionSelect: false});
+        this.setState({optionSelect: -1});
+    }
+    setmenu(){
+        this.setState({set: 1});
+    }
+    singlemenu(){
+        this.setState({set: -1});
     }
     render(){
         console.log(this.state.info);
@@ -166,13 +179,24 @@ class ShowBurgers extends React.Component {
         let option=null;
         let button1=null;
         let button2=null;
+        let ifset = null;
+        if(this.state.set > 0){
+            ifset=<Setmenu set_price={this.state.info.setprice}></Setmenu>
+        }
+        if(this.state.set < 0){
+            ifset=<Payment total_price={this.state.info.singleprice}></Payment>
+        }
         if(this.state.order){
-            option=<div className="dialog">옵션을 선택하시겠습니까?</div>
+            option=<div className="dialog">{this.state.menu}를 선택하셨습니다. 옵션을 선택하시겠습니까?</div>
             button1=<button onClick={this.optionyes.bind(this)}>네.</button>
             button2=<button onClick={this.optionno.bind(this)}>아니요.</button>
             console.log(this.state.optionSelect);
-            if(this.state.optionSelect){
+            if(this.state.optionSelect > 0){
                 order = <OptionChange name={this.state.menu} patty_count={this.state.info.patty_num} cheeze_count={this.state.info.cheeze} onion_state={this.state.info.onion} tomato_state={this.state.info.tomato} lettuce_state={this.state.info.raddish} sauce_state={this.state.info.sauce} single_price={this.state.info.singleprice} set_price={this.state.info.setprice}></OptionChange>
+            }
+            if(this.state.optionSelect < 0){
+                order = <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
+                <button onClick={this.singlemenu.bind(this)}>단품</button><button onClick={this.setmenu.bind(this)}>세트</button>{ifset}</>
             }
         }
 
