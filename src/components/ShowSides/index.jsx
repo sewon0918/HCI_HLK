@@ -42,7 +42,7 @@ class ShowSides extends React.Component {
         let finish = null;
         let menuList = this.results();
         let button = <button id='select'>선택</button>;
-        if (this.state.menu != "")
+        if (this.state.menu !== "")
             button = <button id='select' onClick={this.onSelect}>선택</button>;
         const sidename = this.state.menu;
         const price=this.state.price;

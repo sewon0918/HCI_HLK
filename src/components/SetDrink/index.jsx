@@ -1,6 +1,5 @@
 import React from 'react';
 import drinks from '../../Data/beverage.json';
-import HowMany from '../HowMany';
 import './index.css';
 import Setside from '../Setside';
 
@@ -49,7 +48,6 @@ class SetDrink extends React.Component {
     }
 
     render(){
-        let finish = null;
         let menuList = this.results();
         let button = <button id='select' onClick={this.onSelect}>선택</button>;
         const drinkname = this.state.menu;

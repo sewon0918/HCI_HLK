@@ -2,7 +2,6 @@ import React from 'react';
 import sides from '../../Data/side.json';
 import Payment from '../Payment';
 import './index.css';
-import Setmenu from '../Setmenu'
 
 class Setside extends React.Component {
     constructor(props) {

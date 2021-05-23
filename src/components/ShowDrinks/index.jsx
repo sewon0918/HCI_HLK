@@ -44,7 +44,7 @@ class ShowDrinks extends React.Component {
         let finish = null;
         let menuList = this.results();
         let button = <button id='select' >선택</button>;
-        if (this.state.menu != "")
+        if (this.state.menu !== "")
             button = <button id='select' onClick={this.onSelect}>선택</button>;
         const drinkname = this.state.menu;
         const drinkOrSide = this.state.drinkOrSide;

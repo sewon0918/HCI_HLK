@@ -12,7 +12,7 @@ class Recommendation extends React.Component {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
         this.onSkip = this.onSkip.bind(this);
-        this.onDrinkOrSide = this.onDrinkOrSide.bind(this);  {/* 음료 부분 */}
+        this.onDrinkOrSide = this.onDrinkOrSide.bind(this);  /*{ 음료 부분 }*/
         this.componentDidMount = this.componentDidMount.bind(this);
         this.state = {isLoggedIn: 0, phone: "", show: false, show2: false};
     }
@@ -30,13 +30,13 @@ class Recommendation extends React.Component {
     onSubmit(){
         const number = document.getElementById("number").value;
         console.log(number);
-        if (number != "")
+        if (number !== "")
         this.setState({isLoggedIn: 1, phone: number, recommend: true}); 
     }
     onSkip(){
         this.setState({isLoggedIn: -1, phone: '-1'}); 
     }
-    onDrinkOrSide(){ {/* 음료 부분 */}
+    onDrinkOrSide(){ /*{ 음료 부분 }*/
         this.setState({isLoggedIn: -2, phone: '-1'}); 
     }
     next(){
@@ -44,16 +44,16 @@ class Recommendation extends React.Component {
     }
     render(){
         const isLoggedIn = this.state.isLoggedIn;
-        const phone = this.state.phone
+        //const phone = this.state.phone
         let recommend = null;
-        let option=null;
+        //let option=null;
         if (isLoggedIn > 0) {
             recommend = <ShowBurgers recommend={this.state.recommend} phone = {this.state.phone}></ShowBurgers>
         }
         if (isLoggedIn < 0) {
             recommend = <div>hihi</div>
         }
-        if (isLoggedIn == -2){     {/* 음료 부분 */}
+        if (isLoggedIn === -2){     /*{ 음료 부분 }*/
             recommend = <DrinkOrSide />
         }
 

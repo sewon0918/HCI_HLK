@@ -67,7 +67,7 @@ class ShowBurgers extends React.Component {
 
         }
         let nextButton = null;
-        if (this.state.menu != "") {
+        if (this.state.menu !== "") {
             nextButton = <button id='select' onClick={this.orderMenu.bind(this)}>다음</button>;
         }
         const burgerlist = burgers.map((key, index) => {
@@ -76,7 +76,7 @@ class ShowBurgers extends React.Component {
             const setprice=key.setprice;
             if (name != null) {
                 console.log("name");
-                if (name != "" && burgername.includes(name)) {
+                if (name !== "" && burgername.includes(name)) {
                     num += 1;
                     return (
                         <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
@@ -124,6 +124,7 @@ class ShowBurgers extends React.Component {
                         <div className="price">세트: {setprice} </div>
                     </div>);
             }
+            return null;
         })
         if (name != null && num === 0) 
             return (<>
@@ -181,8 +182,6 @@ class ShowBurgers extends React.Component {
         console.log(this.state.info);
         let order = null;
         let option=null;
-        let button1=null;
-        let button2=null;
         let ifset = null;
         if(this.state.set > 0){
             ifset=<Setmenu set_price={this.state.info.setprice}></Setmenu>

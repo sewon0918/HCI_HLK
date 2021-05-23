@@ -6,7 +6,6 @@ import 양파 from '../../images/onion.png';
 import 토마토 from '../../images/tomato.png';
 import 양상추 from '../../images/lettuce.png';
 import 소스 from '../../images/sauce.png';
-import burgers from '../../Data/burger.json'
 import Setmenu from '../Setmenu';
 import Payment from '../Payment'
 
@@ -75,24 +74,23 @@ class OptionChange extends React.Component {
         const oelements = document.getElementsByClassName("onion");
         const lelements = document.getElementsByClassName("lettuce");
         const selements = document.getElementsByClassName("sauce");
-        let id=null;
         for (var i = 0; i < 4; i++) {
             telements[i].style.backgroundColor="white";
             oelements[i].style.backgroundColor="white";
             lelements[i].style.backgroundColor="white";
             selements[i].style.backgroundColor="white";
         }
-        if(tomato==2){document.getElementById("mid_tomato").style.backgroundColor = 'yellow';}
-        else if(tomato==0){document.getElementById("no_tomato").style.backgroundColor = 'yellow';}
+        if(tomato===2){document.getElementById("mid_tomato").style.backgroundColor = 'yellow';}
+        else if(tomato===0){document.getElementById("no_tomato").style.backgroundColor = 'yellow';}
 
-        if(onion==2){document.getElementById("mid_onion").style.backgroundColor = 'yellow';}
-        else if(onion==0){document.getElementById("no_onion").style.backgroundColor = 'yellow';}
+        if(onion===2){document.getElementById("mid_onion").style.backgroundColor = 'yellow';}
+        else if(onion===0){document.getElementById("no_onion").style.backgroundColor = 'yellow';}
 
-        if(lettuce==2){document.getElementById("mid_lettuce").style.backgroundColor = 'yellow';}
-        else if(lettuce==0){document.getElementById("no_lettuce").style.backgroundColor = 'yellow';}
+        if(lettuce===2){document.getElementById("mid_lettuce").style.backgroundColor = 'yellow';}
+        else if(lettuce===0){document.getElementById("no_lettuce").style.backgroundColor = 'yellow';}
 
-        if(sauce==2){document.getElementById("mid_sauce").style.backgroundColor = 'yellow';}
-        else if(sauce==0){document.getElementById("no_sauce").style.backgroundColor = 'yellow';}
+        if(sauce===2){document.getElementById("mid_sauce").style.backgroundColor = 'yellow';}
+        else if(sauce===0){document.getElementById("no_sauce").style.backgroundColor = 'yellow';}
 
         return;
     }
@@ -104,29 +102,29 @@ class OptionChange extends React.Component {
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.backgroundColor="white";
         }
-        if(cla=="tomato"){
-            if(this.state.tomato_state==0){id="no_tomato"}
-            else if(this.state.tomato_state==1){id="less_tomato"}
-            else if(this.state.tomato_state==2){id="mid_tomato"}
-            else if(this.state.tomato_state==3){id="more_tomato"}
+        if(cla==="tomato"){
+            if(this.state.tomato_state===0){id="no_tomato"}
+            else if(this.state.tomato_state===1){id="less_tomato"}
+            else if(this.state.tomato_state===2){id="mid_tomato"}
+            else if(this.state.tomato_state===3){id="more_tomato"}
         }
-        if(cla=="onion"){
-            if(this.state.onion_state==0){id="no_onion"}
-            else if(this.state.onion_state==1){id="less_onion"}
-            else if(this.state.onion_state==2){id="mid_onion"}
-            else if(this.state.onion_state==2){id="more_onion"}
+        if(cla==="onion"){
+            if(this.state.onion_state===0){id="no_onion"}
+            else if(this.state.onion_state===1){id="less_onion"}
+            else if(this.state.onion_state===2){id="mid_onion"}
+            else if(this.state.onion_state===3){id="more_onion"}
         }
-        if(cla=="lettuce"){
-            if(this.state.lettuce_state==0){id="no_lettuce"}
-            else if(this.state.lettuce_state==1){id="less_lettuce"}
-            else if(this.state.lettuce_state==2){id="mid_lettuce"}
-            else if(this.state.lettuce_state==3){id="more_lettuce"}
+        if(cla==="lettuce"){
+            if(this.state.lettuce_state===0){id="no_lettuce"}
+            else if(this.state.lettuce_state===1){id="less_lettuce"}
+            else if(this.state.lettuce_state===2){id="mid_lettuce"}
+            else if(this.state.lettuce_state===3){id="more_lettuce"}
         }
-        if(cla=="sauce"){
-            if(this.state.sauce_state==0){id="no_sauce"}
-            else if(this.state.sauce_state==1){id="less_sauce"}
-            else if(this.state.sauce_state==2){id="mid_sauce"}
-            else if(this.state.sauce_state==3){id="more_sauce"}
+        if(cla==="sauce"){
+            if(this.state.sauce_state===0){id="no_sauce"}
+            else if(this.state.sauce_state===1){id="less_sauce"}
+            else if(this.state.sauce_state===2){id="mid_sauce"}
+            else if(this.state.sauce_state===3){id="more_sauce"}
         }
 
         document.getElementById(id).style.backgroundColor = 'yellow';
@@ -140,29 +138,29 @@ class OptionChange extends React.Component {
         console.log(id);
         console.log(cla);
         document.getElementById(id).style.backgroundColor = 'yellow';
-        if(id=="much_"+cla){
-            if(cla=="tomato"){this.setState({tomato_state:3});}
-            else if(cla=="lettuce"){this.setState({lettuce_state:3});}
-            else if(cla=="onion"){this.setState({onion_state:3});}
-            else if(cla=="sauce"){this.setState({sauce_state:3});}
+        if(id==="much_"+cla){
+            if(cla==="tomato"){this.setState({tomato_state:3});}
+            else if(cla==="lettuce"){this.setState({lettuce_state:3});}
+            else if(cla==="onion"){this.setState({onion_state:3});}
+            else if(cla==="sauce"){this.setState({sauce_state:3});}
         }
-        else if(id=="mid_"+cla){
-            if(cla=="tomato"){this.setState({tomato_state:2});}
-            else if(cla=="lettuce"){this.setState({lettuce_state:2});}
-            else if(cla=="onion"){this.setState({onion_state:2});}
-            else if(cla=="sauce"){this.setState({sauce_state:2});}
+        else if(id==="mid_"+cla){
+            if(cla==="tomato"){this.setState({tomato_state:2});}
+            else if(cla==="lettuce"){this.setState({lettuce_state:2});}
+            else if(cla==="onion"){this.setState({onion_state:2});}
+            else if(cla==="sauce"){this.setState({sauce_state:2});}
         }
-        else if(id=="less_"+cla){
-            if(cla=="tomato"){this.setState({tomato_state:1});}
-            else if(cla=="lettuce"){this.setState({lettuce_state:1});}
-            else if(cla=="onion"){this.setState({onion_state:1});}
-            else if(cla=="sauce"){this.setState({sauce_state:1});}
+        else if(id==="less_"+cla){
+            if(cla==="tomato"){this.setState({tomato_state:1});}
+            else if(cla==="lettuce"){this.setState({lettuce_state:1});}
+            else if(cla==="onion"){this.setState({onion_state:1});}
+            else if(cla==="sauce"){this.setState({sauce_state:1});}
         }
-        else if(id=="no_"+cla){
-            if(cla=="tomato"){this.setState({tomato_state:0});}
-            else if(cla=="lettuce"){this.setState({lettuce_state:0});}
-            else if(cla=="onion"){this.setState({onion_state:0});}
-            else if(cla=="sauce"){this.setState({sauce_state:0});}
+        else if(id==="no_"+cla){
+            if(cla==="tomato"){this.setState({tomato_state:0});}
+            else if(cla==="lettuce"){this.setState({lettuce_state:0});}
+            else if(cla==="onion"){this.setState({onion_state:0});}
+            else if(cla==="sauce"){this.setState({sauce_state:0});}
         }
     }
 
@@ -180,10 +178,7 @@ class OptionChange extends React.Component {
         const {name} = this.props;
         let ifset=null;
         let next_step=null;
-        let next_button1=null;
-        let next_button2=null;
         console.log(this.state.set_price);
-        let option_state=null;
         if(this.state.fin){
             
             next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
@@ -206,7 +201,7 @@ class OptionChange extends React.Component {
                             <td className='selection'>
                                 <tr rowspan="3">
                                     <td></td>
-                                    <td><img id="patty" className="photo" src={패티}></img><div>패티</div></td>
+                                    <td><img id="patty" className="photo" src={패티} alt="menu_class"></img><div>패티</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -218,7 +213,7 @@ class OptionChange extends React.Component {
                             <td className='selection'>
                                 <tr rowspan="3">
                                     <td></td>
-                                    <td><img id="cheeze" className="photo" src={치즈}></img><div>치즈</div></td>
+                                    <td><img id="cheeze" className="photo" src={치즈} alt="menu_class"></img><div>치즈</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -228,7 +223,7 @@ class OptionChange extends React.Component {
                                 </tr> 
                             </td>
                             <td className='selection'>
-                                <tr><img id="onion" className="photo" src={양파}></img><div>양파</div></tr>
+                                <tr><img id="onion" className="photo" src={양파} alt="menu_class"></img><div>양파</div></tr>
                                 <tr margin="auto">
                                     <button id="much_onion" className="onion" onClick={this.menuClick.bind(this,"much_onion","onion")}>양파 많이</button>
                                     <button id="less_onion" className="onion" onClick={this.menuClick.bind(this,"less_onion","onion")}>양파 조금</button>
@@ -237,7 +232,7 @@ class OptionChange extends React.Component {
                                 </tr>
                             </td>
                             <td className='selection'>
-                                <tr><img id="tomato" className="photo" src={토마토}></img><div>토마토</div></tr>
+                                <tr><img id="tomato" className="photo" src={토마토} alt="menu_class"></img><div>토마토</div></tr>
                                 <tr>
                                     <button id="much_tomato" className="tomato" onClick={this.menuClick.bind(this,"much_tomato","tomato")}>토마토 많이</button>
                                     <button id="mid_tomato" className="tomato" onClick={this.menuClick.bind(this,"mid_tomato","tomato")}>토마토 기본</button>
@@ -247,7 +242,7 @@ class OptionChange extends React.Component {
                                 
                             </td>
                             <td className='selection'>
-                                <tr><img id="lettuce" className="photo" src={양상추}></img><div>양상추</div></tr>
+                                <tr><img id="lettuce" className="photo" src={양상추} alt="menu_class"></img><div>양상추</div></tr>
                                 <tr>
                                     <button id="much_lettuce" className="lettuce" onClick={this.menuClick.bind(this,"much_lettuce","lettuce")}>양상추 많이</button>
                                     <button id="mid_lettuce" className="lettuce" onClick={this.menuClick.bind(this,"mid_lettuce","lettuce")}>양상추 기본</button>
@@ -257,7 +252,7 @@ class OptionChange extends React.Component {
                                 
                             </td>
                             <td className='selection'>
-                                <tr><img id="sauce" className="photo" src={소스}></img><div>소스</div></tr>
+                                <tr><img id="sauce" className="photo" src={소스} alt="menu_class"></img><div>소스</div></tr>
                                 <tr>
                                     <button id="much_sauce" className="sauce" onClick={this.menuClick.bind(this,"much_sauce","sauce")}>소스 많이</button>
                                     <button id="mid_sauce" className="sauce" onClick={this.menuClick.bind(this,"mid_sauce","sauce")}>소스 기본</button>
