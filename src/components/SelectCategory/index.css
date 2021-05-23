@@ -26,16 +26,3 @@
 .input {
     padding: 4px 4px 4px 4px;
 }
-
-
-/* .dialog:after {
-    border-top: 15px solid #dbd57b;
-    border-left: 15px solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 0px solid transparent;
-    border-top-left-radius: 5px;
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: -15px;
-} */

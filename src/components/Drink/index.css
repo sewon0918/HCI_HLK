@@ -1,3 +1,10 @@
-#answer{
-    float : right;
+#answer {
+    margin: 10px 10px 10px auto;
+    width: 250px;
+    height: auto;
+    padding: 10px;
+    background: #c2ecb2;
+    border-radius: 10px 10px 3px 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    font-weight: bold;
 }

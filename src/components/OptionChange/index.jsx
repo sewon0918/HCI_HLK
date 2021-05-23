@@ -7,21 +7,29 @@ import 토마토 from '../../images/tomato.png';
 import 양상추 from '../../images/lettuce.png';
 import 소스 from '../../images/sauce.png';
 import burgers from '../../Data/burger.json'
+import Setmenu from '../Setmenu';
+import Payment from '../Payment'
 
 class OptionChange extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            patty_count:0,
-            cheeze_count:0,
-            onion_state:0,
-            tomato_state:0,
-            lettuce_state:0,
-            sauce_state:0,
-            OptionSelected: []
+            name : this.props.name,
+            patty_count:this.props.patty_count,
+            cheeze_count:this.props.cheeze_count,
+            onion_state:this.props.onion_state,
+            tomato_state:this.props.tomato_state,
+            lettuce_state:this.props.lettuce_state,
+            sauce_state:this.props.sauce_state,
+            set: false,
+            single_price: this.props.single_price,
+            set_price: this.props.set_price
         }
-        this.basicoption=this.basicoption.bind(this);
     }
+    componentDidMount(){
+        console.log(this.state.lettuce_state);
+        this.basicCheck(this.state.tomato_state, this.state.onion_state, this.state.lettuce_state, this.state.sauce_state)
+     }
     Add_patty(){
         console.log("add");
         this.setState({
@@ -157,40 +165,23 @@ class OptionChange extends React.Component {
         }
     }
 
-    basicoption(){
-        console.log("hihi");
-        const {name} = this.props;
-        console.log(name);
-        let burger_info=null;
-        const burger_num=0;
-        const burgerlist=(null);
-        burgers.map(burger=>{
-            //console.log(burger.name);
-            if(burger.name==name){
-                burger_info=burger;
-            }
-        });
-        //console.log(burger_info);
-        return burger_info;   
+    setmenu(){
+        this.setState({set: true});
+    }
+    singlemenu(){
+        this.setState({set: false});
     }
 
     render(){
         const {name} = this.props;
-        const information=this.basicoption();       //{this.basicoption.bind(this)}
-        console.log(information);
-        this.state.patty_count=information.patty_num;
-        this.state.cheeze_count=information.cheeze;
-        if(information.onion==true){this.state.onion_state=2;}
-        else{this.state.onion_state=0;}
-
-        if(information.sauce==true){this.state.sauce_state=2;}
-        else{this.state.sauce_state=0;}
-
-        if(information.tomato==true){this.state.tomato_state=2;}
-        else{this.state.tomato_state=0;}
-
-        if(information.raddish==true){this.state.lettuce_state=2;}
-        else{this.state.lettuce_state=0;}
+        let ifset=null;
+        console.log(this.state.set_price);
+        if(this.state.set){
+            ifset=<Setmenu set_price={this.state.set_price}></Setmenu>
+        }
+        else{
+            ifset=<Payment total_price={this.state.single_price}></Payment>
+        }
         //각각 양파/토마토/.... 가 있는지 확인해서 있으면 보통에 없으면 기본에 체크. -> 함수를 만들었는데, button이 뒤에 선언되어 있어서 안된다함;
         
         return(
@@ -239,7 +230,8 @@ class OptionChange extends React.Component {
                 </div>
                 
                 <div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
-                <button>단품</button><button>세트</button>
+                <button onClick={this.singlemenu.bind(this)}>단품</button><button onClick={this.setmenu.bind(this)}>세트</button>
+                {ifset}
             </div>
         )
     }
