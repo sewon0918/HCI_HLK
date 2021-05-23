@@ -14,10 +14,12 @@ class ShowDrinks extends React.Component {
     menuClick(id, price){
         const elements = document.getElementsByClassName("showmenu");
         for (var i = 0; i < elements.length; i++) {
-            elements[i].style.border="1px solid black";
-            elements[i].style.boxShadow = '0 0 0 0px red inset';
+            //elements[i].style.border="1px solid black";
+            //elements[i].style.boxShadow = '0 0 0 0px red inset';
+            elements[i].style.border="3px solid white";
         }
-        document.getElementById(id).style.boxShadow = '0 0 0 3px red inset';
+        //document.getElementById(id).style.boxShadow = '0 0 0 3px red inset';
+        document.getElementById(id).style.border="3px solid red";
         this.setState({menu: id, price: price});
     }
 
@@ -41,14 +43,16 @@ class ShowDrinks extends React.Component {
     render(){
         let finish = null;
         let menuList = this.results();
-        let button = <button id='select' onClick={this.onSelect}>선택</button>;
+        let button = <button id='select' >선택</button>;
+        if (this.state.menu != "")
+            button = <button id='select' onClick={this.onSelect}>선택</button>;
         const drinkname = this.state.menu;
         const drinkOrSide = this.state.drinkOrSide;
         const price=this.state.price;
         if (this.state.select){
             finish = <HowMany menu={drinkname} price = {price} drinkOrSide = {drinkOrSide}/>
             menuList = null;
-            button = <div id="recommendMenu1"><div key={drinkname} id={drinkname} className="showmenu1" onClick={this.menuClick.bind(this, drinkname)}>
+            button = <div id = 'answer' className="resultBurger"><div key={drinkname} id={drinkname}>
             <img className="image" src={ require(`../../Data/Image/beverages/${drinkname}.jpg`).default } alt="menu_class"/>
             <div className="name">{drinkname}</div>
             <div className="price">{price}</div>

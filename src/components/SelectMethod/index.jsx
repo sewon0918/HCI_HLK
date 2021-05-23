@@ -80,8 +80,8 @@ class SelectMethod extends React.Component {
         }
         return(
             <div>
-                <div className = 'dialog'>버거를 선택하셨습니다.</div>
-                {this.state.show && <div className = 'dialog'>주문하실 방식을 선택해주세요.</div>}
+                {<div className = 'dialog' id='answer'>버거</div>}
+                {this.state.show && <div className = 'dialog'>버거를 주문하실 방식을 선택해주세요.</div>}
                 {this.state.show &&<div  className = 'dialog2'  >
                     <button id="name" className = 'button' onClick = {this.name}> 이름으로 찾기 </button>
                     <button id="ingredient" className = 'button' onClick = {this.ingredient}> 주재료로 찾기 </button>
