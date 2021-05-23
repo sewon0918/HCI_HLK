@@ -68,10 +68,7 @@ class Ingredient extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <><div  className='dialog' id='answer'>주재료로 찾기</div>
-                <br className='clear'/>
-                <br className='clear'/>
-                <br className='clear'/></>}
+                {this.state.show && <div  className='dialog' id='answer'>주재료로 찾기</div>}
                 {this.state.show2 && <div  className='dialog'>원하시는 재료를 선택하고 확인버튼을 눌러주세요. </div>}
                 {this.state.show3 && <><table width="70%"> 
                     <tr>

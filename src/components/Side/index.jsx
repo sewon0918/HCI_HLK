@@ -20,16 +20,12 @@ class Side extends React.Component {
     }
 
     render(){
-        let showdrink = <ShowSides />
+        let showside = <ShowSides />
         return(
             <div>
-                {this.state.show && <div className = 'dialog' id='answer'><h3>사이드 메뉴</h3></div>}
-                <br className='clear'/>
-                <br className='clear'/>
-                <br className='clear'/>
-                <br className='clear'/>
-                {this.state.show2 && <div className = 'dialog'><h3>원하시는 메뉴를 선택해주세요.</h3></div>}
-                {this.state.show3 && showdrink}
+                {this.state.show && <div className = 'dialog' id='answer'>사이드 메뉴</div>}
+                {this.state.show2 && <div className = 'dialog'>원하시는 메뉴를 선택해주세요.</div>}
+                {this.state.show3 && showside}
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import UserInformation from '../UserInformation';
+import Recommendation from '../Recommendation';
 import ShowBurgers from '../ShowBurgers';
 import NameSearch from '../NameSearch';
 import Ingredient from '../Ingredient'
@@ -20,7 +20,7 @@ class SelectMethod extends React.Component {
         },1000)
         setTimeout(()=>{
             this.setState({show2: true})
-        },3000) 
+        },2000) 
      }
 
     menuClick(id){
@@ -70,7 +70,7 @@ class SelectMethod extends React.Component {
         const isRecommend = this.state.isRecommend;
         let ifRecommend = null;
         if (isRecommend > 0) {
-            ifRecommend = <UserInformation />
+            ifRecommend = <Recommendation />
         }
 
         const isAll = this.state.isAll;
@@ -80,13 +80,9 @@ class SelectMethod extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <div className = 'dialog'>버거를 선택하셨습니다.</div>}
-                {this.state.show2 && <div className = 'dialog'>주문하실 방식을 선택해주세요.
-                
-                
-                
-                </div>}
-                {this.state.show2 &&<div  className = 'dialog2'  >
+                <div className = 'dialog'>버거를 선택하셨습니다.</div>
+                {this.state.show && <div className = 'dialog'>주문하실 방식을 선택해주세요.</div>}
+                {this.state.show &&<div  className = 'dialog2'  >
                     <button id="name" className = 'button' onClick = {this.name}> 이름으로 찾기 </button>
                     <button id="ingredient" className = 'button' onClick = {this.ingredient}> 주재료로 찾기 </button>
                     <button id="recommend" className = 'button' onClick = {this.recommend}> 추천받기 </button>
