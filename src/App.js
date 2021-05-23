@@ -11,7 +11,6 @@ import SelectCategory from './components/SelectCategory';
 import Menu from './components/Menu';
 import Cart from './components/Cart';
 
-
 const cartElement = [];
 cartElement.push(<><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
  <div className='text'>장바구니</div></>);
