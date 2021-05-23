@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -53,14 +53,20 @@ class HowMany extends React.Component{
         this.setState({finish: false});
     }
 
+    finishFalse(){
+        this.setState({finish:false});
+        return false;
+    }
+
     render(){
+
+    
         const {menu} = this.props;
         const {price} = this.props;
         const {drinkOrSide} = this.props;
         const number = this.state.number;
         let finish = null;
         let cartlist = null;
-        let num = 0;
         if (this.state.finish){
             var entry = {name: menu, price: price, drinkOrSide: drinkOrSide};
             firebase.database().ref('menu/'+menu).set(entry);
@@ -71,11 +77,12 @@ class HowMany extends React.Component{
                 {this.state.show && <div className = 'dialog'>{menu}를 선택하셨습니다.</div>}
                 {this.state.show2 && <div className = 'dialog'>수량을 선택하고 "장바구니에 담기"를 눌러주세요.</div>}
                 {this.state.show3 && 
-                    <div id='changeNumber'>
-                        <div className='number'>{number}</div><div className='number'>개</div>
-                        <button className='number' onClick={this.plus}>+</button><button onClick={this.minus} className='number'>-</button>
-                        <button id='okay' className='button' onClick={this.pass}>장바구니</button>
-                        <br className='clear' />
+                    <div className = 'dialog2' id='changeNumber'>
+                        <div className = 'number'>{number}개</div>
+                        <button className='button' onClick={this.minus}> - </button>
+                        
+                        <button className='button' onClick={this.plus}> + </button>
+                        <button id='okay' className='button' onClick={this.pass}>장바구니 담기</button>
                     </div>
                 }
                 {/* {finish} */}

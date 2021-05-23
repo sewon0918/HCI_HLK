@@ -1,16 +1,16 @@
 .number {
-    float:left;
-    margin-left: 10px;
-    font-size:20px;
-}
-
-#changeNumber{
-    margin-left: 30px;
-    clear:both;
-    margin-bottom: 20px;
+    /* float:left; */
+    margin: 10px;
+    font-size: 20px;
+    display: inline;
 }
 
 #okay {
+    float: right;
     background-color: salmon;
-    margin-left: 50px;
+    /* margin-left: 50px; */
+}
+
+#changeNumber {
+    float: left;
 }

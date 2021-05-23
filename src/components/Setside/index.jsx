@@ -11,14 +11,16 @@ class Setside extends React.Component {
         this.onSelect = this.onSelect.bind(this);
         this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price};
     }
+    componentDidMount(){
+        this.menuClick('감자튀김(R)', 0)
+     }
 
     menuClick(id, price){
         const elements = document.getElementsByClassName("showmenu");
         for (var i = 0; i < elements.length; i++) {
-            elements[i].style.border="1px solid black";
-            elements[i].style.boxShadow = '0 0 0 0px red inset';
+            elements[i].style.border="3px solid white";
         }
-        document.getElementById(id).style.boxShadow = '0 0 0 3px red inset';
+        document.getElementById(id).style.border="3px solid red";
         this.setState({menu: id, price: price});
     }
 

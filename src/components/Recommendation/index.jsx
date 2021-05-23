@@ -30,6 +30,7 @@ class Recommendation extends React.Component {
     onSubmit(){
         const number = document.getElementById("number").value;
         console.log(number);
+        if (number != "")
         this.setState({isLoggedIn: 1, phone: number, recommend: true}); 
     }
     onSkip(){
