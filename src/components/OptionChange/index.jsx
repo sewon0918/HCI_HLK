@@ -187,7 +187,7 @@ class OptionChange extends React.Component {
         if(this.state.fin){
             
             next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
-            <button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button></>
+            <div className="dialog2"><button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button></div></>
 
             if(this.state.set>0){
                 ifset=<Setmenu set_price={this.state.set_price}></Setmenu>
