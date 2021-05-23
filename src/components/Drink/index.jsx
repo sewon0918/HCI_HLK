@@ -25,9 +25,9 @@ class Drink extends React.Component {
         let showdrink = <ShowDrinks />
         return(
             <div>
-                {this.state.show && <div className = 'dialog' id='answer'>음료</div>}
-                {this.state.show2 && <div className = 'dialog'>원하시는 메뉴를 선택해주세요.</div>}
-                {this.state.show3 && showdrink}
+                {<div className = 'dialog' id='answer'>음료</div>}
+                {this.state.show && <div className = 'dialog'>원하시는 음료 메뉴를 선택해주세요.</div>}
+                {this.state.show2 && showdrink}
             </div>
         )
     }

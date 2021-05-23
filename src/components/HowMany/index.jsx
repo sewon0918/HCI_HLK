@@ -90,6 +90,33 @@ class HowMany extends React.Component{
             //     const price1 = key.price;
             //     const drinkOrSide1 = key.drinkOrSide;
             //     console.log(index, name1, price1, drinkOrSide1);
+            // if (num==0){
+            //     cart.appendChild(img);
+            //     num += 1;
+            // }
+            //writeJsonFile(jsonFile, {name: menu,price: price, drinkOrSide: drinkOrSide}).catch(err=>console.log(err));
+            const cartinfo=cartData;
+            const newcart=[...cartinfo,{name: menu,price: price, drinkOrSide: drinkOrSide} ]
+
+            //cartData.push({name: menu,price: price, drinkOrSide: drinkOrSide});
+            console.log("새로들어간거", menu, price, drinkOrSide);
+            console.log(cartData);
+            console.log(newcart);
+
+            // cartlist = cartData.map((key, index) => {
+            //     console.log("cartlist");
+            //     const name1 = key.name;
+            //     const price1 = key.price;
+            //     const drinkOrSide1 = key.drinkOrSide;
+            //     console.log(index, name1, price1, drinkOrSide1);
+                
+            //     return (<Menu menu={name1} price = {price1} drinkOrSide = {drinkOrSide1}/>
+            //     );
+                    // <div className="showBurger" >
+                    //     <img className="image" src={ require(`../../Data/Image/${drinkOrSide}/${name}.jpg`).default } alt="menu_class"/>
+                    //     <div className="name">{name}</div>
+                    //     <div className="price">{price}</div>
+                    // </div>);
                 
             //     return (<Menu menu={menu1} price = {price1} drinkOrSide = {drinkOrSide1}/>
             //     );    

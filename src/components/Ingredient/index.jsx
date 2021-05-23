@@ -17,10 +17,10 @@ class Ingredient extends React.Component {
         },500)
         setTimeout(()=>{
             this.setState({show2: true})
-        },1500) 
+        },1000) 
         setTimeout(()=>{
             this.setState({show3: true})
-        },2500) 
+        },2000) 
      }
 
     menuClick(id){
@@ -68,20 +68,18 @@ class Ingredient extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <div  className='dialog' id='answer'>주재료로 찾기</div>}
+                {<div  className='dialog' id='answer'>주재료로 찾기</div>}
                 {this.state.show2 && <div  className='dialog'>원하시는 재료를 선택하고 확인버튼을 눌러주세요. </div>}
-                {this.state.show3 && <><table width="70%"> 
+                {this.state.show3 && <><table width="70%"><tbody>
                     <tr>
-                        <td><img id = "소" className="ingred" src={ 소 } alt="menu1" onClick={this.menuClick.bind(this, "소")}/>
-                        <div>소</div></td>
-                        <td><img id = "치킨" className="ingred" src={ 닭 } alt="menu1" onClick={this.menuClick.bind(this, "치킨")}/>
-                        <div>치킨</div></td>
-                        <td><img id = "새우" className="ingred" src={ 새우 } alt="menu1" onClick={this.menuClick.bind(this, "새우")}/>
-                        <div>새우</div></td>
-                        <td><img id = "비건" className="ingred" src={ 비건 } alt="menu1" onClick={this.menuClick.bind(this, "비건")}/>
-                    <div>비건</div></td>                        
+                        <td><img id = "소" className="ingred" src={ 소 } alt="menu1" onClick={this.menuClick.bind(this, "소")}/></td>
+                        <td><img id = "치킨" className="ingred" src={ 닭 } alt="menu1" onClick={this.menuClick.bind(this, "치킨")}/></td>
+                        <td><img id = "새우" className="ingred" src={ 새우 } alt="menu1" onClick={this.menuClick.bind(this, "새우")}/></td>
+                        <td><img id = "비건" className="ingred" src={ 비건 } alt="menu1" onClick={this.menuClick.bind(this, "비건")}/></td>                        
                     </tr>
-
+                    <tr>
+                        <th>소</th><th>치킨</th><th>새우</th><th>비건</th>
+                    </tr></tbody>
                 </table>
                 <button id='ingredChoice'onClick={this.submit.bind(this)}>확인</button>
                 {showResult}</>}

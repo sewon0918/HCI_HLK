@@ -18,6 +18,15 @@
     background-color: white;
     float: left;
 }
+.resultBurger {
+    margin-right: 7px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 7px;
+    width: 30%;
+    padding-top: 3px;
+    border-radius: 10px;
+}
 
 .image {
     width: 80%;

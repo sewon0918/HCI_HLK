@@ -1,10 +1,29 @@
 .photo {
     height: 100px;
     width: 100px;
-}
 
+}
+.table {
+    width: 100%;
+    table-layout: auto;
+}
 .selection {
-    width: 70%;
+    width: auto;
+    height: auto;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px gray;
+    justify-content: left;
+
+}
+
+.confirm{
+    width: 30%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 100px;
+    height: 40px;
+    font-size: 20px;
+    background-color: salmon;
 }

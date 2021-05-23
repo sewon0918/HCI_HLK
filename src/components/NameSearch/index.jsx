@@ -41,10 +41,10 @@ class NameSearch extends React.Component {
         },500)
         setTimeout(()=>{
             this.setState({show2: true})
-        },1500) 
+        },1000) 
         setTimeout(()=>{
             this.setState({show3: true})
-        },2500) 
+        },2000) 
      }
 
 
@@ -75,7 +75,7 @@ class NameSearch extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <div  className='dialog' id='answer'>이름으로 찾기 </div>}
+                {<div  className='dialog' id='answer'>이름으로 찾기 </div>}
                 {this.state.show2 && <div  className='dialog'>버거 이름을 아래 칸에 입력하고 확인버튼을 눌러주세요. </div>}
                 {this.state.show3 && <div className='dialog2'> 
                     {<Autocomplete
