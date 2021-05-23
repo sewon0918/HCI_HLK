@@ -12,13 +12,9 @@ import Menu from './components/Menu';
 import Cart from './components/Cart';
 import firebase from "./firebase";
 
-<<<<<<< HEAD
 const cartElement = [];
 cartElement.push(<><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
  <div className='text'>장바구니</div></>);
-=======
-
->>>>>>> 0b9616460e2309fbd56c681e9274ae978850bd96
 
 class App extends React.Component {
     constructor(props) {
