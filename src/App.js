@@ -10,11 +10,9 @@ import SelectCategory from './components/SelectCategory';
 
 import Menu from './components/Menu';
 import Cart from './components/Cart';
+import firebase from "./firebase";
 
 
-const cartElement = [];
-cartElement.push(<><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
- <div className='text'>장바구니</div></>);
 
 class App extends React.Component {
     constructor(props) {
@@ -30,6 +28,13 @@ class App extends React.Component {
     }
 
     render(){
+        // var newKey = firebase.database().ref('/carts/').push();
+        // newKey.set({
+        //     "country": "s"
+        // });
+
+        // console.log(newKey) ;
+
         const paymessage = this.state.paymessage;
         const {menu} = this.props;
         const {price} = this.props;
