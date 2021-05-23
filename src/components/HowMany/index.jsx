@@ -70,6 +70,16 @@ class HowMany extends React.Component{
         if (this.state.finish){
             var entry = {name: menu, price: price, drinkOrSide: drinkOrSide};
             firebase.database().ref('menu/'+menu).set(entry);
+            // var newKey = firebase.database().ref('/menu/').push();
+            // newKey.set({
+            //     "menu": menu,
+            //     "price": price,
+            //     "drinkOrSide": drinkOrSide
+            // });
+            
+
+            const cartData = firebase.database().ref('menu/').get();
+            console.log(cartData);
             this.block();
         }
         return(
