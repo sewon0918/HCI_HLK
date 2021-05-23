@@ -21,9 +21,10 @@ class OptionChange extends React.Component {
             tomato_state:this.props.tomato_state,
             lettuce_state:this.props.lettuce_state,
             sauce_state:this.props.sauce_state,
-            set: false,
+            set: 0,
             single_price: this.props.single_price,
-            set_price: this.props.set_price
+            set_price: this.props.set_price,
+            fin:false
         }
     }
     componentDidMount(){
@@ -166,21 +167,34 @@ class OptionChange extends React.Component {
     }
 
     setmenu(){
-        this.setState({set: true});
+        this.setState({set: 1});
     }
     singlemenu(){
-        this.setState({set: false});
+        this.setState({set: -1});
     }
 
+    confirm(){
+        this.setState({fin:true});
+    }
     render(){
         const {name} = this.props;
         let ifset=null;
+        let next_step=null;
+        let next_button1=null;
+        let next_button2=null;
         console.log(this.state.set_price);
-        if(this.state.set){
-            ifset=<Setmenu set_price={this.state.set_price}></Setmenu>
-        }
-        else{
-            ifset=<Payment total_price={this.state.single_price}></Payment>
+        let option_state=null;
+        if(this.state.fin){
+            
+            next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
+            <button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button></>
+
+            if(this.state.set>0){
+                ifset=<Setmenu set_price={this.state.set_price}></Setmenu>
+            }
+            if(this.state.set<0){
+                ifset=<Payment total_price={this.state.single_price}></Payment>
+            }
         }
         
         return(
@@ -253,10 +267,9 @@ class OptionChange extends React.Component {
                             </td>
                             </tr>
                     </table>
-                    <button className="confirm">확인</button>
+                    <button className="confirm" onClick={this.confirm.bind(this)}>확인</button>
                 </div>
-                <div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
-                <button onClick={this.singlemenu.bind(this)}>단품</button><button onClick={this.setmenu.bind(this)}>세트</button>
+                {next_step}
                 {ifset}
             </div>
         )
