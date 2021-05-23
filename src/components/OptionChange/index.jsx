@@ -27,6 +27,7 @@ class OptionChange extends React.Component {
         }
     }
     componentDidMount(){
+        console.log(this.state.lettuce_state);
         this.basicCheck(this.state.tomato_state, this.state.onion_state, this.state.lettuce_state, this.state.sauce_state)
      }
     Add_patty(){
