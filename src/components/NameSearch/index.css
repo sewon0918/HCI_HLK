@@ -1,0 +1,27 @@
+.MuiFormControl-fullWidth{
+    background-color: white;
+    margin-left: 10px;
+}
+
+.MuiAutocomplete-hasClearIcon{
+    width: 150px;
+    margin-left: 10px;
+    float: left;
+}
+
+#ok{
+    float: left;
+    width: 60px;
+    height: 54px;
+}
+
+#startv{
+    margin-top: 6px;
+    float: left;
+    padding-left: 40px;
+    width: 210px;
+}
+
+#voicebutton{
+    height: 130px;
+}

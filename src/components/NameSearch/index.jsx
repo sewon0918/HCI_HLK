@@ -6,7 +6,6 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import burger from '../../Data/burger.json';
 import { useSpeechRecognition } from 'react-speech-kit';
 
-var word = '';
 function Voice() {
     const [value, setValue] = useState('');
     const { listen, listening, stop } = useSpeechRecognition({
@@ -14,20 +13,19 @@ function Voice() {
         // 음성인식 결과가 value 상태값으로 할당됩니다.
         result = result.split(' ').join('')
         setValue(result);
-        word = result;
+        document.getElementsByTagName('input')[0].value = result;
       },
     });
   
     return (
-      <div>
-        <div>{value}</div>
-        <button onClick={listen}>
+      <div id='voicebutton'>
+        <button className='button' onClick={listen}>
           시작
         </button>
-        <button onClick={stop}>
+        <button className='button' onClick={stop}>
           끝
         </button>
-        {listening && <div>음성인식 활성화 중</div>}
+        {listening && <div>음성인식 중</div>}
       </div>
     );
   }
@@ -61,9 +59,6 @@ class NameSearch extends React.Component {
     }
     onSubmit() {
         var name = document.getElementById("auto").value;
-        if (word !== ''){
-            name = word;
-        }
         this.setState({name: name, submitted: true}); 
     }
     handlePress = (e) => {
@@ -82,16 +77,17 @@ class NameSearch extends React.Component {
             <div>
                 {this.state.show && <div  className='dialog' id='answer'>이름으로 찾기 </div>}
                 {this.state.show2 && <div  className='dialog'>버거 이름을 아래 칸에 입력하고 확인버튼을 눌러주세요. </div>}
-                {this.state.show3 && <div> 
+                {this.state.show3 && <div className='dialog2'> 
                     {<Autocomplete
                         id='auto'
                         freeSolo={true}
                         options={menulist}
                         getOptionLabel={(option) => option.name}
                         style={{ width: 300 }}
-                        renderInput={(params) => <TextField {...params} label="버거 이름" variant="outlined" />}
+                        renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
                     />}
-                    <button onClick = {this.onSubmit.bind(this)}> 확인 </button>
+                    <button id='ok' className='button' onClick = {this.onSubmit.bind(this)}> 확인 </button>
+                    <div id='startv'>음성인식으로 메뉴 이름 검색</div>
                     <Voice />
                 </div>}
                 {showResult}

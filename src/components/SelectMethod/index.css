@@ -6,3 +6,5 @@
     font-weight: bold;
     border-radius: 3px;
 }
+
+.button:hover{ background-color:#a59056; }
