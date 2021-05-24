@@ -63,9 +63,9 @@ class Recommendation extends React.Component {
             <div>
                 {this.state.show && <div className = 'dialog' id='answer'>추천받기 </div>}
                 {this.state.show2 && <div className = 'dialog'>전화번호를 입력하고 확인을 눌러주세요.</div>}
-                {this.state.show2 &&<div className = 'dialog2_short2'> 
+                {this.state.show2 &&<div id = 'short2'> 
                     <input className = 'input' id = "number"/> 
-                    <button className = 'button' onClick = {this.onSubmit}> 확인 </button>
+                    <button id='okay' className = 'button' onClick = {this.onSubmit}> 확인 </button>
                     {/* <button className = 'button' onClick = {this.onSkip}> Skip </button> */}
                 </div>}
                 

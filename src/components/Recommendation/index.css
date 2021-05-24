@@ -25,20 +25,21 @@
 
 .input {
     padding: 4px 4px 4px 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     height: 25px;
     width: 200px;
     margin-right: 10px;
 }
 
 
-/* .dialog:after {
-    border-top: 15px solid #dbd57b;
-    border-left: 15px solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 0px solid transparent;
-    border-top-left-radius: 5px;
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: -15px;
-} */
+#short2 {
+    position: relative;
+    font-size:18px;
+    margin: 10px;
+    width: 380px;
+    height: 50px;
+    padding: 10px;
+    background: #ececec;
+    border-radius: 10px 10px 10px 3px;
+}
