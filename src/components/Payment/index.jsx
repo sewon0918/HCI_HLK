@@ -44,7 +44,7 @@ class Payment extends React.Component {
             }
             if (keyList != null){
                 pricelist = keyList.map((i) =>{
-                    return (Number(myValue[i].price))
+                    return (Number(myValue[i].price * myValue[i].num))
                 });
                 for (var i = 0; i < pricelist.length; i++) {
                     price += pricelist[i];
