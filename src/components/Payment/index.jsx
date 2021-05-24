@@ -7,7 +7,7 @@ class Payment extends React.Component {
         super(props);
         this.state = {show: false, show2: false, paywith:'', price: this.props.total_price};
         this.card = this.card.bind(this);
-        this.cash = this.card.bind(this);
+        this.cash = this.cash.bind(this);
     }
     componentDidMount(){
         setTimeout(()=>{
@@ -39,11 +39,9 @@ class Payment extends React.Component {
         firebase.database().ref('menu/').on('value', function(snapshot) {
   
             var myValue = snapshot.val();
-            console.log("장바구니", myValue);
             if (myValue!=null){
                 var keyList = Object.keys(myValue)
             }
-            console.log("키",keyList);
             if (keyList != null){
                 pricelist = keyList.map((i) =>{
                     return (Number(myValue[i].price))
