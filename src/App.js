@@ -46,9 +46,10 @@ class App extends React.Component {
                 </div>
                 <div className = 'layout'>
                     <ScrollToBottom className = "chatContainer">
+                        <div className = 'dialog'>어서오세요. 헬로버거입니다!</div>
                         <SelectCategory />
                     </ScrollToBottom>
-                    <div className = "cartContainer" id='cartContainer'>
+                    <ScrollToBottom  className = "cartContainer" id='cartContainer'>
                         
                             <div id='cart'>
                                 <div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
@@ -57,10 +58,10 @@ class App extends React.Component {
                             </div>
                            
                             {paymessage}
-                    <div >
-                        <Cart onCreate={this.handleCreate}/>
-                    </div> 
-                </div>
+                            <div >
+                                <Cart onCreate={this.handleCreate}/>
+                            </div> 
+                    </ScrollToBottom >
             </div>
             </div>
         );

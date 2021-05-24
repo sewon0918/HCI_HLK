@@ -65,18 +65,6 @@ class HowMany extends React.Component{
     }
 
 
-    // getQuantity(){
-    //     firebase.database().ref('menu/').on('value', (snapshot)=>{
-    //         var myValue = snapshot.val();
-    //         if (myValue!=null){
-    //             var keyList = Object.keys(myValue)
-    //             var num = keyList.length;
-    //             console.log(num)
-    //             this.setState({quantity:num});
-    //         }
-    //     })
-    // }
-
     render(){
 
         const {menu} = this.props;
@@ -91,9 +79,6 @@ class HowMany extends React.Component{
             console.log("finish!!!", q);
             var entry = {name: menu, price: price, category: drinkOrSide};
             firebase.database().ref('menu/'+q).set(entry);
-
-            goback = <SelectCategory />;
-            console.log(goback);
             firebase.database().ref('menu/').on('value', function(snapshot) {
       
                 var myValue = snapshot.val();
@@ -112,11 +97,11 @@ class HowMany extends React.Component{
                     <div className='text'>장바구니</div></>;
                     const cart = document.getElementById('cart')
                     ReactDOM.render([cartTitle, cartlist], cart);
-                }
-                
+                } 
             })
-        
             
+            goback = <SelectCategory />;
+            console.log("goback: ", goback);
             this.block();
         }
         return(
