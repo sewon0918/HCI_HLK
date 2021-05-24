@@ -7,7 +7,7 @@ class Payment extends React.Component {
         super(props);
         this.state = {show: false, show2: false, paywith:'', price: this.props.total_price};
         this.card = this.card.bind(this);
-        this.cash = this.card.bind(this);
+        this.cash = this.cash.bind(this);
     }
     componentDidMount(){
         setTimeout(()=>{
@@ -29,34 +29,35 @@ class Payment extends React.Component {
     render(){
         const paywith = this.state.paywith;
         var price=0;
+        var choice=<> <div className="dialog2_cart"><button className="button" onClick={this.card}>카드</button><button className="button" onClick={this.cash}>현금</button></div></>;
         let last = null;
+        let check = 0;
         if (paywith !== ''){
-            last = <div className = 'dialog'><h3>{paywith}(으)로 결제합니다.</h3></div>
+            choice=null;
+            last = <div className = 'dialog_cart'>{paywith}(으)로 결제합니다.</div>
         }
 
         let pricelist = null;
         firebase.database().ref('menu/').on('value', function(snapshot) {
   
             var myValue = snapshot.val();
-            console.log("장바구니", myValue);
             if (myValue!=null){
                 var keyList = Object.keys(myValue)
             }
-            console.log("키",keyList);
             if (keyList != null){
                 pricelist = keyList.map((i) =>{
-                    return (Number(myValue[i].price))
+                    return (Number(myValue[i].price * myValue[i].num))
                 });
-            }
-            for (var i = 0; i < pricelist.length; i++) {
-                price += pricelist[i];
+                for (var i = 0; i < pricelist.length; i++) {
+                    price += pricelist[i];
+                }
             }
         })
         return(
             <div className='finishing'>
                 <div className="dialog_cart" >총 {price}원 입니다.</div>
                 {this.state.show && <div id="pay" className = 'dialog_cart'>결제 방법을 선택해주세요.</div>}
-                {this.state.show2 && <div className="dialog2_cart"><button className="button" onClick={this.card}>카드</button><button className="button" onClick={this.cash}>현금</button></div>}
+                {this.state.show2 && <div>{choice}</div>}
                 {last}
             </div>
         )

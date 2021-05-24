@@ -85,9 +85,9 @@ class HowMany extends React.Component{
             var entry = null;
             if (drinkOrSide === "set") {
                 console.log(`burger ${menu} drink ${drink} side ${side}`)
-                entry = {name: menu, price: price, category: drinkOrSide, drink: drink, side: side};
+                entry = {name: menu, price: price, category: drinkOrSide, drink: drink, side: side, num:number};
             }
-            else entry = {name: menu, price: price, category: drinkOrSide};
+            else entry = {name: menu, price: price, category: drinkOrSide, num:number};
             firebase.database().ref('menu/'+q).set(entry);
             firebase.database().ref('menu/').on('value', function(snapshot) {
       

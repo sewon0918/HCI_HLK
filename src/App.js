@@ -18,6 +18,9 @@ class App extends React.Component {
         this.state = {paymessage: null};
         this.handleCreate = this.handleCreate.bind(this);
     }
+    componentDidMount(){
+        firebase.database().ref('/menu/').remove();
+     }
 
     handleCreate = (paym) => {
         if (paym){
@@ -26,7 +29,6 @@ class App extends React.Component {
     }
 
     render(){
-        firebase.database().ref('/menu/').remove();
         const paymessage = this.state.paymessage;
         const {menu} = this.props;
         const {price} = this.props;
