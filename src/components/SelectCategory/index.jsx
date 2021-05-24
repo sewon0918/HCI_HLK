@@ -3,6 +3,9 @@ import SelectMethod from '../SelectMethod';
 import './index.css';
 import Drink from '../Drink';
 import Side from '../Side';
+import 버거 from '../../images/burger.png';
+import 음료 from '../../images/drink.png';
+import 사이드 from '../../images/side.png';
 
 class SelectCategory extends React.Component {
     constructor(props){
@@ -49,9 +52,9 @@ class SelectCategory extends React.Component {
                 {this.state.show && <div className = 'dialog'>어서오세요. 헬로버거입니다!</div>}
                 {this.state.show2 && <div className = 'dialog'>주문하실 카테고리를 선택해주세요.</div>}
                 {this.state.show2 &&<div  className = 'dialog2'>
-                    <button id="burger" className = 'button' onClick={this.onBurger}> 버거 </button>
-                    <button id="drinkside" className = 'button' onClick={this.onDrink}> 음료 </button>
-                    <button id="drinkside" className = 'button' onClick={this.onSide}> 사이드 </button>
+                    <button id="burger" className = 'button1' onClick={this.onBurger}><img id='burgerimg' src={ 버거 } /> <div>버거</div> </button>
+                    <button id="drinkside" className = 'button1' onClick={this.onDrink}><img id='drinkimg' src={ 음료 } /> <div>음료</div> </button>
+                    <button id="drinkside" className = 'button1' onClick={this.onSide}><img id='sideimg' src={ 사이드 } /> <div>사이드</div> </button>
                 </div>}
                 {selection}
             </div>

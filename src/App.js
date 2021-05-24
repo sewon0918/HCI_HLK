@@ -10,9 +10,6 @@ import SelectCategory from './components/SelectCategory';
 
 import Menu from './components/Menu';
 import Cart from './components/Cart';
-import firebase from "./Firebase";
-
-
 
 class App extends React.Component {
     constructor(props) {
@@ -28,7 +25,6 @@ class App extends React.Component {
     }
 
     render(){
-        firebase.database().ref('/menu/').remove();
         const paymessage = this.state.paymessage;
         const {menu} = this.props;
         const {price} = this.props;
@@ -48,19 +44,21 @@ class App extends React.Component {
                     <ScrollToBottom className = "chatContainer">
                         <SelectCategory />
                     </ScrollToBottom>
-                    <div className = "cartContainer" id='cartContainer'>
+                    <ScrollToBottom  className = "cartContainer" id='cartContainer'>
                         
                             <div id='cart'>
                                 <div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
-                                <div className='text'>장바구니</div>
-                                
+                                <div className='text'>장바구니</div>   
                             </div>
-                           
+                            <ScrollToBottom className ="scrollcart">
+                            <div id = 'cartContent'></div>
+                            </ScrollToBottom>
+                            {/* <Payment /> */}
                             {paymessage}
-                    <div >
-                        <Cart onCreate={this.handleCreate}/>
-                    </div> 
-                </div>
+                            <div >
+                                <Cart onCreate={this.handleCreate}/>
+                            </div> 
+                    </ScrollToBottom >
             </div>
             </div>
         );

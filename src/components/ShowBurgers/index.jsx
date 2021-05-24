@@ -141,26 +141,26 @@ class ShowBurgers extends React.Component {
             return (<>
                 {<div  className='dialog' id='answer'>{name}</div>}
                 {this.state.show && <div  className='dialog'>"{name}"에 대한 검색 결과입니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show2 && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show3 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
         if (ingredient != null) 
             return (<>
                 {<div  className='dialog' id='answer'>{ingredient}</div>}
                 {this.state.show && <div  className='dialog'>주재료가 {ingredient}인 햄버거입니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show2 && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show3 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
         if (recommend)
             return(<>
                 {<div  className='dialog'>"{phone}" 님의 추천메뉴입니다.</div>}
-                {this.state.show && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show2 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
         if (name == null && ingredient == null) return (<>
                 {<div  className='dialog' id='answer'>모든 메뉴 보기</div>}
                 {this.state.show && <div  className='dialog'>"모든 메뉴 보기"를 선택했습니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show2 && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show3 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
     }
@@ -189,7 +189,7 @@ class ShowBurgers extends React.Component {
             ifset=<Setmenu set_price={this.state.info.setprice} name={this.state.menu}></Setmenu>
         }
         if(this.state.set < 0){
-            ifset=<HowMany price={this.state.info.singleprice} menu={this.state.menu} drinkOrSide={"Burger"}></HowMany>
+            ifset=<HowMany price={this.state.info.singleprice} menu={this.state.menu} drinkOrSide={"burgers"}></HowMany>
         }
         if(this.state.order){
             option=<><div className="dialog">{this.state.menu}를 선택하셨습니다.</div></>

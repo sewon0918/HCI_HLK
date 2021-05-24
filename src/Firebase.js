@@ -13,8 +13,9 @@ const firebaseConfig = {
 };
 
 // firebaseConfig 정보로 firebase 시작
-firebase.initializeApp(firebaseConfig);
-
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 
 // 필요한 곳에서 사용할 수 있도록 내보내기
 export default firebase ;

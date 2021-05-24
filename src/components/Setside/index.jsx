@@ -64,7 +64,7 @@ class Setside extends React.Component {
             <div className="name">{sidename}</div>
             <div className="price">{price}</div>
         </div></div>;
-            pay=<HowMany price= {total_price} menu={this.state.burger} drinkOrSide={"Burger"} drink={this.state.drink} side={this.state.sidename}></HowMany>
+            pay=<HowMany price= {total_price} menu={this.state.burger} drinkOrSide={"set"} drink={this.state.drink} side={sidename}></HowMany>
             console.log(this.state.burger);
         }
         return(

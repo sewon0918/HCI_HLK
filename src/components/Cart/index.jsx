@@ -5,17 +5,21 @@ class Cart extends React.Component {
     constructor(props) {
         super(props);
         this.payment = this.payment.bind(this);
+        this.state = {payclick:false}
     }
     
     payment(){
         this.props.onCreate(true);
+        this.setState({payclick:true})
     }
 
     render(){
         return(
-            <div id='container'>
-                <button onClick={this.payment}>결제</button>
-            </div>
+            <>
+            {!this.state.payclick && <div id='container'>
+                <button onClick={this.payment} id="select">결제하기</button>
+            </div>}
+            </>
         )
     }
 }
