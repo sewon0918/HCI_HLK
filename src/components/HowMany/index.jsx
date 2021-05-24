@@ -8,18 +8,20 @@ import aaa from '../../images/1.png'
 import cartIcon from '../../images/cart.png';
 import cartData from '../../Data/cart.json';
 import firebase from '../../Firebase';
+import SelectCategory from '../SelectCategory'
 
   // Initialize Firebase
 
 class HowMany extends React.Component{
     constructor(props){
         super(props);
-        this.state = {show:false, show2: false, show3: false, number: 1, finish: false, cart:cartData, id:-1};
+        this.state = {show:false, show2: false, show3: false, number: 1, finish: false, cart:cartData, id:-1, quantity:0};
         this.componentDidMount = this.componentDidMount.bind(this);
         this.plus = this.plus.bind(this);
         this.minus = this.minus.bind(this);
         this.pass = this.pass.bind(this);
         this.block = this.block.bind(this);
+        // this.getQuantity = this.getQuantity.bind(this);
     }
     componentDidMount(){
         setTimeout(()=>{
@@ -47,39 +49,74 @@ class HowMany extends React.Component{
 
     pass(){
         this.setState({finish: true});
+        firebase.database().ref('menu/').on('value', (snapshot)=>{
+            var myValue = snapshot.val();
+            if (myValue!=null){
+                var keyList = Object.keys(myValue)
+                var num = keyList.length;
+                console.log(num)
+                this.setState({quantity:num});
+            }
+        })
     }
 
     block(){
         this.setState({finish: false});
     }
 
-    finishFalse(){
-        this.setState({finish:false});
-        return false;
-    }
+
+    // getQuantity(){
+    //     firebase.database().ref('menu/').on('value', (snapshot)=>{
+    //         var myValue = snapshot.val();
+    //         if (myValue!=null){
+    //             var keyList = Object.keys(myValue)
+    //             var num = keyList.length;
+    //             console.log(num)
+    //             this.setState({quantity:num});
+    //         }
+    //     })
+    // }
 
     render(){
 
-    
         const {menu} = this.props;
         const {price} = this.props;
         const {drinkOrSide} = this.props;
         const number = this.state.number;
-        let finish = null;
         let cartlist = null;
+        let goback = null;
         if (this.state.finish){
-            var entry = {name: menu, price: price, drinkOrSide: drinkOrSide};
-            firebase.database().ref('menu/'+menu).set(entry);
-            // var newKey = firebase.database().ref('/menu/').push();
-            // newKey.set({
-            //     "menu": menu,
-            //     "price": price,
-            //     "drinkOrSide": drinkOrSide
-            // });
-            
 
-            const cartData = firebase.database().ref('menu/').get();
-            console.log(cartData);
+            var q = this.state.quantity;
+            console.log("finish!!!", q);
+            var entry = {name: menu, price: price, category: drinkOrSide};
+            firebase.database().ref('menu/'+q).set(entry);
+
+            goback = <SelectCategory />;
+            console.log(goback);
+            firebase.database().ref('menu/').on('value', function(snapshot) {
+      
+                var myValue = snapshot.val();
+                console.log("장바구니", myValue);
+                if (myValue!=null){
+                    var keyList = Object.keys(myValue)
+                }
+                console.log("키",keyList);
+                if (keyList != null){
+                    cartlist = keyList.map((i) =>{
+                        console.log("index",i);
+                        return (
+                            <Menu menu = {myValue[i].name} price = {myValue[i].price} drinkOrSide = {myValue[i].category}/>);
+                    });
+                    const cartTitle = <><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>;
+                    <div className='text'>장바구니</div></>;
+                    const cart = document.getElementById('cart')
+                    ReactDOM.render([cartTitle, cartlist], cart);
+                }
+                
+            })
+        
+            
             this.block();
         }
         return(
@@ -95,8 +132,7 @@ class HowMany extends React.Component{
                         <button id='okay' className='button' onClick={this.pass}>장바구니 담기</button>
                     </div>
                 }
-                {/* {finish} */}
-                {cartlist}
+                {goback}
             </div>
         )
     }

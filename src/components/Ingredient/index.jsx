@@ -24,13 +24,14 @@ class Ingredient extends React.Component {
      }
 
     menuClick(id){
-        const elements = document.getElementsByClassName("menu");
+        const elements = document.getElementsByClassName("ingred");
 
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.backgroundColor="white";
         }
         console.log(id)
         document.getElementById(id).style.backgroundColor = 'yellow';
+        this.setState({ingredient: id, submitted: false})
     
         // console.log("jj")
     }

@@ -1,6 +1,7 @@
-import firebase from 'firebase';
+import firebase from "firebase";
+// import "firebase/firestore";
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyB4DHLmx6UfS5vnwIgpsyWVWmshXG54Jss",
     authDomain: "hci-hlk-f2fb4.firebaseapp.com",
     databaseURL: "https://hci-hlk-f2fb4-default-rtdb.firebaseio.com",
@@ -9,9 +10,11 @@ var firebaseConfig = {
     messagingSenderId: "107533714020",
     appId: "1:107533714020:web:9d788582b11733b01f9571",
     measurementId: "G-X9MWCVJ3L1"
-  };
+};
 
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+// firebaseConfig 정보로 firebase 시작
+firebase.initializeApp(firebaseConfig);
 
-  export default firebase;
+
+// 필요한 곳에서 사용할 수 있도록 내보내기
+export default firebase ;
