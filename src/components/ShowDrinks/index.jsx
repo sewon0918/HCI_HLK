@@ -8,7 +8,7 @@ class ShowDrinks extends React.Component {
         super(props);
         this.results = this.results.bind(this);
         this.onSelect = this.onSelect.bind(this);
-        this.state = {select: false, menu: '', price:0, drinkOrSide : 'beverages'};
+        this.state = {select: false, menu: '', price:0, drinkOrSide : 'beverages' };
     }
 
     menuClick(id, price){

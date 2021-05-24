@@ -8,6 +8,7 @@ import 양상추 from '../../images/lettuce.png';
 import 소스 from '../../images/sauce.png';
 import Setmenu from '../Setmenu';
 import Payment from '../Payment'
+import HowMany from '../HowMany'
 
 class OptionChange extends React.Component {
     constructor(props) {
@@ -185,10 +186,10 @@ class OptionChange extends React.Component {
             <div className="dialog2"><button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button></div></>
 
             if(this.state.set>0){
-                ifset=<Setmenu set_price={this.state.set_price}></Setmenu>
+                ifset=<Setmenu set_price={this.state.set_price} name={this.state.name}></Setmenu>
             }
             if(this.state.set<0){
-                ifset=<Payment total_price={this.state.single_price}></Payment>
+                ifset=<HowMany price={this.state.single_price} menu={this.state.name} drinkOrSide={"Burger"}></HowMany>
             }
         }
         

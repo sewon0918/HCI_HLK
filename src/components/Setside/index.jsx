@@ -1,6 +1,7 @@
 import React from 'react';
 import sides from '../../Data/side.json';
 import Payment from '../Payment';
+import HowMany from '../HowMany'
 import './index.css';
 
 class Setside extends React.Component {
@@ -8,7 +9,7 @@ class Setside extends React.Component {
         super(props);
         this.results = this.results.bind(this);
         this.onSelect = this.onSelect.bind(this);
-        this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price};
+        this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price, burger:this.props.burger};
     }
     componentDidMount(){
         this.menuClick('감자튀김(R)', 0)
@@ -62,8 +63,8 @@ class Setside extends React.Component {
             <div className="name">{sidename}</div>
             <div className="price">{price}</div>
         </div></div>;
-            pay=<Payment total_price= {total_price}></Payment>
-            console.log(total_price);
+            pay=<HowMany price= {total_price} menu={this.state.burger} drinkOrSide={"Burger"}></HowMany>
+            console.log(this.state.burger);
         }
         return(
             <div id='contain'>

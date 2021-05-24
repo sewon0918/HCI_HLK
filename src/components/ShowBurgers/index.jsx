@@ -4,6 +4,7 @@ import burgers from '../../Data/burger.json'
 import OptionChange from '../OptionChange';
 import Payment from '../Payment';
 import Setmenu from '../Setmenu';
+import HowMany from '../HowMany';
 
 class ShowBurgers extends React.Component {
     constructor(props) {
@@ -184,10 +185,10 @@ class ShowBurgers extends React.Component {
         let option=null;
         let ifset = null;
         if(this.state.set > 0){
-            ifset=<Setmenu set_price={this.state.info.setprice}></Setmenu>
+            ifset=<Setmenu set_price={this.state.info.setprice} name={this.state.menu}></Setmenu>
         }
         if(this.state.set < 0){
-            ifset=<Payment total_price={this.state.info.singleprice}></Payment>
+            ifset=<HowMany price={this.state.info.singleprice} menu={this.state.menu} drinkOrSide={"Burger"}></HowMany>
         }
         if(this.state.order){
             option=<><div className="dialog">{this.state.menu}를 선택하셨습니다. 옵션을 선택하시겠습니까?</div>
