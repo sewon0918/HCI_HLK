@@ -94,10 +94,9 @@ class HowMany extends React.Component{
                         return (
                             <Menu menu = {myValue[i].name} price = {myValue[i].price} drinkOrSide = {myValue[i].category}/>);
                     });
-                    const cartTitle = <><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>;
-                    <div className='text'>장바구니</div></>;
-                    const cart = document.getElementById('cart')
-                    ReactDOM.render([cartTitle, cartlist], cart);
+                    
+                    const cart = document.getElementById('cartContent');
+                    ReactDOM.render(cartlist, cart);
                 } 
             })
             

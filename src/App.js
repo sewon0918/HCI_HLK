@@ -53,10 +53,12 @@ class App extends React.Component {
                         
                             <div id='cart'>
                                 <div ><img id = "icon" src={ cartIcon } alt="icon"/></div>
-                                <div className='text'>장바구니</div>
-                                
+                                <div className='text'>장바구니</div>   
                             </div>
-                           
+                            <ScrollToBottom className ="scrollcart">
+                            <div id = 'cartContent'></div>
+                            </ScrollToBottom>
+                            {/* <Payment /> */}
                             {paymessage}
                             <div >
                                 <Cart onCreate={this.handleCreate}/>

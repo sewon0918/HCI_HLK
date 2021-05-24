@@ -1,1 +1,24 @@
+.dialog_cart {
+    position: relative;
+    margin: 2%;
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    background: #c2ecb2;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    font-weight: bold;
+}
 
+.dialog2_cart {
+    position: relative;
+    margin: 2%;
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    background: #ececec;
+    /* background: none; */
+    border-radius: 10px;
+    /* box-shadow: 1px 1px 1px 1px gray; */
+    font-weight: bold;
+}
