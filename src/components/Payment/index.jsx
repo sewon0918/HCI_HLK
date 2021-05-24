@@ -30,8 +30,9 @@ class Payment extends React.Component {
         const paywith = this.state.paywith;
         var price=0;
         let last = null;
+        let check = 0;
         if (paywith !== ''){
-            last = <div className = 'dialog'><h3>{paywith}(으)로 결제합니다.</h3></div>
+            last = <div className = 'dialog_cart'>{paywith}(으)로 결제합니다.</div>
         }
 
         let pricelist = null;
@@ -47,9 +48,9 @@ class Payment extends React.Component {
                 pricelist = keyList.map((i) =>{
                     return (Number(myValue[i].price))
                 });
-            }
-            for (var i = 0; i < pricelist.length; i++) {
-                price += pricelist[i];
+                for (var i = 0; i < pricelist.length; i++) {
+                    price += pricelist[i];
+                }
             }
         })
         return(
