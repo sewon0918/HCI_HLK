@@ -15,7 +15,7 @@ import SelectCategory from '../SelectCategory'
 class HowMany extends React.Component{
     constructor(props){
         super(props);
-        this.state = {show:false, show2: false, show3: false, number: 1, finish: false, cart:cartData, id:-1, quantity:0};
+        this.state = {show:false, show2: false, show3: false, number: 1, finish: false, cart:cartData, id:-1, quantity:0, showNext: false};
         this.componentDidMount = this.componentDidMount.bind(this);
         this.plus = this.plus.bind(this);
         this.minus = this.minus.bind(this);
@@ -48,7 +48,7 @@ class HowMany extends React.Component{
     }
 
     pass(){
-        this.setState({finish: true});
+        this.setState({finish: true, showNext: true});
         firebase.database().ref('menu/').on('value', (snapshot)=>{
             var myValue = snapshot.val();
             if (myValue!=null){
@@ -72,7 +72,8 @@ class HowMany extends React.Component{
         const {drinkOrSide} = this.props;
         const number = this.state.number;
         let cartlist = null;
-        let goback = null;
+        let goback = <SelectCategory />;
+        console.log(goback);
         if (this.state.finish){
 
             var q = this.state.quantity;
@@ -117,7 +118,7 @@ class HowMany extends React.Component{
                         <button id='okay' className='button' onClick={this.pass}>장바구니 담기</button>
                     </div>
                 }
-                {goback}
+                {this.state.showNext && goback}
             </div>
         )
     }
