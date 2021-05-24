@@ -58,7 +58,7 @@ class App extends React.Component {
                             <ScrollToBottom className ="scrollcart">
                             <div id = 'cartContent'></div>
                             </ScrollToBottom>
-                            {/* <Payment /> */}
+                            {}
                             {paymessage}
                             <div >
                                 <Cart onCreate={this.handleCreate}/>

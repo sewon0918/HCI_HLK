@@ -101,10 +101,10 @@ class HowMany extends React.Component{
                     cartlist = keyList.map((i) =>{
                         console.log("index",i);
                         if (myValue[i].category === "set") {
-                            return (<Menu_set menu={myValue[i].name} price={myValue[i].price} drink={myValue[i].drink} side={myValue[i].side}/>)
+                            return (<Menu_set menu={myValue[i].name} price={myValue[i].price} drink={myValue[i].drink} side={myValue[i].side} number={myValue[i].num}/>)
                         }
                         return (
-                            <Menu menu = {myValue[i].name} price = {myValue[i].price} drinkOrSide = {myValue[i].category}/>);
+                            <Menu menu = {myValue[i].name} price = {myValue[i].price} drinkOrSide = {myValue[i].category} number={myValue[i].num}/>);
                     });
                     
                     const cart = document.getElementById('cartContent');
@@ -118,7 +118,7 @@ class HowMany extends React.Component{
         }
         var choice_dialog = <div className='dialog'>{menu}를 선택하셨습니다.</div>
         if (drinkOrSide === "set") choice_dialog = <div className='dialog_long'>{menu}, {drink}, {side} 세트를 선택하셨습니다.</div>
-        if (drinkOrSide === "burgers") choice_dialog = <div className='dialog_long'>{menu}(옵션)을 선택하셨습니다.</div>
+        if (drinkOrSide === "burgers") choice_dialog = <div className='dialog_long'>{menu}(단품)을 선택하셨습니다.</div>
         return(
             <div>
                 {this.state.show && choice_dialog}
