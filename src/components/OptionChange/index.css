@@ -1,20 +1,17 @@
 .photo {
     height: 100px;
     width: 100px;
-    align-content: center;
 }
 .table {
     width: 100%;
     table-layout: auto;
 }
 .selection {
-    width: auto;
     height: auto;
+    width: auto;
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
-    box-shadow: 1px gray;
-    justify-content: left;
     align-content: center;
     text-align: center;
 }

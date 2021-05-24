@@ -161,13 +161,15 @@ class OptionChange extends React.Component {
         let options=null;
         let ifset=null;
         let next_step=null;
+        let confirm=null;
         if(this.state.show1){
             intro=<><div  className='dialog'>{name}에서 원하시는 옵션을 선택해주세요.</div></>
         }
         if(this.state.fin){
+            confirm=null;
             options=<>
-                <div className="tabl">
-                    <table width='70%'>
+                <div className="dialog2">
+                    <table width='100%'>
                         <tr>
                             <td className='selection'>
                                 <tr>
@@ -236,9 +238,10 @@ class OptionChange extends React.Component {
         }
         else{
             if(this.state.show2){
+                confirm=<button className="confirm" onClick={this.confirm.bind(this)}>확인</button>
                 options=<>
-                <div>
-                    <table width='70%'>
+                <div className='dialog2'>
+                    <table width='100%'>
                         <tr>
                             <td className='selection'>
                                 <tr rowspan="3">
@@ -316,7 +319,6 @@ class OptionChange extends React.Component {
                             </td>
                             </tr>
                     </table>
-                    <button className="confirm" onClick={this.confirm.bind(this)}>확인</button>
                 </div>
                 
             </>
@@ -330,6 +332,7 @@ class OptionChange extends React.Component {
             <div>
                 {intro}
                 {options}
+                {confirm}
                 {next_step}
                 {ifset}
             </div>
