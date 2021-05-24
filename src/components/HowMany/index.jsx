@@ -120,12 +120,9 @@ class HowMany extends React.Component{
         if (drinkOrSide === "set") choice_dialog = <div className='dialog_long'>{menu}, {drink}, {side} 세트를 선택하셨습니다.</div>
         return(
             <div>
-                {this.state.show && <div className='dialog_long'>{menu}를 선택하셨습니다.</div>}
-                {this.state.show2 && !this.state.showNext&&<div className = 'dialog'>수량을 선택하고 "장바구니에 담기"를 눌러주세요.</div>}
-                {this.state.show2 && !this.state.showNext&&
                 {this.state.show && choice_dialog}
-                {this.state.show2 && <div className = 'dialog'>수량을 선택하고 "장바구니에 담기"를 눌러주세요.</div>}
-                {this.state.show3 && 
+                {this.state.show2 && !this.state.showNext&&<div className = 'dialog'>수량을 선택하고 "장바구니에 담기"를 눌러주세요.</div>}
+                {this.state.show3 && !this.state.showNext&&
                     <div className = 'dialog2' id='changeNumber'>
                         <div className = 'number'>{number}개</div>
                         <button className='button' onClick={this.minus}> - </button>
