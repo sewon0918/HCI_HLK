@@ -173,18 +173,18 @@ class OptionChange extends React.Component {
                         <tr>
                             <td className='selection'>
                                 <tr>
-                                    <img id="patty" className="photo" src={패티}장 alt="menu_class"></img><div>패티</div>
+                                    <img id="patty" className="photo" src={패티} alt="menu_class"></img><div>패티</div>
                                 </tr>
                                 <tr margin-left="auto" margin-right="auto" align="center" alignItems="auto">
-                                    <div>{this.state.patty_count}</div>
+                                    <div>{this.state.patty_count}장</div>
                                 </tr>
                             </td>
                             <td className='selection'>
                                 <tr>
-                                    <img id="cheeze" className="photo" src={치즈}장 alt="menu_class"></img><div>치즈</div>
+                                    <img id="cheeze" className="photo" src={치즈} alt="menu_class"></img><div>치즈</div>
                                 </tr>
                                 <tr>
-                                    <div>{this.state.cheeze_count}</div>
+                                    <div>{this.state.cheeze_count}장</div>
                                 </tr> 
                             </td>
                             <td className='selection'>

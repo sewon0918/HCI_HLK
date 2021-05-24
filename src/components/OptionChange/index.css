@@ -4,7 +4,9 @@
 }
 .table {
     width: 100%;
-    table-layout: auto;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
 }
 .selection {
     height: auto;
@@ -13,6 +15,7 @@
     border-radius: 10px;
     background-color: white;
     align-content: center;
+    justify-content: center;
     text-align: center;
 }
 
