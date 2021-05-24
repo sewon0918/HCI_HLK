@@ -188,7 +188,7 @@ class ShowBurgers extends React.Component {
             ifset=<Setmenu set_price={this.state.info.setprice} name={this.state.menu}></Setmenu>
         }
         if(this.state.set < 0){
-            ifset=<HowMany price={this.state.info.singleprice} menu={this.state.menu} drinkOrSide={"Burger"}></HowMany>
+            ifset=<HowMany price={this.state.info.singleprice} menu={this.state.menu} drinkOrSide={"burgers"}></HowMany>
         }
         if(this.state.order){
             option=<><div className="dialog">{this.state.menu}를 선택하셨습니다. 옵션을 선택하시겠습니까?</div>
