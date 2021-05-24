@@ -209,7 +209,7 @@ class OptionChange extends React.Component {
                 ifset=<Setmenu set_price={this.state.set_price} name={this.state.name}></Setmenu>
             }
             if(this.state.set<0){
-                ifset=<HowMany price={this.state.single_price} menu={this.state.name+"(단품)"} drinkOrSide={"Burger"}></HowMany>
+                ifset=<HowMany price={this.state.single_price} menu={this.state.name} drinkOrSide={"Burger"}></HowMany>
             }
         }
         else{
