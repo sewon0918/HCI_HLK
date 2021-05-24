@@ -49,7 +49,7 @@ class SelectCategory extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <div className = 'dialog'>어서오세요. 헬로버거입니다!</div>}
+                
                 {this.state.show2 && <div className = 'dialog'>주문하실 카테고리를 선택해주세요.</div>}
                 {this.state.show2 &&<div  className = 'dialog2'>
                     <button id="burger" className = 'button1' onClick={this.onBurger}><img id='burgerimg' src={ 버거 } /> <div>버거</div> </button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import firebase from '../../Firebase';
 
 class Payment extends React.Component {
     constructor(props) {
@@ -27,11 +28,30 @@ class Payment extends React.Component {
 
     render(){
         const paywith = this.state.paywith;
-        const price=this.state.price;
+        var price=0;
         let last = null;
         if (paywith !== ''){
             last = <div className = 'dialog'><h3>{paywith}(으)로 결제합니다.</h3></div>
         }
+
+        let pricelist = null;
+        firebase.database().ref('menu/').on('value', function(snapshot) {
+  
+            var myValue = snapshot.val();
+            console.log("장바구니", myValue);
+            if (myValue!=null){
+                var keyList = Object.keys(myValue)
+            }
+            console.log("키",keyList);
+            if (keyList != null){
+                pricelist = keyList.map((i) =>{
+                    return (Number(myValue[i].price))
+                });
+            }
+            for (var i = 0; i < pricelist.length; i++) {
+                price += pricelist[i];
+            }
+        })
         return(
             <div className='finishing'>
                 <div className="dialog_cart" >총 {price}원 입니다.</div>

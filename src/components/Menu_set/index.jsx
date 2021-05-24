@@ -18,10 +18,10 @@ class Menu extends React.Component {
         return(
             
             <div>
-                <div key={menu} id={menu} className="showBurger" >
-                        <img className="image" src={ require(`../../Data/Image/burgers/${menu}.jpg`).default } alt="menu_class"/>
-                        <img className="image" src={ require(`../../Data/Image/sides/${side}.jpg`).default } alt="menu_class"/>
-                        <img className="image" src={ require(`../../Data/Image/beverages/${drink}.jpg`).default } alt="menu_class"/>
+                <div key={menu} id={menu} className="cartMenu" >
+                        <img className="setImage" src={ require(`../../Data/Image/burgers/${menu}.jpg`).default } alt="menu_class"/>
+                        <img className="setImage" src={ require(`../../Data/Image/sides/${side}.jpg`).default } alt="menu_class"/>
+                        <img className="setImage" src={ require(`../../Data/Image/beverages/${drink}.jpg`).default } alt="menu_class"/>
                         <div className="name">{menu} 세트</div>
                         <div className="price">{price}</div>
                     </div>
