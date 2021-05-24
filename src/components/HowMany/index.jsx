@@ -118,6 +118,7 @@ class HowMany extends React.Component{
         }
         var choice_dialog = <div className='dialog'>{menu}를 선택하셨습니다.</div>
         if (drinkOrSide === "set") choice_dialog = <div className='dialog_long'>{menu}, {drink}, {side} 세트를 선택하셨습니다.</div>
+        if (drinkOrSide === "burgers") choice_dialog = <div className='dialog_long'>{menu}(옵션)을 선택하셨습니다.</div>
         return(
             <div>
                 {this.state.show && choice_dialog}
