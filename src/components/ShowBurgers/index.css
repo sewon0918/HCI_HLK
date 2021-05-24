@@ -61,7 +61,10 @@
 .dialog2_short2 {
     position: relative;
     font-size:18px;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
     width: 380px;
     height: 40px;
     float:left;
