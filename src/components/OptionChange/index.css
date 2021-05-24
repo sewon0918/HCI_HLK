@@ -9,14 +9,18 @@
     text-align: center;
 }
 .selection {
-    height: auto;
-    width: auto;
+    margin-right: 7px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    width: 30%;
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
     align-content: center;
     justify-content: center;
     text-align: center;
+
 }
 
 .confirm{
