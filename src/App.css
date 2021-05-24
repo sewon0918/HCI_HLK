@@ -40,7 +40,7 @@
     float: left;
     margin-right: 30px;
     padding: 2%;
-    width: 60%;
+    width: 65%;
     height: 75vh;
     background-color: #fde7a8;
     border-radius: 10px;
@@ -51,7 +51,7 @@
 .cartContainer {
     float: left;
     /* display: 'block'; */
-    width: 25%;
+    width: 23vw;
     height: 75vh;
     background-color: #f5d682;
     border-radius: 10px;
@@ -67,7 +67,7 @@
 
 .scrollcart {
     display: block;
-    width: 100%;
+    width: 90%;
     height: 85%;
     background-color: #f5d682;
     border-radius: 10px;

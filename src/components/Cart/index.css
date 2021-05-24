@@ -3,3 +3,13 @@
     top: 90%;
     left: 73%;
 }
+
+#payyy {
+    float: right;
+    background-color: salmon;
+    /* margin-left: 50px; */
+    height: 40px;
+    width: 200px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 18px;
+}

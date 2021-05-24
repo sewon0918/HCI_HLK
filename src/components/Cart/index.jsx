@@ -17,7 +17,7 @@ class Cart extends React.Component {
         return(
             <>
             {!this.state.payclick && <div id='container'>
-                <button onClick={this.payment} id="select">결제하기</button>
+                <button onClick={this.payment} id="payyy">결제하기</button>
             </div>}
             </>
         )
