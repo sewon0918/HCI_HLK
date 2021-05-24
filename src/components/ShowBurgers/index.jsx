@@ -69,7 +69,7 @@ class ShowBurgers extends React.Component {
         }
         let nextButton = null;
         if (this.state.menu !== "") {
-            nextButton = <button id='select' onClick={this.orderMenu.bind(this)}>다음</button>;
+            nextButton = <button id='selected' onClick={this.orderMenu.bind(this)}>다음</button>;
         }
         const burgerlist = burgers.map((key, index) => {
             const burgername = key.name;

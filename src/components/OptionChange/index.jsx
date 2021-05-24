@@ -206,7 +206,7 @@ class OptionChange extends React.Component {
         if(this.state.fin){
             //options=<div className='dialog' id='answer'>{result}</div>;
             next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
-            <div className="dialog2"><button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button></div></>
+            <div className="dialog2_short2"><button className='button11' onClick={this.singlemenu.bind(this)}>단품</button><button className='button11' onClick={this.setmenu.bind(this)}>세트</button></div></>
 
             if(this.state.set>0){
                 ifset=<Setmenu set_price={this.state.set_price} name={this.state.name}></Setmenu>
@@ -216,7 +216,7 @@ class OptionChange extends React.Component {
             }
         }
         if(this.state.show1){
-            intro=<><div  className='dialog'>{name}에서 원하시는 옵션을 선택해주세요.</div></>
+            intro=<><div  className='dialog_long'>{name}에서 원하시는 옵션을 선택해주세요.</div></>
         }
         if(this.state.show2){
             options=<>
