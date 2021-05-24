@@ -7,6 +7,10 @@
     padding: 15px;
 }
 
+.ingred:hover {
+    background-color: lightgray;
+}
+
 .table {
     width: 30%;
 }
@@ -19,4 +23,5 @@
     height: 40px;
     font-size: 20px;
     background-color: salmon;
+    border-radius: 10px 10px 10px 10px;
 }

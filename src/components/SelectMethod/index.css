@@ -1,12 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
 .button {
     padding: 5px;
     margin: 3px;
     background-color: #f5d682;
     border: 1px solid;
-    font-weight: bold;
+    /* font-weight: bold; */
     border-radius: 3px;
+    font-size:15px;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .button:hover {
     background-color: #a59056;
+}
+
+#nameimg{
+    width:80%;
+    height: 55%;
+    margin-bottom: 10px;
+}
+#recommendimg{
+    width:55%;
+    height: 55%;
+    margin-bottom: 10px;
+}
+#ingredientimg{
+    width:57%;
+    margin-bottom: 10px;
+}
+#allimg{
+    width:55%;
+    height: 55%;
+    margin-bottom: 10px;
+}
+#name {
+    width: 140px;
+    height: 120px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#ingredient {
+    width: 140px;
+    height: 120px;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#recommend {
+    width: 140px;
+    height: 120px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#all {
+    width: 140px;
+    height: 120px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }

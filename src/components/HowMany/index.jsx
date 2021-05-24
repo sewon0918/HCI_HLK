@@ -105,8 +105,8 @@ class HowMany extends React.Component{
             this.block();
         }
         return(
-            <div className='parent2'>
-                {this.state.show && <div className = 'dialog'>{menu}를 선택하셨습니다.</div>}
+            <div>
+                {this.state.show && <div className='dialog_long'>{menu}를 선택하셨습니다.</div>}
                 {this.state.show2 && <div className = 'dialog'>수량을 선택하고 "장바구니에 담기"를 눌러주세요.</div>}
                 {this.state.show3 && 
                     <div className = 'dialog2' id='changeNumber'>

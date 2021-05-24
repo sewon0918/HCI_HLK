@@ -7,14 +7,15 @@ class Setmenu extends React.Component {
         super(props);
         this.state={
             set_price:this.props.set_price,
+            name: this.props.name
 
         }
     }
 
 
     render(){
-        console.log(this.state.set_price);
-        let drinks=<SetDrink curr_price= {this.state.set_price}></SetDrink>
+        console.log(this.state.name);
+        let drinks=<SetDrink curr_price= {this.state.set_price} name={this.state.name}></SetDrink>
         return(
             <div>
                 <div className='dialog'>세트 선택하셨습니다.</div>

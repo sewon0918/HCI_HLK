@@ -28,9 +28,11 @@ class Ingredient extends React.Component {
 
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.backgroundColor="white";
+            elements[i].style.border='1px solid black';
         }
         console.log(id)
-        document.getElementById(id).style.backgroundColor = 'yellow';
+        document.getElementById(id).style.backgroundColor = 'lightpink';
+        document.getElementById(id).style.border = '3px solid red';
         this.setState({ingredient: id, submitted: false})
     
         // console.log("jj")
@@ -58,8 +60,9 @@ class Ingredient extends React.Component {
         return(
             <div>
                 {<div  className='dialog' id='answer'>주재료로 찾기</div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 재료를 선택하고 확인버튼을 눌러주세요. </div>}
+                {this.state.show2 && <div  className='dialog_long'>원하시는 재료를 선택하고 확인버튼을 눌러주세요. </div>}
                 {this.state.show3 && <><table width="70%"><tbody>
+                    <div className='dialog2'>
                     <tr>
                         <td><img id = "소" className="ingred" src={ 소 } alt="menu1" onClick={this.menuClick.bind(this, "소")}/></td>
                         <td><img id = "치킨" className="ingred" src={ 닭 } alt="menu1" onClick={this.menuClick.bind(this, "치킨")}/></td>
@@ -68,7 +71,7 @@ class Ingredient extends React.Component {
                     </tr>
                     <tr>
                         <th>소</th><th>치킨</th><th>새우</th><th>비건</th>
-                    </tr></tbody>
+                    </tr></div></tbody>
                 </table>
                 <button id='ingredChoice'onClick={this.submit.bind(this)}>확인</button>
                 {showResult}</>}

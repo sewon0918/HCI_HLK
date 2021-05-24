@@ -3,7 +3,11 @@ import './index.css';
 import Recommendation from '../Recommendation';
 import ShowBurgers from '../ShowBurgers';
 import NameSearch from '../NameSearch';
-import Ingredient from '../Ingredient'
+import Ingredient from '../Ingredient';
+import 이름 from '../../images/name.png';
+import 재료 from '../../images/ingredient.png';
+import 추천 from '../../images/recommend.png';
+import 모두 from '../../images/all.png';
 
 class SelectMethod extends React.Component {
     constructor(props) {
@@ -83,10 +87,10 @@ class SelectMethod extends React.Component {
                 {<div className = 'dialog' id='answer'>버거</div>}
                 {this.state.show && <div className = 'dialog'>버거를 주문하실 방식을 선택해주세요.</div>}
                 {this.state.show &&<div  className = 'dialog2'  >
-                    <button id="name" className = 'button' onClick = {this.name}> 이름으로 찾기 </button>
-                    <button id="ingredient" className = 'button' onClick = {this.ingredient}> 주재료로 찾기 </button>
-                    <button id="recommend" className = 'button' onClick = {this.recommend}> 추천받기 </button>
-                    <button id="all" className = 'button' onClick = {this.all}> 모든 메뉴 보기 </button>
+                    <button id="name" className = 'button' onClick = {this.name}><img id='nameimg' src={ 이름 } /> <div>이름으로 찾기</div> </button>
+                    <button id="ingredient" className = 'button' onClick = {this.ingredient}><img id='ingredientimg' src={ 재료 } /> <div>주재료로 찾기</div> </button>
+                    <button id="recommend" className = 'button' onClick = {this.recommend}><img id='recommendimg' src={ 추천 } /> <div>추천받기</div> </button>
+                    <button id="all" className = 'button' onClick = {this.all}><img id='allimg' src={ 모두 } /> <div>모든 메뉴 보기</div> </button>
                 </div>}
                 {ifName}
                 {ifIngredient}

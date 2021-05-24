@@ -8,7 +8,7 @@ class SetDrink extends React.Component {
         super(props);
         this.results = this.results.bind(this);
         this.onSelect = this.onSelect.bind(this);
-        this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price};
+        this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price, name:this.props.name};
     }
     componentDidMount(){
         this.menuClick('콜라(R)', 0)
@@ -27,6 +27,7 @@ class SetDrink extends React.Component {
         const drinklist = drinks.map((key, index) => {
             const drinkname = key.name;
             let price=key.price;
+            console.log(this.state.name);
             if(price>1700){
                 price=price-1700;
             }
@@ -62,14 +63,13 @@ class SetDrink extends React.Component {
             <div className="name">{drinkname}</div>
             <div className="price">{price}</div>
         </div></div>;
-            sides=<Setside curr_price={curr_price}></Setside>
+            sides=<Setside curr_price={curr_price} burger={this.state.name} drink = {drinkname}></Setside>
             console.log(curr_price);
         }
         return(
             <div id='contain'>
                 {menuList}
                 {button}
-                <div className="dialog">{drinkname}을 주문하셨습니다.</div>
                 {sides}
             </div>
         )

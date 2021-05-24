@@ -3,6 +3,9 @@ import SelectMethod from '../SelectMethod';
 import './index.css';
 import Drink from '../Drink';
 import Side from '../Side';
+import 버거 from '../../images/burger.png';
+import 음료 from '../../images/drink.png';
+import 사이드 from '../../images/side.png';
 
 class SelectCategory extends React.Component {
     constructor(props){
