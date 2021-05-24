@@ -56,7 +56,7 @@ class Payment extends React.Component {
         return(
             <div className='finishing'>
                 <div className="dialog_cart" >총 {price}원 입니다.</div>
-                {this.state.show && <div id="pay" className = 'dialog_cart'>결제 방법을 선택해주세요.</div>}
+                {this.state.show && <div className = 'dialog_cart'>결제 방법을 선택해주세요.</div>}
                 {this.state.show2 && <div>{choice}</div>}
                 {last}
             </div>

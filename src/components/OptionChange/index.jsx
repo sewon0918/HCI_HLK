@@ -169,59 +169,33 @@ class OptionChange extends React.Component {
             confirm=null;
             options=<>
                 <div className="dialog2">
-                    <table width='100%'>
-                        <tr>
+                    <table width='100%' text-align="center" >
+                        <tr >
                             <td className='selection'>
-                                <div style={{margin:'auto auto 30px 0px'}}>
-                                <tr>
                                     <img id="patty" className="photo" src={패티} alt="menu_class"></img><div>패티</div>
-                                </tr>
-                                <tr margin-left="auto" margin-right="auto" align="center" alignItems="auto">
                                     <div>{this.state.patty_count}장</div>
-                                </tr>
-                                </div>
                             </td>
                             <td className='selection'>
-                                <tr>
                                     <img id="cheeze" className="photo" src={치즈} alt="menu_class"></img><div>치즈</div>
-                                </tr>
-                                <tr>
                                     <div>{this.state.cheeze_count}장</div>
-                                </tr> 
                             </td>
                             <td className='selection'>
-                                <tr>
                                     <img id="onion" className="photo" src={양파} alt="menu_class"></img><div>양파</div>
-                                </tr>
-                                <tr>
                                     <div>{this.neocheck(this.state.onion_state)}</div>
-                                </tr>
                             </td>
                         </tr>
                         <tr>
                             <td className='selection'>
-                                <tr>
                                    <img id="tomato" className="photo" src={토마토} alt="menu_class"></img><div>토마토</div>
-                                </tr>
-                                <tr>
                                     <div>{this.neocheck(this.state.tomato_state)}</div>
-                                </tr>
                             </td>
                             <td className='selection'>
-                                <tr>
                                     <img id="lettuce" className="photo" src={양상추} alt="menu_class"></img><div>양상추</div>
-                                </tr>
-                                <tr>
                                     <div>{this.neocheck(this.state.lettuce_state)}</div>
-                                </tr>
                             </td>
                             <td className='selection'>
-                                <tr>
                                    <img id="sauce" className="photo" src={소스} alt="menu_class"></img><div>소스</div>
-                                </tr>
-                                <tr>
                                     <div>{this.neocheck(this.state.sauce_state)}</div>
-                                </tr>
                             </td>
                             </tr>
                     </table>
