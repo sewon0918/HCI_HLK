@@ -29,17 +29,9 @@
 }
 
 #select {
-    /* width: 40%;
-    margin-top: 3px;
-    margin-bottom: 5px;
-    margin-right: 100px;
-    height: 60px;
-    font-size: 20px;
-    background-color:salmon; */
-    /* position: relative; */
     margin-left: 10px;
     margin-top: 10px;
-    width: 96%;
+    width: 90%;
     height: auto;
     padding: 10px;
     background: #f5d682;
@@ -47,12 +39,6 @@
     box-shadow: 1px gray;
     font-weight: bold;
     display: block;
-    /* padding: 5px;
-    margin: 3px;
-    background-color: #f5d682;
-    border: 1px solid;
-    font-weight: bold;
-    border-radius: 3px; */
 }
 
 #recommendMenu {
