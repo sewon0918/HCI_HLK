@@ -69,8 +69,8 @@ class Setside extends React.Component {
         }
         return(
             <div id='contain'>
-                <div className="dialog">{this.state.drink}을 주문하셨습니다. 사이드를 주문해주세요.</div>
-                {menuList}
+                <div className="dialog_long">{this.state.drink}을 주문하셨습니다. 사이드를 주문해주세요.</div>
+                <div id='menu-list'>{menuList}</div>
                 {button}
                 {pay}
 

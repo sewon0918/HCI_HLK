@@ -116,18 +116,18 @@ class HowMany extends React.Component{
             console.log("goback: ", goback);
             this.block();
         }
-        var choice_dialog = <div className='dialog_long'>{menu}를 선택하셨습니다.</div>
-        if (drinkOrSide === "set") choice_dialog = <div className='dialog_long'>{menu}, {drink}, {side} 세트를 선택하셨습니다.</div>
+        var choice_dialog = <div className='dialog'>{menu}를 선택하셨습니다.</div>
+        if (drinkOrSide === "set") choice_dialog = <div className='dialog'>{menu}, {drink}, {side} 세트를 선택하셨습니다.</div>
         return(
             <div>
                 {this.state.show && choice_dialog}
-                {this.state.show2 && !this.state.showNext&&<div className = 'dialog'>수량을 선택하고 "장바구니에 담기"를 눌러주세요.</div>}
+                {this.state.show2 && !this.state.showNext&&<div className = 'dialog_long'>수량을 선택하고 "장바구니에 담기"를 눌러주세요.</div>}
                 {this.state.show3 && !this.state.showNext&&
-                    <div className = 'dialog2' id='changeNumber'>
+                    <div className = 'dialog2_short' id='changeNumber'>
                         <div className = 'number'>{number}개</div>
-                        <button className='button' onClick={this.minus}> - </button>
+                        <button className='button3' onClick={this.minus}> - </button>
                         
-                        <button className='button' onClick={this.plus}> + </button>
+                        <button className='button3' onClick={this.plus}> + </button>
                         <button id='okay' className='button' onClick={this.pass}>장바구니 담기</button>
                     </div>
                 }

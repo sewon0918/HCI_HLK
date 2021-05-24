@@ -36,4 +36,40 @@
     height: 40px;
     font-size: 20px;
     background-color: salmon;
+    border-radius: 10px 10px 10px 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.button11 {
+    padding: 5px;
+    margin: 3px;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: #f5d682;
+    border: 1px solid;
+    /* font-weight: bold; */
+    border-radius: 3px;
+    font-size:20px;
+    width:170px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.button11:hover{
+    background-color: #a59056;
+}
+
+#set {
+    position: relative;
+    font-size:18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 380px;
+    height: 50px;
+    padding: 10px;
+    background: #ececec;
+    border-radius: 10px 10px 10px 3px;
 }
