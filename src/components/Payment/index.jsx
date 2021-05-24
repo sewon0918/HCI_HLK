@@ -29,9 +29,11 @@ class Payment extends React.Component {
     render(){
         const paywith = this.state.paywith;
         var price=0;
+        var choice=<> <div className="dialog2_cart"><button className="button" onClick={this.card}>카드</button><button className="button" onClick={this.cash}>현금</button></div></>;
         let last = null;
         let check = 0;
         if (paywith !== ''){
+            choice=null;
             last = <div className = 'dialog_cart'>{paywith}(으)로 결제합니다.</div>
         }
 
@@ -55,7 +57,7 @@ class Payment extends React.Component {
             <div className='finishing'>
                 <div className="dialog_cart" >총 {price}원 입니다.</div>
                 {this.state.show && <div id="pay" className = 'dialog_cart'>결제 방법을 선택해주세요.</div>}
-                {this.state.show2 && <div className="dialog2_cart"><button className="button" onClick={this.card}>카드</button><button className="button" onClick={this.cash}>현금</button></div>}
+                {this.state.show2 && <div>{choice}</div>}
                 {last}
             </div>
         )
