@@ -172,12 +172,14 @@ class OptionChange extends React.Component {
                     <table width='100%'>
                         <tr>
                             <td className='selection'>
+                                <div style={{margin:'auto auto 30px 0px'}}>
                                 <tr>
                                     <img id="patty" className="photo" src={패티} alt="menu_class"></img><div>패티</div>
                                 </tr>
                                 <tr margin-left="auto" margin-right="auto" align="center" alignItems="auto">
                                     <div>{this.state.patty_count}장</div>
                                 </tr>
+                                </div>
                             </td>
                             <td className='selection'>
                                 <tr>
@@ -233,7 +235,7 @@ class OptionChange extends React.Component {
                 ifset=<Setmenu set_price={this.state.set_price} name={this.state.name}></Setmenu>
             }
             if(this.state.set<0){
-                ifset=<HowMany price={this.state.single_price} menu={this.state.name} drinkOrSide={"Burger"}></HowMany>
+                ifset=<HowMany price={this.state.single_price} menu={this.state.name+"(단품)"} drinkOrSide={"Burger"}></HowMany>
             }
         }
         else{

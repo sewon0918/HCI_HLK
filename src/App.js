@@ -10,6 +10,7 @@ import SelectCategory from './components/SelectCategory';
 
 import Menu from './components/Menu';
 import Cart from './components/Cart';
+import firebase from "./Firebase";
 
 class App extends React.Component {
     constructor(props) {
@@ -25,6 +26,7 @@ class App extends React.Component {
     }
 
     render(){
+        firebase.database().ref('/menu/').remove();
         const paymessage = this.state.paymessage;
         const {menu} = this.props;
         const {price} = this.props;
