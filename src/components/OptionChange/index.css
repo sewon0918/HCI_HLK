@@ -6,7 +6,10 @@
     width: 100%;
     align-content: center;
     justify-content: center;
-    text-align: center;
+    text-align: right;
+}
+.test{
+    margin-left: 10px;
 }
 .selection {
     margin-right: 7px;
