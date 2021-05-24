@@ -18,6 +18,9 @@
     background-color: white;
     float: left;
 }
+.showBurger:hover{
+    border: 3px solid gray;
+}
 .resultBurger {
     margin-right: 7px;
     margin-top: 3px;
@@ -38,4 +41,29 @@
     clear: both;
     float: left;
     width: 100%;
+}
+
+#dialog_long {
+    position: relative;
+    margin: 10px;
+    width: 520px;
+    font-size:18px;
+    height: auto;
+    padding: 10px;
+    background: #c2ecb2;
+    border-radius: 10px 10px 10px 3px;
+    box-shadow: 1px 1px 1px 1px gray;
+
+}
+
+.dialog2_short2 {
+    position: relative;
+    font-size:18px;
+    margin: 10px;
+    width: 380px;
+    height: 40px;
+    float:left;
+    padding: 10px;
+    background: #ececec;
+    border-radius: 10px 10px 10px 3px;
 }

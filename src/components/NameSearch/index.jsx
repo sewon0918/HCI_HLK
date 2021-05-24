@@ -20,13 +20,10 @@ function Voice() {
   
     return (
       <div id='voicebutton'>
-        <button className='button' onClick={listen}>
-          시작
+        <button className='button' onMouseDown={listen} onMouseUp={stop}>
+          버튼을 누른 채로 말하세요
         </button>
-        <button className='button' onClick={stop}>
-          끝
-        </button>
-        {listening && <div>음성인식 중</div>}
+        {listening && <div id='voicing'>음성인식 중</div>}
       </div>
     );
   }
@@ -77,8 +74,8 @@ class NameSearch extends React.Component {
         return(
             <div>
                 {<div  className='dialog' id='answer'>이름으로 찾기 </div>}
-                {this.state.show2 && <div  className='dialog'>버거 이름을 아래 칸에 입력하고 확인버튼을 눌러주세요. </div>}
-                {this.state.show3 && <div className='dialog2'> 
+                {this.state.show2 && <div  className='dialog_long'>버거 이름을 아래 칸에 입력하고 확인버튼을 눌러주세요. </div>}
+                {this.state.show3 && <div id='parent'><div className='dialog2_short'> 
                     {<Autocomplete
                         id='auto'
                         freeSolo={true}
@@ -88,9 +85,9 @@ class NameSearch extends React.Component {
                         renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
                     />}
                     <button id='ok' className='button' onClick = {this.onSubmit.bind(this)}> 확인 </button>
-                    <div id='startv'>음성인식으로 메뉴 이름 검색</div>
+                    <div id='startv'>음성인식 : </div>
                     <Voice />
-                </div>}
+                </div></div>}
                 {showResult}
             </div>
         )

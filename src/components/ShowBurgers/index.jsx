@@ -141,26 +141,26 @@ class ShowBurgers extends React.Component {
             return (<>
                 {<div  className='dialog' id='answer'>{name}</div>}
                 {this.state.show && <div  className='dialog'>"{name}"에 대한 검색 결과입니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show2 && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show3 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
         if (ingredient != null) 
             return (<>
                 {<div  className='dialog' id='answer'>{ingredient}</div>}
                 {this.state.show && <div  className='dialog'>주재료가 {ingredient}인 햄버거입니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show2 && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show3 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
         if (recommend)
             return(<>
                 {<div  className='dialog'>"{phone}" 님의 추천메뉴입니다.</div>}
-                {this.state.show && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show2 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
         if (name == null && ingredient == null) return (<>
                 {<div  className='dialog' id='answer'>모든 메뉴 보기</div>}
                 {this.state.show && <div  className='dialog'>"모든 메뉴 보기"를 선택했습니다. </div>}
-                {this.state.show2 && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show2 && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show3 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
     }
@@ -184,6 +184,7 @@ class ShowBurgers extends React.Component {
         let order = null;
         let option=null;
         let ifset = null;
+        let minioption=null;
         if(this.state.set > 0){
             ifset=<Setmenu set_price={this.state.info.setprice} name={this.state.menu}></Setmenu>
         }
@@ -191,22 +192,26 @@ class ShowBurgers extends React.Component {
             ifset=<HowMany price={this.state.info.singleprice} menu={this.state.menu} drinkOrSide={"burgers"}></HowMany>
         }
         if(this.state.order){
-            option=<><div className="dialog">{this.state.menu}를 선택하셨습니다. 옵션을 선택하시겠습니까?</div>
-                    <div className="dialog2"><button className="button" onClick={this.optionyes.bind(this)}>네.</button><button className="button" onClick={this.optionno.bind(this)}>아니요.</button></div></>
+            option=<><div className="dialog">{this.state.menu}를 선택하셨습니다.</div></>
+            //minioption=<><div className="dialog2"><button className="button" onClick={this.optionyes.bind(this)}>네.</button><button className="button" onClick={this.optionno.bind(this)}>아니요.</button></div></>
             console.log(this.state.optionSelect);
-            if(this.state.optionSelect > 0){
+            if(true){
+                //minioption=<div className='dialog' id='answer'>네</div>;
                 order = <OptionChange name={this.state.menu} patty_count={this.state.info.patty_num} cheeze_count={this.state.info.cheeze} onion_state={this.state.info.onion} tomato_state={this.state.info.tomato} lettuce_state={this.state.info.raddish} sauce_state={this.state.info.sauce} single_price={this.state.info.singleprice} set_price={this.state.info.setprice}></OptionChange>
             }
+            /*
             if(this.state.optionSelect < 0){
+                //minioption=<div className='dialog' id='answer'>아니요</div>;
                 order = <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
                 <div className="dialog2"><button className='button' onClick={this.singlemenu.bind(this)}>단품</button><button className='button' onClick={this.setmenu.bind(this)}>세트</button></div>{ifset}</>
-            }
+            }*/
         }
 
         return(
             <div id='contain'>
                 {this.results()}
                 {option}
+                {minioption}
                 {order}
 
             </div>

@@ -18,7 +18,7 @@ class Menu extends React.Component {
         return(
             
             <div>
-                <div key={menu} id={menu} className="showBurger" >
+                <div key={menu} id={menu} className="cartMenu" >
                         <img className="image" src={ require(`../../Data/Image/${drinkOrSide}/${menu}.jpg`).default } alt="menu_class"/>
                         <div className="name">{menu}</div>
                         <div className="price">{price}</div>

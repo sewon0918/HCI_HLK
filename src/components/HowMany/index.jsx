@@ -66,18 +66,6 @@ class HowMany extends React.Component{
     }
 
 
-    // getQuantity(){
-    //     firebase.database().ref('menu/').on('value', (snapshot)=>{
-    //         var myValue = snapshot.val();
-    //         if (myValue!=null){
-    //             var keyList = Object.keys(myValue)
-    //             var num = keyList.length;
-    //             console.log(num)
-    //             this.setState({quantity:num});
-    //         }
-    //     })
-    // }
-
     render(){
 
         const {menu} = this.props;
@@ -101,7 +89,6 @@ class HowMany extends React.Component{
             }
             else entry = {name: menu, price: price, category: drinkOrSide};
             firebase.database().ref('menu/'+q).set(entry);
-
             firebase.database().ref('menu/').on('value', function(snapshot) {
       
                 var myValue = snapshot.val();
@@ -119,20 +106,19 @@ class HowMany extends React.Component{
                         return (
                             <Menu menu = {myValue[i].name} price = {myValue[i].price} drinkOrSide = {myValue[i].category}/>);
                     });
-                    const cartTitle = <><div ><img id = "icon" src={ cartIcon } alt="icon"/></div>;
-                    <div className='text'>장바구니</div></>;
-                    const cart = document.getElementById('cart')
-                    ReactDOM.render([cartTitle, cartlist], cart);
-                }
-                
+                    
+                    const cart = document.getElementById('cartContent');
+                    ReactDOM.render(cartlist, cart);
+                } 
             })
-        
             
+            goback = <SelectCategory />;
+            console.log("goback: ", goback);
             this.block();
         }
         return(
-            <div className='parent2'>
-                {this.state.show && <div className = 'dialog'>{menu}를 선택하셨습니다.</div>}
+            <div>
+                {this.state.show && <div className='dialog_long'>{menu}를 선택하셨습니다.</div>}
                 {this.state.show2 && <div className = 'dialog'>수량을 선택하고 "장바구니에 담기"를 눌러주세요.</div>}
                 {this.state.show3 && 
                     <div className = 'dialog2' id='changeNumber'>

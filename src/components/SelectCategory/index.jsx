@@ -3,6 +3,9 @@ import SelectMethod from '../SelectMethod';
 import './index.css';
 import Drink from '../Drink';
 import Side from '../Side';
+import 버거 from '../../images/burger.png';
+import 음료 from '../../images/drink.png';
+import 사이드 from '../../images/side.png';
 
 class SelectCategory extends React.Component {
     constructor(props){
@@ -46,9 +49,8 @@ class SelectCategory extends React.Component {
         }
         return(
             <div>
-                {this.state.show && <div className = 'dialog'>어서오세요. 헬로버거입니다!</div>}
-                {this.state.show2 && <div className = 'dialog'>주문하실 카테고리를 선택해주세요.</div>}
-                {this.state.show2 &&<div  className = 'dialog2'>
+                {this.state.show && <div className = 'dialog'>주문하실 카테고리를 선택해주세요.</div>}
+                {this.state.show &&<div  className = 'dialog2'>
                     <button id="burger" className = 'button' onClick={this.onBurger}> 버거 </button>
                     <button id="drinkside" className = 'button' onClick={this.onDrink}> 음료 </button>
                     <button id="drinkside" className = 'button' onClick={this.onSide}> 사이드 </button>

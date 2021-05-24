@@ -7,7 +7,7 @@
     background: #c2ecb2;
     border-radius: 10px 10px 10px 3px;
     box-shadow: 1px 1px 1px 1px gray;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .dialog2 {
@@ -20,11 +20,14 @@
     /* background: none; */
     border-radius: 10px 10px 10px 3px;
     /* box-shadow: 1px 1px 1px 1px gray; */
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .input {
     padding: 4px 4px 4px 4px;
+    height: 25px;
+    width: 200px;
+    margin-right: 10px;
 }
 
 
