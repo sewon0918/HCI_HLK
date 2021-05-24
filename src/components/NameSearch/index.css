@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
 .MuiFormControl-fullWidth{
+    width: 270px;
     background-color: white;
     margin-left: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .MuiAutocomplete-hasClearIcon{
-    width: 150px;
+    width: 140px;
     margin-left: 10px;
     float: left;
     padding-top: 3px;
+    font-family: 'Nanum Gothic', sans-serif;
 }
-
 #ok{
     float: left;
     width: 60px;

@@ -42,7 +42,6 @@ class App extends React.Component {
                 </div>
                 <div className = 'layout'>
                     <ScrollToBottom className = "chatContainer">
-                        <div className = 'dialog'>어서오세요. 헬로버거입니다!</div>
                         <SelectCategory />
                     </ScrollToBottom>
                     <ScrollToBottom  className = "cartContainer" id='cartContainer'>
