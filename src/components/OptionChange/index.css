@@ -1,7 +1,7 @@
 .photo {
     height: 100px;
     width: 100px;
-
+    align-content: center;
 }
 .table {
     width: 100%;
@@ -15,7 +15,13 @@
     background-color: white;
     box-shadow: 1px gray;
     justify-content: left;
+    align-content: center;
+    text-align: center;
+}
 
+.confirm{
+    align-content: center;
+    text-align: center;
 }
 
 .confirm{
