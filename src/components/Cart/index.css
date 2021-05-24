@@ -1,6 +1,5 @@
 #container {
     position: absolute;
-<<<<<<< HEAD
     top: 90%;
     left: 73%;
 }
@@ -13,17 +12,4 @@
     width: 200px;
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 18px;
-=======
-    top: 92%;
-    left: 70%;
-}
-
-#pay {
-    width: 100px;
-    height: 40px;
-    font-size: 20px;
-    background-color: salmon;
-    border-radius: 10px;
-    font-family: 'Nanum Gothic', sans-serif;
->>>>>>> 030930e3af58df15da7a920a053148833b3f1f72
 }
