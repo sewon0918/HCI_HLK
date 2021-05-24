@@ -169,14 +169,14 @@ class OptionChange extends React.Component {
             confirm=null;
             options=<>
                 <div className="dialog2">
-                    <table width='100%'>
-                        <tr>
+                    <table width='100%' text-align="center" >
+                        <tr >
                             <td className='selection'>
                                 <div style={{margin:'auto auto 30px 0px'}}>
-                                <tr>
+                                <tr >
                                     <img id="patty" className="photo" src={패티} alt="menu_class"></img><div>패티</div>
                                 </tr>
-                                <tr margin-left="auto" margin-right="auto" align="center" alignItems="auto">
+                                <tr margin="auto"  >
                                     <div>{this.state.patty_count}장</div>
                                 </tr>
                                 </div>
