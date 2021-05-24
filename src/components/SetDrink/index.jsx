@@ -63,14 +63,13 @@ class SetDrink extends React.Component {
             <div className="name">{drinkname}</div>
             <div className="price">{price}</div>
         </div></div>;
-            sides=<Setside curr_price={curr_price} burger={this.state.name}></Setside>
+            sides=<Setside curr_price={curr_price} burger={this.state.name} drink = {drinkname}></Setside>
             console.log(curr_price);
         }
         return(
             <div id='contain'>
                 {menuList}
                 {button}
-                <div className="dialog">{drinkname}을 주문하셨습니다.</div>
                 {sides}
             </div>
         )

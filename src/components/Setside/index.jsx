@@ -9,7 +9,7 @@ class Setside extends React.Component {
         super(props);
         this.results = this.results.bind(this);
         this.onSelect = this.onSelect.bind(this);
-        this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price, burger:this.props.burger};
+        this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price, burger:this.props.burger, drink: this.props.drink};
     }
     componentDidMount(){
         this.menuClick('감자튀김(R)', 0)
@@ -35,11 +35,12 @@ class Setside extends React.Component {
                 price=0;
             }
             //console.log(key);
-            return (<div key={sidename} id={sidename} className="showmenu" onClick={this.menuClick.bind(this, sidename, price)}>
+            return (<>
+                <div key={sidename} id={sidename} className="showmenu" onClick={this.menuClick.bind(this, sidename, price)}>
                         <img className="image" src={ require(`../../Data/Image/sides/${sidename}.jpg`).default } alt="menu_class"/>
                         <div className="name">{sidename}</div>
                         <div className="price">+{price}원</div>
-                    </div>)
+                    </div></>)
         })
         return (<div id="recommendMenu">{sidelist}</div>)
     }
@@ -63,15 +64,14 @@ class Setside extends React.Component {
             <div className="name">{sidename}</div>
             <div className="price">{price}</div>
         </div></div>;
-            pay=<HowMany price= {total_price} menu={this.state.burger} drinkOrSide={"Burger"}></HowMany>
+            pay=<HowMany price= {total_price} menu={this.state.burger} drinkOrSide={"Burger"} drink={this.state.drink} side={this.state.sidename}></HowMany>
             console.log(this.state.burger);
         }
         return(
             <div id='contain'>
-                <div className="dialog">사이드를 주문해주세요.</div>
+                <div className="dialog">{this.state.drink}을 주문하셨습니다. 사이드를 주문해주세요.</div>
                 {menuList}
                 {button}
-                <div className="dialog">{sidename}을 주문하셨습니다.</div>
                 {pay}
 
             </div>
