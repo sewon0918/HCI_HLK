@@ -31,8 +31,15 @@ class Ingredient extends React.Component {
             elements[i].style.border='1px solid black';
         }
         console.log(id)
+        const ingredElem = document.getElementsByName(id)
+
+        for (var i = 0; i < ingredElem.length; i++) {
+            ingredElem[i].style.backgroundColor="lightpink";
+            ingredElem[i].style.border='3px solid red';
+        }
+        /*
         document.getElementById(id).style.backgroundColor = 'lightpink';
-        document.getElementById(id).style.border = '3px solid red';
+        document.getElementById(id).style.border = '3px solid red';*/
         this.setState({ingredient: id, submitted: false})
     
         // console.log("jj")
@@ -64,10 +71,10 @@ class Ingredient extends React.Component {
                 {this.state.show3 && <><table width="70%"><tbody>
                     <div className='dialog2'>
                     <tr>
-                        <td><img id = "소" className="ingred" src={ 소 } alt="menu1" onClick={this.menuClick.bind(this, "소")}/></td>
-                        <td><img id = "치킨" className="ingred" src={ 닭 } alt="menu1" onClick={this.menuClick.bind(this, "치킨")}/></td>
-                        <td><img id = "새우" className="ingred" src={ 새우 } alt="menu1" onClick={this.menuClick.bind(this, "새우")}/></td>
-                        <td><img id = "비건" className="ingred" src={ 비건 } alt="menu1" onClick={this.menuClick.bind(this, "비건")}/></td>                        
+                        <td><img id = "소" name="소" className="ingred" src={ 소 } alt="menu1" onClick={this.menuClick.bind(this, "소")}/></td>
+                        <td><img id = "치킨" name="치킨" className="ingred" src={ 닭 } alt="menu1" onClick={this.menuClick.bind(this, "치킨")}/></td>
+                        <td><img id = "새우" name="새우" className="ingred" src={ 새우 } alt="menu1" onClick={this.menuClick.bind(this, "새우")}/></td>
+                        <td><img id = "비건" name="비건" className="ingred" src={ 비건 } alt="menu1" onClick={this.menuClick.bind(this, "비건")}/></td>                        
                     </tr>
                     <tr>
                         <th>소</th><th>치킨</th><th>새우</th><th>비건</th>
