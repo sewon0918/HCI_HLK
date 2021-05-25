@@ -28,7 +28,7 @@ class Menu extends React.Component {
                         </div>
                     </td>
                     <td>
-                        <div className="cartMenu">{number}개</div>
+                        <div className="cartMany">{number}개</div>
                     </td>
                 
                 </table>

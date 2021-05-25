@@ -1,7 +1,18 @@
 .cartMenu {
-    width: 80%;
+    width: 220px;
     height: auto;
     border-radius: 10px;
     background-color: white;
-    margin: 10px;
+    margin-bottom: 10px;
+}
+
+.cartMany {
+    font-size:18px;
+    width: 50px;
+    height: 30px;
+    padding-top:10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 10px;
 }
