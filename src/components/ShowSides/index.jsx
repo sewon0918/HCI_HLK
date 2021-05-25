@@ -47,11 +47,12 @@ class ShowSides extends React.Component {
         const sidename = this.state.menu;
         const price=this.state.price;
         const drinkOrSide = this.state.drinkOrSide;
+        const side_id=sidename+'_selected';
         console.log(drinkOrSide);
         if (this.state.select){
             finish = <HowMany menu={sidename} price = {price} drinkOrSide = {drinkOrSide}/>
             menuList = null;
-            button = <div id = 'answer' className="resultBurger"><div key={sidename} id={sidename}  >
+            button = <div id = 'answer' className="resultBurger"><div key={sidename} id={side_id}  >
             <img className="image" src={ require(`../../Data/Image/sides/${sidename}.jpg`).default } alt="menu_class"/>
             <div className="name">{sidename}</div>
             <div className="price">{price}</div>
