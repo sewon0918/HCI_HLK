@@ -67,8 +67,8 @@ class Ingredient extends React.Component {
         return(
             <div>
                 {<div  className='dialog' id='answer'>주재료로 찾기</div>}
-                {this.state.show2 && <div  className='dialog_long'>원하시는 재료를 선택하고 확인버튼을 눌러주세요. </div>}
-                {this.state.show3 && <><table width="70%"><tbody>
+                {this.state.show && <div  className='dialog_long'>원하시는 재료를 선택하고 확인버튼을 눌러주세요. </div>}
+                {this.state.show2 && <><table width="70%"><tbody>
                     <div className='dialog2'>
                     <tr>
                         <td><img id = "소" name="소" className="ingred" src={ 소 } alt="menu1" onClick={this.menuClick.bind(this, "소")}/></td>

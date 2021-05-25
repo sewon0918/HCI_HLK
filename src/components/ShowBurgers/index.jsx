@@ -17,13 +17,13 @@ class ShowBurgers extends React.Component {
         },200)
         setTimeout(()=>{
            this.setState({show: true})
-        },2000)
+        },500)
         setTimeout(()=>{
             this.setState({show2: true})
-        },4000) 
+        },2000) 
         setTimeout(()=>{
             this.setState({show3: true})
-        },7000) 
+        },4500) 
      }
 
 
