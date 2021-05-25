@@ -7,7 +7,7 @@
 
 #okay {
     float: right;
-    background-color: #EAAD3A;
+    background-color: #FF8857;
     border: 0px;
     border-radius: 10px;
     height: 40px;
@@ -25,9 +25,9 @@
     height: 40px;
     margin-bottom: 20px;
     background-color: white;
-    border: 0px solid;
+    border: 1px solid;
     /* font-weight: bold; */
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 20px;
     width: 35px;
     margin-left: 10px;
@@ -49,5 +49,5 @@
     width: 380px;
     height: 50px;
     padding: 10px;
-    background: #FFD770;
+    background: #FFF8D6;
 }

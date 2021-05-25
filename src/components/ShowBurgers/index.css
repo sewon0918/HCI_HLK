@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
-
 .menu {
     margin-right: 10px;
     margin-top: 4px;
@@ -20,9 +19,11 @@
     background-color: white;
     float: left;
 }
-.showBurger:hover{
+
+.showBurger:hover {
     border: 3px solid gray;
 }
+
 .resultBurger {
     margin-right: 7px;
     margin-top: 3px;
@@ -45,31 +46,18 @@
     width: 100%;
 }
 
-#dialog_long {
-    position: relative;
-    margin: 10px;
-    width: 520px;
-    font-size:18px;
-    height: auto;
-    padding: 10px;
-    background: #c2ecb2;
-    border-radius: 10px 10px 10px 3px;
-    box-shadow: 1px 1px 1px 1px gray;
-
-}
-
 .dialog2_short2 {
     position: relative;
-    font-size:18px;
+    font-size: 18px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
     margin-top: 5px;
     width: 380px;
     height: 40px;
-    float:left;
+    float: left;
     padding: 10px;
-    background: #ececec;
+    background: #FFF8D6;
     border-radius: 10px 10px 10px 3px;
 }
 

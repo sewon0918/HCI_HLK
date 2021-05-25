@@ -1,15 +1,16 @@
 #container {
     position: absolute;
-    top: 90%;
-    left: 73%;
+    width: 85%;
+    /* top: 90%; */
+    /* left: 73%; */
 }
 
 #pay {
     /* float: right; */
-    background-color: #EAAD3A;
+    background-color: #FF8857;
     /* margin-left: 50px; */
     height: auto;
-    width: auto;
+    width: 100%;
     padding: 10px;
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 18px;

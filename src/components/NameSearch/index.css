@@ -18,6 +18,7 @@
     float: left;
     width: 60px;
     height: 53px;
+    background-color: #FF8857;
 }
 
 #startv {
@@ -41,7 +42,7 @@
     height: 110px;
     float: left;
     padding: 10px;
-    background: #FFD770;
+    background: #FFF8D6;
     border-radius: 10px 10px 10px 3px;
 }
 
