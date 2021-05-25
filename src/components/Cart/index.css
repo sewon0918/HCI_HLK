@@ -4,12 +4,29 @@
     left: 73%;
 }
 
-#payyy {
-    float: right;
+#pay {
+    /* float: right; */
     background-color: salmon;
     /* margin-left: 50px; */
-    height: 40px;
-    width: 200px;
+    height: auto;
+    width: auto;
+    padding: 10px;
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 18px;
+    border-radius: 10px;
+    border: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
 }
+
+
+/* #select {
+    width: 30%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 100px;
+    height: 40px;
+    font-size: 20px;
+    background-color: salmon;
+    border-radius: 10px 10px 10px 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+} */
