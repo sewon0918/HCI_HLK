@@ -28,7 +28,7 @@ class Ingredient extends React.Component {
 
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.backgroundColor="white";
-            elements[i].style.border='1px solid black';
+            elements[i].style.border='0px solid black';
         }
         console.log(id)
         document.getElementById(id).style.backgroundColor = 'lightpink';
@@ -73,7 +73,7 @@ class Ingredient extends React.Component {
                         <th>소</th><th>치킨</th><th>새우</th><th>비건</th>
                     </tr></div></tbody>
                 </table>
-                <button id='ingredChoice'onClick={this.submit.bind(this)}>확인</button>
+                <button id='select'onClick={this.submit.bind(this)}>확인</button>
                 {showResult}</>}
                 
             </div>

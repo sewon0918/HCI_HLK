@@ -1,52 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
-
-.MuiFormControl-fullWidth{
+.MuiFormControl-fullWidth {
     width: 270px;
     background-color: white;
     margin-left: 10px;
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-.MuiAutocomplete-hasClearIcon{
+.MuiAutocomplete-hasClearIcon {
     width: 140px;
     margin-left: 10px;
     float: left;
     padding-top: 3px;
     font-family: 'Nanum Gothic', sans-serif;
 }
-#ok{
+
+#ok {
     float: left;
     width: 60px;
     height: 53px;
 }
 
-#startv{
+#startv {
     margin-top: 11px;
     float: left;
     padding-left: 30px;
     width: 100px;
 }
 
-#voicebutton{
+#voicebutton {
     margin-top: 5px;
     height: 130px;
-    float:left;
+    float: left;
 }
 
 .dialog2_short {
     position: relative;
-    font-size:18px;
+    font-size: 18px;
     margin: 10px;
     width: 380px;
-    height: 130px;
-    float:left;
+    height: 110px;
+    float: left;
     padding: 10px;
-    background: #ececec;
+    background: #FFD770;
     border-radius: 10px 10px 10px 3px;
 }
 
 #voiceing {
-    float:left;
+    float: left;
 }
 
 #parent {
