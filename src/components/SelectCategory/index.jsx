@@ -20,10 +20,10 @@ class SelectCategory extends React.Component {
     componentDidMount(){
         setTimeout(()=>{
            this.setState({show: true})
-        },500)
+        },2000)
         setTimeout(()=>{
             this.setState({show2: true})
-        },1000) 
+        },4000) 
      }
 
      onBurger(){

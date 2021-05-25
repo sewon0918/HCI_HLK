@@ -36,13 +36,13 @@ class NameSearch extends React.Component {
     componentDidMount(){
         setTimeout(()=>{
            this.setState({show: true})
-        },500)
+        },200)
         setTimeout(()=>{
             this.setState({show2: true})
-        },1000) 
+        },2000) 
         setTimeout(()=>{
             this.setState({show3: true})
-        },2000) 
+        },4000) 
      }
 
 

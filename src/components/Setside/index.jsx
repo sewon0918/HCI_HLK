@@ -9,10 +9,20 @@ class Setside extends React.Component {
         super(props);
         this.results = this.results.bind(this);
         this.onSelect = this.onSelect.bind(this);
-        this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price, burger:this.props.burger, drink: this.props.drink};
+        this.state = {select: false, menu: '', price:0, curr_price: this.props.curr_price, burger:this.props.burger, drink: this.props.drink,
+                        show:false, show2:false, show3:false};
     }
     componentDidMount(){
-        this.menuClick('감자튀김(R)', 0)
+        this.menuClick('감자튀김(R)', 0);
+        setTimeout(()=>{
+            this.setState({show: true})
+         },500);
+         setTimeout(()=>{
+            this.setState({show2: true})
+         },2000);
+         setTimeout(()=>{
+            this.setState({show3: true})
+         },4000);
      }
 
     menuClick(id, price){
