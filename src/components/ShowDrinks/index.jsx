@@ -49,10 +49,11 @@ class ShowDrinks extends React.Component {
         const drinkname = this.state.menu;
         const drinkOrSide = this.state.drinkOrSide;
         const price=this.state.price;
+        let drink_id=drinkname+'_selected';
         if (this.state.select){
             finish = <HowMany menu={drinkname} price = {price} drinkOrSide = {drinkOrSide}/>
             menuList = null;
-            button = <div id = 'answer' className="resultBurger"><div key={drinkname} id={drinkname}>
+            button = <div id = 'answer' className="resultBurger"><div key={drinkname} id={drink_id}>
             <img className="image" src={ require(`../../Data/Image/beverages/${drinkname}.jpg`).default } alt="menu_class"/>
             <div className="name">{drinkname}</div>
             <div className="price">{price}</div>

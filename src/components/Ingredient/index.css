@@ -1,7 +1,7 @@
 .ingred {
     margin-right: 10px;
     width: 70%;
-    border: 1px solid black;
+    border: 0px solid black;
     border-radius: 10px;
     background-color: white;
     padding: 15px;
@@ -13,16 +13,4 @@
 
 .table {
     width: 30%;
-}
-
-#ingredChoice {
-    width: 30%;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    margin-right: 100px;
-    height: 40px;
-    font-size: 20px;
-    background-color: salmon;
-    border-radius: 10px 10px 10px 10px;
-    font-family: 'Nanum Gothic', sans-serif;
 }

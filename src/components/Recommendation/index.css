@@ -4,7 +4,7 @@
     width: 400px;
     height: auto;
     padding: 10px;
-    background: #c2ecb2;
+    background: #FAE1A4;
     border-radius: 10px 10px 10px 3px;
     box-shadow: 1px 1px 1px 1px gray;
     /* font-weight: bold; */
@@ -16,11 +16,8 @@
     width: 400px;
     height: auto;
     padding: 10px;
-    background: #ececec;
-    /* background: none; */
+    background: #FFD770;
     border-radius: 10px 10px 10px 3px;
-    /* box-shadow: 1px 1px 1px 1px gray; */
-    /* font-weight: bold; */
 }
 
 .input {
@@ -32,14 +29,13 @@
     margin-right: 10px;
 }
 
-
 #short2 {
     position: relative;
-    font-size:18px;
+    font-size: 18px;
     margin: 10px;
     width: 380px;
     height: 50px;
     padding: 10px;
-    background: #ececec;
+    background: #FFD770;
     border-radius: 10px 10px 10px 3px;
 }
