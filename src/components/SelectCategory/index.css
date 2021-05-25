@@ -5,7 +5,7 @@
     width: 540px;
     height: auto;
     padding: 10px;
-    background: #FAE1A4;
+    background: #FFF8D6;
     border-radius: 10px 10px 10px 3px;
     box-shadow: 1px 1px 1px 1px gray;
 }
@@ -16,7 +16,7 @@
     width: 600px;
     height: auto;
     padding: 10px;
-    background: #FFD770;
+    background: #FFF8D6;
     border-radius: 10px 10px 10px 3px;
 }
 
@@ -28,9 +28,9 @@
     padding: 5px;
     margin: 3px;
     background-color: white;
-    border: 0px solid;
+    border: 1px solid;
     /* font-weight: bold; */
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 15px;
     width: 170px;
     margin-left: 10px;

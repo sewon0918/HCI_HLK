@@ -42,7 +42,7 @@
     padding: 2%;
     width: 65%;
     height: 75vh;
-    background-color: #FFF2B1;
+    background-color: #FFE292;
     border-radius: 10px;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -53,7 +53,7 @@
     /* display: 'block'; */
     width: 23vw;
     height: 75vh;
-    background-color: #FFF2B1;
+    background-color: #FFE292;
     border-radius: 10px;
     padding: 2%;
     overflow-y: hidden;
@@ -69,7 +69,7 @@
     display: block;
     width: 90%;
     height: 85%;
-    background-color: #FFF2B1;
+    background-color: #FFE292;
     border-radius: 10px;
     padding: 2%;
     overflow-y: hidden;
