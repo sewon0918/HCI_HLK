@@ -1,9 +1,11 @@
 # HLK - Happy Learnable Kiosk
 
-This project is for KAIST CS374(Introduction to Human-Computer Interaction) in Spring, 2021
+This is a repository for HLK, Happy Learnable Kiosk
 
 ## Overview
-Happy Learnable Kiosk(HLK) is a project proposing a new kiosk design for middle-aged users who are uncomfortable with using previous kiosk.   
+HLK is a project for KAIST CS374(Introduction to Human-Computer Interaction) in Spring, 2021. We propose a new kiosk design for middle-aged users who feel uncomfortable with using previous kiosk.   
+
+Link for Demo: [URL](https://hci-hlk-f2fb4.web.app/)
 
 ## Libraries & Frameworks
 React   
