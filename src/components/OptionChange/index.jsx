@@ -220,6 +220,7 @@ class OptionChange extends React.Component {
                     <table width='100%'>
                         <tr>
                             <td className='selection'>
+                                <table align="center">
                                 <tr rowspan="3">
                                     <td></td>
                                     <td><img id="patty" className="photo" src={패티} alt="menu_class"></img><div>패티</div></td>
@@ -229,9 +230,10 @@ class OptionChange extends React.Component {
                                     <td ><button id="rem_but" className="button" onClick={this.Rem_patty.bind(this)}>-</button></td>
                                     <td text-align="center"><div>{this.state.patty_count}장</div></td>
                                     <td><button id="add_but" className="button" onClick={this.Add_patty.bind(this)}>+</button></td>
-                                </tr>
+                                </tr></table>
                             </td>
                             <td className='selection'>
+                                <table align="center">
                                 <tr rowspan="3">
                                     <td></td>
                                     <td><img id="cheeze" className="photo" src={치즈} alt="menu_class"></img><div>치즈</div></td>
@@ -241,9 +243,10 @@ class OptionChange extends React.Component {
                                     <td><button id="rem_but" className="button" onClick={this.Rem_cheeze.bind(this)}>-</button></td>
                                     <td><div>{this.state.cheeze_count}장</div></td>
                                     <td><button id="add_but" className="button" onClick={this.Add_cheeze.bind(this)}>+</button></td>
-                                </tr> 
+                                </tr> </table>
                             </td>
                             <td className='selection'>
+                                <table align="center">
                                 <tr rowspan="3">
                                     <td></td>
                                     <td><img id="onion" className="photo" src={양파} alt="menu_class"></img><div>양파</div></td>
@@ -253,11 +256,12 @@ class OptionChange extends React.Component {
                                     <td ><button id="rem_but" className="button" onClick={this.Rem_state.bind(this,"onion", this.state.onion_state)}>-</button></td>
                                     <td text-align="center"><div>{this.neocheck(this.state.onion_state)}</div></td>
                                     <td><button id="add_but" className="button" onClick={this.Add_state.bind(this, "onion", this.state.onion_state)}>+</button></td>
-                                </tr>
+                                </tr></table>
                             </td>
                         </tr>
                         <tr>
                             <td className='selection'>
+                                <table align="center">
                                 <tr rowspan="3">
                                     <td></td>
                                     <td><img id="tomato" className="photo" src={토마토} alt="menu_class"></img><div>토마토</div></td>
@@ -267,9 +271,10 @@ class OptionChange extends React.Component {
                                     <td ><button id="rem_but" className="button" onClick={this.Rem_state.bind(this,"tomato", this.state.tomato_state)}>-</button></td>
                                     <td text-align="center"><div>{this.neocheck(this.state.tomato_state)}</div></td>
                                     <td><button id="add_but" className="button" onClick={this.Add_state.bind(this, "tomato", this.state.tomato_state)}>+</button></td>
-                                </tr>
+                                </tr></table>
                             </td>
                             <td className='selection'>
+                                <table align="center">
                                 <tr rowspan="3">
                                     <td></td>
                                     <td><img id="lettuce" className="photo" src={양상추} alt="menu_class"></img><div>양상추</div></td>
@@ -279,9 +284,10 @@ class OptionChange extends React.Component {
                                     <td ><button id="rem_but" className="button" onClick={this.Rem_state.bind(this,"lettuce", this.state.lettuce_state)}>-</button></td>
                                     <td text-align="center"><div>{this.neocheck(this.state.lettuce_state)}</div></td>
                                     <td><button id="add_but" className="button" onClick={this.Add_state.bind(this, "lettuce", this.state.lettuce_state)}>+</button></td>
-                                </tr>
+                                </tr></table>
                             </td>
                             <td className='selection'>
+                                <table align="center">
                                 <tr rowspan="3">
                                     <td></td>
                                     <td><img id="sauce" className="photo" src={소스} alt="menu_class"></img><div>소스</div></td>
@@ -291,7 +297,7 @@ class OptionChange extends React.Component {
                                     <td ><button id="rem_but" className="button" onClick={this.Rem_state.bind(this,"sauce", this.state.sauce_state)}>-</button></td>
                                     <td text-align="center"><div>{this.neocheck(this.state.sauce_state)}</div></td>
                                     <td><button id="add_but" className="button" onClick={this.Add_state.bind(this, "sauce", this.state.sauce_state)}>+</button></td>
-                                </tr>
+                                </tr></table>
                             </td>
                             </tr>
                     </table>
