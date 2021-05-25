@@ -1,9 +1,16 @@
 # HLK - Happy Learnable Kiosk
 
-## Overview
-This is Repository for HLK, Happy Learnable Kiosk. We propose a new kiosk design for middle-aged users
+This project is for KAIST CS374(Introduction to Human-Computer Interaction) in Spring, 2021
 
-## Frameworks
+## Overview
+Happy Learnable Kiosk(HLK) is a project proposing a new kiosk design for middle-aged users who are uncomfortable with using previous kiosk.   
+
+## Libraries & Frameworks
+React   
+firebase   
+@material-ui/core/TextField   
+@material-ui/lab/Autocomplete   
+react-speech-kit   
 
 ## Contributers
 [Kangsan Kim](https://github.com/KangsanKim07)
