@@ -17,10 +17,10 @@ class Ingredient extends React.Component {
         },500)
         setTimeout(()=>{
             this.setState({show2: true})
-        },1000) 
+        },2000) 
         setTimeout(()=>{
             this.setState({show3: true})
-        },2000) 
+        },4000) 
      }
 
     menuClick(id){

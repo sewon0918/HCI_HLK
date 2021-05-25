@@ -32,10 +32,10 @@ class OptionChange extends React.Component {
     componentDidMount(){
         setTimeout(()=>{
             this.setState({show1: true})
-         },200)
+         },2000)
          setTimeout(()=>{
             this.setState({show2: true})
-         },500)
+         },4000)
      }
 
     Add_patty(){

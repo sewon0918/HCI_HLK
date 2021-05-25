@@ -15,10 +15,10 @@ class Drink extends React.Component {
         },500)
         setTimeout(()=>{
             this.setState({show2: true})
-        },1000)
+        },2000)
         setTimeout(()=>{
             this.setState({show3: true})
-        },1500)  
+        },4000)  
     }
 
     render(){

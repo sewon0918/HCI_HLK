@@ -30,10 +30,10 @@ class HowMany extends React.Component{
         },500)
         setTimeout(()=>{
             this.setState({show2: true})
-        },1000) 
+        },2000) 
         setTimeout(()=>{
             this.setState({show3: true})
-        },1500) 
+        },4000) 
     }
 
     plus(){
@@ -116,7 +116,7 @@ class HowMany extends React.Component{
             console.log("goback: ", goback);
             this.block();
         }
-        var choice_dialog = <div className='dialog'>{menu}를 선택하셨습니다.</div>
+        var choice_dialog = <div className='dialog'>{menu}(을)를 선택하셨습니다.</div>
         if (drinkOrSide === "set") choice_dialog = <div className='dialog_long'>{menu}, {drink}, {side} 세트를 선택하셨습니다.</div>
         if (drinkOrSide === "burgers") choice_dialog = <div className='dialog_long'>{menu}(단품)을 선택하셨습니다.</div>
         return(

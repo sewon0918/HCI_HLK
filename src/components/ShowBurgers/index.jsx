@@ -17,13 +17,13 @@ class ShowBurgers extends React.Component {
         },200)
         setTimeout(()=>{
            this.setState({show: true})
-        },500)
+        },2000)
         setTimeout(()=>{
             this.setState({show2: true})
-        },1500) 
+        },4000) 
         setTimeout(()=>{
             this.setState({show3: true})
-        },2500) 
+        },7000) 
      }
 
 
@@ -61,10 +61,10 @@ class ShowBurgers extends React.Component {
             },500)
             setTimeout(()=>{
                 this.setState({show2: true})
-            },1500) 
+            },2000) 
             setTimeout(()=>{
                 this.setState({show3: true})
-            },2500) 
+            },4500) 
 
         }
         let nextButton = null;
@@ -192,7 +192,7 @@ class ShowBurgers extends React.Component {
             ifset=<HowMany price={this.state.info.singleprice} menu={this.state.menu} drinkOrSide={"burgers"}></HowMany>
         }
         if(this.state.order){
-            option=<><div className="dialog">{this.state.menu}를 선택하셨습니다.</div></>
+            option=<><div className="dialog">{this.state.menu}(을)를 선택하셨습니다.</div></>
             //minioption=<><div className="dialog2"><button className="button" onClick={this.optionyes.bind(this)}>네.</button><button className="button" onClick={this.optionno.bind(this)}>아니요.</button></div></>
             console.log(this.state.optionSelect);
             if(true){
