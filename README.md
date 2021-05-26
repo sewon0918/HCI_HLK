@@ -10,8 +10,8 @@ HLK is a project for KAIST CS374(Introduction to Human-Computer Interaction) in 
 We considered users who know what they want, but cannot reach for their requirements because they are not used to communicating with new machines. 
 Our prototype is written in Korean for our target users. 
 
-Link for Demo: [URL](https://hci-hlk-f2fb4.web.app/)
-Link for Demo Video: [URL](https://drive.google.com/file/d/1GUsJZ02Hi5UtBlVlPHkJAChp-lwxRcTU/view?usp=sharing)
+* Link for Demo: [URL](https://hci-hlk-f2fb4.web.app/)
+* Link for Demo Video: [URL](https://drive.google.com/file/d/1GUsJZ02Hi5UtBlVlPHkJAChp-lwxRcTU/view?usp=sharing)
 
 ## Description of codes
 
