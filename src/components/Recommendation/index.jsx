@@ -6,15 +6,15 @@ import '.'
 import '../OptionChange'
 import '../../App'
 import ShowBurgers from '../ShowBurgers';
+import firebase from '../../Firebase';
 
 class Recommendation extends React.Component {
     constructor(props) {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
         this.onSkip = this.onSkip.bind(this);
-        this.onDrinkOrSide = this.onDrinkOrSide.bind(this);  /*{ 음료 부분 }*/
         this.componentDidMount = this.componentDidMount.bind(this);
-        this.state = {isLoggedIn: 0, phone: "", show: false, show2: false};
+        this.state = {isLoggedIn: 0, phone: "", show: false, show2: false, dbExist: false};
     }
     componentDidMount(){
         console.log("component");
@@ -31,30 +31,48 @@ class Recommendation extends React.Component {
         const number = document.getElementById("number").value;
         console.log(number);
         if (number !== "")
-        this.setState({isLoggedIn: 1, phone: number, recommend: true}); 
+        // this.setState({isLoggedIn: 1, phone: number, recommend: true}); 
+    
+
+
+        firebase.database().ref('recommendation/').on('value', (snapshot)=>{
+            var myValue = snapshot.val();
+            if (myValue!=null){
+                var keyList = Object.keys(myValue);
+                var index = keyList.indexOf(number);
+                console.log(index);
+                console.log(myValue[keyList[index]]);
+                if(index < 0){
+                    this.setState({isLoggedIn: 1, phone: number, recommend: true, dbExist: false}); 
+                }else{
+                    this.setState({isLoggedIn: 1, phone: number, recommend: true, dbExist: true, recommendMenu: myValue[keyList[index]]}); 
+                }
+            }
+        })
     }
     onSkip(){
         this.setState({isLoggedIn: -1, phone: '-1'}); 
-    }
-    onDrinkOrSide(){ /*{ 음료 부분 }*/
-        this.setState({isLoggedIn: -2, phone: '-1'}); 
     }
     next(){
         document.getElementById("recommendMenu")
     }
     render(){
         const isLoggedIn = this.state.isLoggedIn;
+        const dbExist = this.state.dbExist;
         //const phone = this.state.phone
         let recommend = null;
         //let option=null;
         if (isLoggedIn > 0) {
-            recommend = <ShowBurgers recommend={this.state.recommend} phone = {this.state.phone}></ShowBurgers>
+            if (dbExist){
+                recommend = <ShowBurgers recommend={this.state.recommend} dbExist = {this.state.dbExist} recommendMenu = {this.state.recommendMenu} phone = {this.state.phone}></ShowBurgers>
+            }else{
+                console.log("없어없다고", this.state.dbExist);
+                recommend = <ShowBurgers recommend={this.state.recommend} dbExist = {this.state.dbExist} phone = {this.state.phone}></ShowBurgers>
+            }
+            
         }
         if (isLoggedIn < 0) {
             recommend = <div>hihi</div>
-        }
-        if (isLoggedIn === -2){     /*{ 음료 부분 }*/
-            recommend = <DrinkOrSide />
         }
 
 

@@ -49,10 +49,13 @@ class ShowBurgers extends React.Component {
         const {name} = this.props;
         const {ingredient} = this.props;
         const {recommend} = this.props;
+        const {dbExist} = this.props;
+        const {recommendMenu} = this.props;
         const {phone} = this.props;
         console.log("name", name);
         console.log("ingredient", ingredient);
         console.log("phone", phone);
+        console.log("dbExist", dbExist);
         let num = 0;
         if (this.state.query !== name) {
             this.setState({query: name, show: false, show2: false, show3: false, order: false});
@@ -103,8 +106,23 @@ class ShowBurgers extends React.Component {
                 }
                 else return (null);
             }
-            else if (phone!==null && recommend){
-                console.log("recommend")
+            else if (phone!==null && recommend && dbExist){
+                console.log("recommend and db exist", recommendMenu)
+                for (var i=0 ; i< recommendMenu.length ; i++){
+                    if (burgername.includes(recommendMenu[i])){
+                        return (
+                            <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
+                                <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
+                                <div className="name">{burgername}</div>
+                                <div className="price">단품: {singleprice}</div>
+                                <div className="price">세트: {setprice} </div>
+                            </div>);
+                    }
+                }
+                
+            }
+            else if (phone!==null && recommend && !dbExist){
+                console.log("recommend but no db")
                 if (burgername.includes("불고기")){
                     return (
                         <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
@@ -151,12 +169,18 @@ class ShowBurgers extends React.Component {
                 {this.state.show2 && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show3 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
-        if (recommend)
+        if (recommend && dbExist)
             return(<>
                 {<div  className='dialog'>"{phone}" 님의 추천메뉴입니다.</div>}
-                {this.state.show && <div  className='dialog_long'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
+                {this.state.show && <div  className='dialog'>원하시는 메뉴를 선택하고 "다음"을 눌러주세요. </div>}
                 {this.state.show2 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
             </>)
+        if (recommend && !dbExist)
+        return(<>
+            {<div  className='dialog'>입력하신 번호의 주문 기록이 없습니다.</div>}
+            {this.state.show && <div  className='dialog'>인기있는 메뉴를 추천해드리겠습니다. </div>}
+            {this.state.show2 && <><div id="menuShower">{burgerlist}</div>{nextButton}</>}
+        </>)
         if (name == null && ingredient == null) return (<>
                 {<div  className='dialog' id='answer'>모든 메뉴 보기</div>}
                 {this.state.show && <div  className='dialog'>"모든 메뉴 보기"를 선택했습니다. </div>}
