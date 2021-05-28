@@ -74,7 +74,7 @@ class SelectMethod extends React.Component {
         const isRecommend = this.state.isRecommend;
         let ifRecommend = null;
         if (isRecommend > 0) {
-            ifRecommend = <Recommendation />
+            ifRecommend = <Recommendation></Recommendation>
         }
 
         const isAll = this.state.isAll;
