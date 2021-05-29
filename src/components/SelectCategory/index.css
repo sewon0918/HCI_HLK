@@ -43,13 +43,16 @@
 }
 
 #burgerimg {
-    width: 150px;
+    height: 110px;
+    width: 110px;
 }
 
 #drinkimg {
+    width: 110px;
     height: 110px;
 }
 
 #sideimg {
+    width: 110px;
     height: 110px;
 }
