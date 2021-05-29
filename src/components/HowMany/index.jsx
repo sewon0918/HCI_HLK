@@ -13,7 +13,7 @@ import SelectCategory from '../SelectCategory'
 
   // Initialize Firebase
 
-class HowMany extends React.Component{
+class HowMany extends React.Component{ 
     constructor(props){
         super(props);
         this.state = {show:false, show2: false, show3: false, number: 1, finish: false, cart:cartData, id:-1, quantity:0, showNext: false};

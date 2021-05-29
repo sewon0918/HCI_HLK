@@ -49,7 +49,7 @@ class Menu_set extends React.Component {
             this.setState({show: true, menu: this.props.menu, price: this.props.price, drinkOrSide: this.props.drinkOrSide, number: this.props.number, index: this.props.index, drink: this.props.drink, side: this.props.side})
         }
         if (this.state.show)
-        return(
+        return( 
             
             <div>
                 <table>

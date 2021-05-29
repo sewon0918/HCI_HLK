@@ -45,7 +45,7 @@ class Menu extends React.Component {
         firebase.database().ref('menu/'+this.state.index).remove()
         console.log("didplus")
         this.setState({show: false})
-    }
+    } 
 
 
     render(){
