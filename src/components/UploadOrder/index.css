@@ -1,0 +1,10 @@
+#phone {
+    background-color: coral;
+    height: 40px;
+    width: 50px;
+}
+
+#phone_number{
+    width: 200px;
+    height: 30px;
+}

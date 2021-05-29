@@ -6,6 +6,7 @@ import '.'
 import '../OptionChange'
 import '../../App'
 import ShowBurgers from '../ShowBurgers';
+import firebase from '../../Firebase';
 
 class Recommendation extends React.Component {
     constructor(props) {
@@ -29,9 +30,9 @@ class Recommendation extends React.Component {
       
     onSubmit(){
         const number = document.getElementById("number").value;
-        console.log(number);
-        if (number !== "")
         this.setState({isLoggedIn: 1, phone: number, recommend: true}); 
+        const numarray = [number];
+        firebase.database().ref('phonenumber/').set(numarray);
     }
     onSkip(){
         this.setState({isLoggedIn: -1, phone: '-1'}); 
