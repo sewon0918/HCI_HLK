@@ -29,12 +29,6 @@ class Recommendation extends React.Component {
       
     onSubmit(){
         const number = document.getElementsByClassName('input')[0].value;
-        console.log(number);
-        if (number !== "")
-    
-
-
-        
         if (number !== "" && number!=undefined){
             let split;
             split=number.split('');
@@ -53,6 +47,8 @@ class Recommendation extends React.Component {
                 }
                 if(all){
                     this.setState({isLoggedIn: 1, phone: number, recommend: true}); 
+                    const numarray = [number];
+                    firebase.database().ref('phonenumber/').set(numarray);
                 }
                 else{
                    alert("번호에 숫자가 아닌 문자가 포함되어 있습니다. 다시 입력해주세요.");

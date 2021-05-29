@@ -20,6 +20,7 @@ class App extends React.Component {
     }
     componentDidMount(){
         firebase.database().ref('/menu/').remove();
+        firebase.database().ref('/phonenumber/').remove();
      }
 
     handleCreate = (paym) => {
