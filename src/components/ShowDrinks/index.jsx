@@ -28,7 +28,7 @@ class ShowDrinks extends React.Component {
             const drinkname = key.name;
             let price=key.price;
             return (<div key={drinkname} id={drinkname} className="showmenu" onClick={this.menuClick.bind(this, drinkname, price)}>
-                        <img className="image" src={ require(`../../Data/Image/beverages/${drinkname}.jpg`).default } alt="menu_class"/>
+                        <img className="image" src={ require(`../../Data/Image/beverages/${drinkname}.png`).default } alt="menu_class"/>
                         <div className="name">{drinkname}</div>
                         <div className="price">{price}</div>
                     </div>)
@@ -54,7 +54,7 @@ class ShowDrinks extends React.Component {
             finish = <HowMany menu={drinkname} price = {price} drinkOrSide = {drinkOrSide}/>
             menuList = null;
             button = <div id = 'answer' className="resultBurger"><div key={drinkname} id={drink_id}>
-            <img className="image" src={ require(`../../Data/Image/beverages/${drinkname}.jpg`).default } alt="menu_class"/>
+            <img className="image" src={ require(`../../Data/Image/beverages/${drinkname}.png`).default } alt="menu_class"/>
             <div className="name">{drinkname}</div>
             <div className="price">{price}</div>
         </div></div>;

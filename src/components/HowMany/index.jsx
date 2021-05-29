@@ -13,7 +13,7 @@ import SelectCategory from '../SelectCategory'
 
   // Initialize Firebase
 
-class HowMany extends React.Component{
+class HowMany extends React.Component{ 
     constructor(props){
         super(props);
         this.state = {show:false, show2: false, show3: false, number: 1, finish: false, cart:cartData, id:-1, quantity:0, showNext: false};
@@ -55,8 +55,9 @@ class HowMany extends React.Component{
             if (myValue!=null){
                 var keyList = Object.keys(myValue)
                 var num = keyList.length;
+                var next = Number(keyList[num -1]) + 1
                 console.log(num)
-                this.setState({quantity:num});
+                this.setState({quantity:next});
             }
         })
     }
@@ -101,10 +102,10 @@ class HowMany extends React.Component{
                     cartlist = keyList.map((i) =>{
                         console.log("index",i);
                         if (myValue[i].category === "set") {
-                            return (<Menu_set menu={myValue[i].name} price={myValue[i].price} drink={myValue[i].drink} side={myValue[i].side} number={myValue[i].num}/>)
+                            return (<Menu_set menu={myValue[i].name} price={myValue[i].price} drink={myValue[i].drink} side={myValue[i].side} number={myValue[i].num} index={i}/>)
                         }
                         return (
-                            <Menu menu = {myValue[i].name} price = {myValue[i].price} drinkOrSide = {myValue[i].category} number={myValue[i].num}/>);
+                            <Menu menu = {myValue[i].name} price = {myValue[i].price} drinkOrSide = {myValue[i].category} number={myValue[i].num} index={i}/>);
                     });
                     
                     const cart = document.getElementById('cartContent');

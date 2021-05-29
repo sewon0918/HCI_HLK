@@ -30,7 +30,11 @@ class Setside extends React.Component {
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.border="3px solid white";
         }
-        document.getElementById(id).style.border="3px solid red";
+        const elems = document.getElementsByName(id)
+        for (var i = 0; i < elems.length; i++) {
+            elems[i].style.border="3px solid red";
+        }
+        //document.getElementById(id).style.border="3px solid red";
         this.setState({menu: id, price: price});
     }
 
@@ -46,8 +50,8 @@ class Setside extends React.Component {
             }
             //console.log(key);
             return (<>
-                <div key={sidename} id={sidename} className="showmenu" onClick={this.menuClick.bind(this, sidename, price)}>
-                        <img className="image" src={ require(`../../Data/Image/sides/${sidename}.jpg`).default } alt="menu_class"/>
+                <div key={sidename} id={sidename} name={sidename} className="showmenu" onClick={this.menuClick.bind(this, sidename, price)}>
+                        <img className="image" src={ require(`../../Data/Image/sides/${sidename}.png`).default } alt="menu_class"/>
                         <div className="name">{sidename}</div>
                         <div className="price">+{price}원</div>
                     </div></>)
@@ -70,7 +74,7 @@ class Setside extends React.Component {
         if (this.state.select){
             menuList = null;
             button = <div id="recommendMenu1"><div key={sidename} id={sidename} className="showmenu1" >
-            <img className="image" src={ require(`../../Data/Image/sides/${sidename}.jpg`).default } alt="menu_class"/>
+            <img className="image" src={ require(`../../Data/Image/sides/${sidename}.png`).default } alt="menu_class"/>
             <div className="name">{sidename}</div>
             <div className="price">{price}</div>
         </div></div>;
