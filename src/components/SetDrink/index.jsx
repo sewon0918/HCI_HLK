@@ -28,7 +28,11 @@ class SetDrink extends React.Component {
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.border="3px solid white";
         }
-        document.getElementById(id).style.border="3px solid red";
+        const elems = document.getElementsByName(id)
+        for (var i = 0; i < elems.length; i++) {
+            elems[i].style.border="3px solid red";
+        }
+        //document.getElementById(id).style.border="3px solid red";
         this.setState({menu: id, price: price});
     }
 
@@ -44,7 +48,7 @@ class SetDrink extends React.Component {
                 price=0;
             }
             //console.log(price);
-            return (<div key={drinkname} id={drinkname} className="showmenu" onClick={this.menuClick.bind(this, drinkname, price)}>
+            return (<div key={drinkname} id={drinkname} name={drinkname}className="showmenu" onClick={this.menuClick.bind(this, drinkname, price)}>
                         <img className="image" src={ require(`../../Data/Image/beverages/${drinkname}.png`).default } alt="menu_class"/>
                         <div className="name">{drinkname}</div>
                         <div className="price">+{price}원</div>
