@@ -227,9 +227,9 @@ class OptionChange extends React.Component {
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td ><button id="rem_but" className="button" onClick={this.Rem_patty.bind(this)}>-</button></td>
+                                    <td ><button id="rem_but" className="button111" onClick={this.Rem_patty.bind(this)}>-</button></td>
                                     <td text-align="center"><div>{this.state.patty_count}장</div></td>
-                                    <td><button id="add_but" className="button" onClick={this.Add_patty.bind(this)}>+</button></td>
+                                    <td><button id="add_but" className="button111" onClick={this.Add_patty.bind(this)}>+</button></td>
                                 </tr></table>
                             </td>
                             <td className='selection'>
@@ -240,9 +240,9 @@ class OptionChange extends React.Component {
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td><button id="rem_but" className="button" onClick={this.Rem_cheeze.bind(this)}>-</button></td>
+                                    <td><button id="rem_but" className="button111" onClick={this.Rem_cheeze.bind(this)}>-</button></td>
                                     <td><div>{this.state.cheeze_count}장</div></td>
-                                    <td><button id="add_but" className="button" onClick={this.Add_cheeze.bind(this)}>+</button></td>
+                                    <td><button id="add_but" className="button111" onClick={this.Add_cheeze.bind(this)}>+</button></td>
                                 </tr> </table>
                             </td>
                             <td className='selection'>
@@ -253,9 +253,9 @@ class OptionChange extends React.Component {
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td ><button id="rem_but" className="button" onClick={this.Rem_state.bind(this,"onion", this.state.onion_state)}>-</button></td>
+                                    <td ><button id="rem_but" className="button111" onClick={this.Rem_state.bind(this,"onion", this.state.onion_state)}>-</button></td>
                                     <td text-align="center"><div>{this.neocheck(this.state.onion_state)}</div></td>
-                                    <td><button id="add_but" className="button" onClick={this.Add_state.bind(this, "onion", this.state.onion_state)}>+</button></td>
+                                    <td><button id="add_but" className="button111" onClick={this.Add_state.bind(this, "onion", this.state.onion_state)}>+</button></td>
                                 </tr></table>
                             </td>
                         </tr>
@@ -268,9 +268,9 @@ class OptionChange extends React.Component {
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td ><button id="rem_but" className="button" onClick={this.Rem_state.bind(this,"tomato", this.state.tomato_state)}>-</button></td>
+                                    <td ><button id="rem_but" className="button111" onClick={this.Rem_state.bind(this,"tomato", this.state.tomato_state)}>-</button></td>
                                     <td text-align="center"><div>{this.neocheck(this.state.tomato_state)}</div></td>
-                                    <td><button id="add_but" className="button" onClick={this.Add_state.bind(this, "tomato", this.state.tomato_state)}>+</button></td>
+                                    <td><button id="add_but" className="button111" onClick={this.Add_state.bind(this, "tomato", this.state.tomato_state)}>+</button></td>
                                 </tr></table>
                             </td>
                             <td className='selection'>
@@ -281,9 +281,9 @@ class OptionChange extends React.Component {
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td ><button id="rem_but" className="button" onClick={this.Rem_state.bind(this,"lettuce", this.state.lettuce_state)}>-</button></td>
+                                    <td ><button id="rem_but" className="button111" onClick={this.Rem_state.bind(this,"lettuce", this.state.lettuce_state)}>-</button></td>
                                     <td text-align="center"><div>{this.neocheck(this.state.lettuce_state)}</div></td>
-                                    <td><button id="add_but" className="button" onClick={this.Add_state.bind(this, "lettuce", this.state.lettuce_state)}>+</button></td>
+                                    <td><button id="add_but" className="button111" onClick={this.Add_state.bind(this, "lettuce", this.state.lettuce_state)}>+</button></td>
                                 </tr></table>
                             </td>
                             <td className='selection'>
@@ -294,9 +294,9 @@ class OptionChange extends React.Component {
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td ><button id="rem_but" className="button" onClick={this.Rem_state.bind(this,"sauce", this.state.sauce_state)}>-</button></td>
+                                    <td ><button id="rem_but" className="button111" onClick={this.Rem_state.bind(this,"sauce", this.state.sauce_state)}>-</button></td>
                                     <td text-align="center"><div>{this.neocheck(this.state.sauce_state)}</div></td>
-                                    <td><button id="add_but" className="button" onClick={this.Add_state.bind(this, "sauce", this.state.sauce_state)}>+</button></td>
+                                    <td><button id="add_but" className="button111" onClick={this.Add_state.bind(this, "sauce", this.state.sauce_state)}>+</button></td>
                                 </tr></table>
                             </td>
                             </tr>
