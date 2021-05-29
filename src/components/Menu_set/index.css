@@ -1,9 +1,36 @@
-.setImage {
-    width: 38%;
-    align-items: center;
+.setContainer {
+    position: relative;
+    padding-top: 10px;
+    top: 0%;
+    left: 0px;
+}
+
+.setImageBurger {
+    width: 80%;
+    position: relative;
+    z-index: 3;
+    top: 0%;
+    left: 0%;
+}
+
+.setImageSide {
+    width: 70%;
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    left: 35%;
+}
+
+.setImageDrink {
+    width: 80%;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: -10%;
+    /* align-items: center;
     margin-left: -8px;
     margin-right: -8px;
-    border-radius: 10px;
+    border-radius: 10px; */
 }
 
 .cartMany {
