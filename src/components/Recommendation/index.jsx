@@ -29,6 +29,7 @@ class Recommendation extends React.Component {
       
     onSubmit(){
         const number = document.getElementsByClassName('input')[0].value;
+        let login = false
         if (number !== "" && number!=undefined){
             let split;
             split=number.split('');
@@ -46,6 +47,7 @@ class Recommendation extends React.Component {
                     }
                 }
                 if(all){
+                    login = true
                     this.setState({isLoggedIn: 1, phone: number, recommend: true}); 
                     const numarray = [number];
                     firebase.database().ref('phonenumber/').set(numarray);
@@ -58,12 +60,13 @@ class Recommendation extends React.Component {
                 alert("번호가 11자리가 아닙니다. 다시 입력해주세요.");
             }
         }
-        if (this.state.isLoggedIn){
+        if (login){
             firebase.database().ref('recommendation/').on('value', (snapshot)=>{
                 var myValue = snapshot.val();
                 if (myValue!=null){
                     var keyList = Object.keys(myValue);
                     var index = keyList.indexOf(number);
+                    console.log("@@@@@@@@@@@@@@@@")
                     console.log(index);
                     console.log(myValue[keyList[index]]);
                     if(index < 0){
