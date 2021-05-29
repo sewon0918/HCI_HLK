@@ -47,7 +47,7 @@ class Setside extends React.Component {
             //console.log(key);
             return (<>
                 <div key={sidename} id={sidename} className="showmenu" onClick={this.menuClick.bind(this, sidename, price)}>
-                        <img className="image" src={ require(`../../Data/Image/sides/${sidename}.jpg`).default } alt="menu_class"/>
+                        <img className="image" src={ require(`../../Data/Image/sides/${sidename}.png`).default } alt="menu_class"/>
                         <div className="name">{sidename}</div>
                         <div className="price">+{price}원</div>
                     </div></>)
@@ -70,7 +70,7 @@ class Setside extends React.Component {
         if (this.state.select){
             menuList = null;
             button = <div id="recommendMenu1"><div key={sidename} id={sidename} className="showmenu1" >
-            <img className="image" src={ require(`../../Data/Image/sides/${sidename}.jpg`).default } alt="menu_class"/>
+            <img className="image" src={ require(`../../Data/Image/sides/${sidename}.png`).default } alt="menu_class"/>
             <div className="name">{sidename}</div>
             <div className="price">{price}</div>
         </div></div>;

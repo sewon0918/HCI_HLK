@@ -84,7 +84,7 @@ class ShowBurgers extends React.Component {
                     num += 1;
                     return (
                         <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
-                            <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
+                            <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.png`).default } alt="menu_class"/>
                             <div className="name">{burgername}</div>
                             <div className="price">단품: {singleprice}</div>
                             <div className="price">세트: {setprice} </div>
@@ -98,7 +98,7 @@ class ShowBurgers extends React.Component {
                     num += 1;
                     return (
                         <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
-                            <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
+                            <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.png`).default } alt="menu_class"/>
                             <div className="name">{burgername}</div>
                             <div className="price">단품: {singleprice}</div>
                             <div className="price">세트: {setprice} </div>
@@ -112,7 +112,7 @@ class ShowBurgers extends React.Component {
                     if (burgername.includes(recommendMenu[i])){
                         return (
                             <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
-                                <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
+                                <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.png`).default } alt="menu_class"/>
                                 <div className="name">{burgername}</div>
                                 <div className="price">단품: {singleprice}</div>
                                 <div className="price">세트: {setprice} </div>
@@ -126,7 +126,7 @@ class ShowBurgers extends React.Component {
                 if (burgername.includes("불고기")){
                     return (
                         <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
-                            <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
+                            <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.png`).default } alt="menu_class"/>
                             <div className="name">{burgername}</div>
                             <div className="price">단품: {singleprice}</div>
                             <div className="price">세트: {setprice} </div>
@@ -137,7 +137,7 @@ class ShowBurgers extends React.Component {
                 console.log("show all");
                 return (
                     <div key = {burgername} id = {burgername} className="showBurger" onClick={this.menuClick.bind(this, burgername, key)}>
-                        <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.jpg`).default } alt="menu_class"/>
+                        <img className="image" src={ require(`../../Data/Image/burgers/${burgername}.png`).default } alt="menu_class"/>
                         <div className="name">{burgername}</div>
                         <div className="price">단품: {singleprice}</div>
                         <div className="price">세트: {setprice} </div>
@@ -152,7 +152,7 @@ class ShowBurgers extends React.Component {
             if (this.state.order)
                 return (
                 <div id = 'answer' className="resultBurger">
-                    <img className="image" src={ require(`../../Data/Image/burgers/${this.state.menu}.jpg`).default } alt="menu_class"/>
+                    <img className="image" src={ require(`../../Data/Image/burgers/${this.state.menu}.png`).default } alt="menu_class"/>
                     <div className="name">{this.state.menu}</div>
                 </div>)
         if (name != null)

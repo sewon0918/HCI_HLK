@@ -55,9 +55,9 @@ class Menu_set extends React.Component {
                 <table>
                     <td>
                         <div key={menu} id={menu} className="cartMenu" >
-                        <img className="setImage" src={ require(`../../Data/Image/burgers/${menu}.jpg`).default } alt="menu_class"/>
-                        <img className="setImage" src={ require(`../../Data/Image/sides/${side}.jpg`).default } alt="menu_class"/>
-                        <img className="setImage" src={ require(`../../Data/Image/beverages/${drink}.jpg`).default } alt="menu_class"/>
+                        <img className="setImage" src={ require(`../../Data/Image/burgers/${menu}.png`).default } alt="menu_class"/>
+                        <img className="setImage" src={ require(`../../Data/Image/sides/${side}.png`).default } alt="menu_class"/>
+                        <img className="setImage" src={ require(`../../Data/Image/beverages/${drink}.png`).default } alt="menu_class"/>
                         <div className="name">{menu} 세트</div>
                         <div className="price">{price}</div>
                         </div>

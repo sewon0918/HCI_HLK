@@ -31,24 +31,10 @@ class Recommendation extends React.Component {
         const number = document.getElementsByClassName('input')[0].value;
         console.log(number);
         if (number !== "")
-        // this.setState({isLoggedIn: 1, phone: number, recommend: true}); 
     
 
 
-        firebase.database().ref('recommendation/').on('value', (snapshot)=>{
-            var myValue = snapshot.val();
-            if (myValue!=null){
-                var keyList = Object.keys(myValue);
-                var index = keyList.indexOf(number);
-                console.log(index);
-                console.log(myValue[keyList[index]]);
-                if(index < 0){
-                    this.setState({isLoggedIn: 1, phone: number, recommend: true, dbExist: false}); 
-                }else{
-                    this.setState({isLoggedIn: 1, phone: number, recommend: true, dbExist: true, recommendMenu: myValue[keyList[index]]}); 
-                }
-            }
-        })
+        
         if (number !== "" && number!=undefined){
             let split;
             split=number.split('');
@@ -76,6 +62,23 @@ class Recommendation extends React.Component {
                 alert("번호가 11자리가 아닙니다. 다시 입력해주세요.");
             }
         }
+        if (this.state.isLoggedIn){
+            firebase.database().ref('recommendation/').on('value', (snapshot)=>{
+                var myValue = snapshot.val();
+                if (myValue!=null){
+                    var keyList = Object.keys(myValue);
+                    var index = keyList.indexOf(number);
+                    console.log(index);
+                    console.log(myValue[keyList[index]]);
+                    if(index < 0){
+                        this.setState({isLoggedIn: 1, phone: number, recommend: true, dbExist: false}); 
+                    }else{
+                        this.setState({isLoggedIn: 1, phone: number, recommend: true, dbExist: true, recommendMenu: myValue[keyList[index]]}); 
+                    }
+                }
+            })
+        }
+        
     }
 
     onSkip(){
