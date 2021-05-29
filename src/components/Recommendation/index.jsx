@@ -87,40 +87,34 @@ class Recommendation extends React.Component {
         console.log("hihi");
         const isLoggedIn = this.state.isLoggedIn;
         const dbExist = this.state.dbExist;
-        //const phone = this.state.phone
         let recommend = null;
-        let welcome=null;
-        /*if(this.state.where==0){
-            welcome=<>{this.state.show && <div className = 'dialog' id='answer'>추천받기 </div>}</>
-        }
-        else{
-           welcome=null; 
-        }*/
-        //let option=null;
+        let welcome = this.state.show2 && <div className = 'dialog'>전화번호를 입력하고 확인을 눌러주세요.</div>;
+        let getnum = this.state.show2 &&<div id = 'short2'> 
+                        <input className = 'input' id = "number"/> 
+                        <button id='okay' className = 'button' onClick = {this.onSubmit}> 확인 </button>
+                    </div>;
+
         if (isLoggedIn > 0) {
             if (dbExist){
                 recommend = <ShowBurgers recommend={this.state.recommend} dbExist = {this.state.dbExist} recommendMenu = {this.state.recommendMenu} phone = {this.state.phone}></ShowBurgers>
             }else{
                 console.log("없어없다고", this.state.dbExist);
                 recommend = <ShowBurgers recommend={this.state.recommend} dbExist = {this.state.dbExist} phone = {this.state.phone}></ShowBurgers>
-            }
-            
+            }   
         }
         if (isLoggedIn < 0) {
             recommend = <div>hihi</div>
         }
-
-
         return(
-
             <div>
                 {this.state.show && <div className = 'dialog' id='answer'>추천받기 </div>}
-                {this.state.show2 && <div className = 'dialog'>전화번호를 입력하고 확인을 눌러주세요.</div>}
-                {this.state.show2 &&<div id = 'short2'> 
+                {/* {this.state.show2 && <div className = 'dialog'>전화번호를 입력하고 확인을 눌러주세요.</div>} */}
+                {welcome}
+                {/* {this.state.show2 &&<div id = 'short2'> 
                     <input className = 'input' id = "number"/> 
                     <button id='okay' className = 'button' onClick = {this.onSubmit}> 확인 </button>
-                    {/* <button className = 'button' onClick = {this.onSkip}> Skip </button> */}
-                </div>}   
+                </div>}    */}
+                {getnum}
                 {recommend}
             </div>
         )
