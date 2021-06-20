@@ -16,12 +16,14 @@ import SelectCategory from '../SelectCategory'
 class HowMany extends React.Component{ 
     constructor(props){
         super(props);
-        this.state = {show:false, show2: false, show3: false, number: 1, finish: false, cart:cartData, id:-1, quantity:0, showNext: false};
+        this.state = {show:false, show2: false, show3: false, number: 1, finish: false, cart:cartData, id:-1, quantity:0, showNext: false, again: 0};
         this.componentDidMount = this.componentDidMount.bind(this);
         this.plus = this.plus.bind(this);
         this.minus = this.minus.bind(this);
         this.pass = this.pass.bind(this);
         this.block = this.block.bind(this);
+        this.yes = this.yes.bind(this);
+        this.no = this.no.bind(this);
         // this.getQuantity = this.getQuantity.bind(this);
     }
     componentDidMount(){
@@ -66,6 +68,13 @@ class HowMany extends React.Component{
         this.setState({finish: false});
     }
 
+    yes(){
+        this.setState({again: 1});
+    }
+
+    no(){
+        this.setState({again: 2});
+    }
 
     render(){
 
@@ -76,8 +85,13 @@ class HowMany extends React.Component{
         const {side} = this.props;
         const number = this.state.number;
         let cartlist = null;
-        let goback = <SelectCategory />;
-        console.log(goback);
+        let goback = null;
+        if (this.state.again === 1){
+            goback = <SelectCategory />;
+        }
+        if (this.state.again === 2){
+            goback = <div className='dialog'>오른쪽 아래 결제 버튼을 눌러주세요.</div>
+        }
         if (this.state.finish){
 
             var q = this.state.quantity;
@@ -133,7 +147,14 @@ class HowMany extends React.Component{
                         <button id='okay' className='button' onClick={this.pass}>장바구니 담기</button>
                     </div>
                 }
-                {this.state.show3 &&this.state.showNext && goback}
+                {this.state.show3 &&this.state.showNext &&
+                    <div id ='parent'>
+                        <div className = 'dialog'> 다른 메뉴를 추가 주문하시겠습니까? </div>
+                        <button className='button2' onClick={this.yes}> 네 </button>
+                        <button className='button2' onClick={this.no}> 아니오 </button>
+                    </div>
+                }
+                {goback}
             </div>
         )
     }

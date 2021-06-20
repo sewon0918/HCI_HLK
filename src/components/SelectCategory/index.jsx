@@ -20,7 +20,7 @@ class SelectCategory extends React.Component {
     componentDidMount(){
         setTimeout(()=>{
            this.setState({show: true})
-        },2000)
+        },1000)
         setTimeout(()=>{
             this.setState({show2: true})
         },4000) 

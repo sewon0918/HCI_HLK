@@ -51,3 +51,21 @@
     padding: 10px;
     background: #FFF8D6;
 }
+
+.button2 {
+    /* background-color: #FF8857; */
+    float: left;
+    height: auto;
+    width: 20%;
+    padding: 10px;
+    margin-left: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 10px;
+    box-shadow: 1px 1px 1px 1px grey;
+}
+
+#parent {
+    overflow : hidden;
+}

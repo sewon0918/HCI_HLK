@@ -21,7 +21,7 @@ function Voice() {
     return (
       <div id='voicebutton'>
         <button className='button' onMouseDown={listen} onMouseUp={stop}>
-          버튼을 누른 채로 말하세요
+          여기를 누른 채로 말하세요
         </button>
         {listening && <div id='voicing'>음성인식 중</div>}
       </div>
