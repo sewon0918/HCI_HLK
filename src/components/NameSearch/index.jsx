@@ -87,7 +87,7 @@ class NameSearch extends React.Component {
                     <button id='ok' className='button' onClick = {this.onSubmit.bind(this)}> 확인 </button>
                     <div id='startv'>음성인식 : </div>
                     <Voice />
-                </div></div>}
+                </div></div>}   
                 {showResult}
             </div>
         )
