@@ -41,6 +41,8 @@ class Ingredient extends React.Component {
         document.getElementById(id).style.backgroundColor = 'lightpink';
         document.getElementById(id).style.border = '3px solid red';*/
         this.setState({ingredient: id, submitted: false})
+        console.log("확인");
+        this.setState({submitted: true});
     
         // console.log("jj")
     }
@@ -80,7 +82,6 @@ class Ingredient extends React.Component {
                         <th>소</th><th>치킨</th><th>새우</th><th>비건</th>
                     </tr></div></tbody>
                 </table>
-                <button id='select'onClick={this.submit.bind(this)}>확인</button>
                 {showResult}</>}
                 
             </div>
