@@ -69,7 +69,7 @@ class Ingredient extends React.Component {
         return(
             <div>
                 {<div  className='dialog' id='answer'>주재료로 찾기</div>}
-                {this.state.show && <div  className='dialog_long'>원하시는 재료를 선택하고 확인버튼을 눌러주세요. </div>}
+                {this.state.show && <div  className='dialog_long'>원하시는 재료를 선택해주세요. </div>}
                 {this.state.show2 && <><table width="70%"><tbody>
                     <div className='dialog2'>
                     <tr>
