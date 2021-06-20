@@ -26,7 +26,9 @@ class OptionChange extends React.Component {
             set_price: this.props.set_price,
             fin:false,
             show1:false,
-            show2:false
+            show2:false,
+            yes:false,
+            clicked: false,
         }
     }
     componentDidMount(){
@@ -151,6 +153,13 @@ class OptionChange extends React.Component {
     singlemenu(){
         this.setState({set: -1});
     }
+    yesoption(){
+        this.setState({yes:true, clicked:true});
+    }
+    nooption(){
+        console.log("hi");
+        this.setState({yes:false, clicked:true});
+    }
 
     confirm(){
         this.setState({fin:true});
@@ -162,58 +171,88 @@ class OptionChange extends React.Component {
         let ifset=null;
         let next_step=null;
         let confirm=null;
-        if(this.state.show1){
-            intro=<><div  className='dialog_long'>{name}에서 원하시는 옵션을 선택해주세요.</div></>
-        }
-        if(this.state.fin){
-            confirm=null;
-            options=<>
-                <div className="dialog2">
-                    <table width='100%' text-align="center" >
-                        <tr >
-                            <td className='selection'>
-                                    <img id="patty" className="photo" src={패티} alt="menu_class"></img><div>패티</div>
-                                    <div>{this.state.patty_count}장</div>
-                            </td>
-                            <td className='selection'>
-                                    <img id="cheeze" className="photo" src={치즈} alt="menu_class"></img><div>치즈</div>
-                                    <div>{this.state.cheeze_count}장</div>
-                            </td>
-                            <td className='selection'>
-                                    <img id="onion" className="photo" src={양파} alt="menu_class"></img><div>양파</div>
-                                    <div>{this.neocheck(this.state.onion_state)}</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='selection'>
-                                   <img id="tomato" className="photo" src={토마토} alt="menu_class"></img><div>토마토</div>
-                                    <div>{this.neocheck(this.state.tomato_state)}</div>
-                            </td>
-                            <td className='selection'>
-                                    <img id="lettuce" className="photo" src={양상추} alt="menu_class"></img><div>양상추</div>
-                                    <div>{this.neocheck(this.state.lettuce_state)}</div>
-                            </td>
-                            <td className='selection'>
-                                   <img id="sauce" className="photo" src={소스} alt="menu_class"></img><div>소스</div>
-                                    <div>{this.neocheck(this.state.sauce_state)}</div>
-                            </td>
-                            </tr>
-                    </table>
-                </div>
-                
-            </>
-            next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
-            <div id="set" ><button className='button11' onClick={this.singlemenu.bind(this)}>단품</button><button className='button11' onClick={this.setmenu.bind(this)}>세트</button></div></>
+        let ask=null;
 
-            if(this.state.set>0){
-                ifset=<Setmenu set_price={this.state.set_price} name={this.state.name}></Setmenu>
+        if(this.state.show1){
+            if(this.state.clicked){
+                if(this.state.yes){
+                    ask=<><div className="dialog">옵션(패티 개수 등)을 바꾸시겠습니까?</div>
+                    <div className="dialog2" >옵션 변경을 선택하셨습니다. 설정을 마치시면 확인 버튼을 눌러주세요.</div>
+                   </>
+                }
+                else{
+                    ask=<><div className="dialog">옵션(패티 개수 등)을 바꾸시겠습니까?</div>
+                    <div className="dialog" id="answer">아니요</div>
+                   </>
+                }
             }
-            if(this.state.set<0){
-                ifset=<HowMany price={this.state.single_price} menu={this.state.name} drinkOrSide={"burgers"}></HowMany>
+            else{
+                ask=<><div className="dialog">옵션(패티 개수 등)을 바꾸시겠습니까?</div>
+                     <div className="dialog"> <button className='button11' onClick={this.yesoption.bind(this)}>네</button><button className='button11' onClick={this.nooption.bind(this)}>아니요</button></div>
+                    </>
             }
+            
         }
-        else{
-            if(this.state.show2){
+
+        if(this.state.yes){
+            if(this.state.fin){
+                confirm=null;
+                options=<>
+                    <div  className='dialog_long'>{name}에서 원하시는 옵션을 선택해주세요.</div>
+                    <div className="dialog2">
+                        <table width='100%' text-align="center" >
+                            <tr >
+                                <td className='selection'>
+                                        <img id="patty" className="photo" src={패티} alt="menu_class"></img><div>패티</div>
+                                        <div>{this.state.patty_count}장</div>
+                                </td>
+                                <td className='selection'>
+                                        <img id="cheeze" className="photo" src={치즈} alt="menu_class"></img><div>치즈</div>
+                                        <div>{this.state.cheeze_count}장</div>
+                                </td>
+                                <td className='selection'>
+                                        <img id="onion" className="photo" src={양파} alt="menu_class"></img><div>양파</div>
+                                        <div>{this.neocheck(this.state.onion_state)}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className='selection'>
+                                       <img id="tomato" className="photo" src={토마토} alt="menu_class"></img><div>토마토</div>
+                                        <div>{this.neocheck(this.state.tomato_state)}</div>
+                                </td>
+                                <td className='selection'>
+                                        <img id="lettuce" className="photo" src={양상추} alt="menu_class"></img><div>양상추</div>
+                                        <div>{this.neocheck(this.state.lettuce_state)}</div>
+                                </td>
+                                <td className='selection'>
+                                       <img id="sauce" className="photo" src={소스} alt="menu_class"></img><div>소스</div>
+                                        <div>{this.neocheck(this.state.sauce_state)}</div>
+                                </td>
+                                </tr>
+                        </table>
+                    </div>
+                    
+                </>
+
+                console.log(this.state.set);
+                if(this.state.set>0){
+                    next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
+                    <div className="dialog"  id="answer">세트</div>
+                    </>
+                    ifset=<Setmenu set_price={this.state.set_price} name={this.state.name}></Setmenu>
+                }
+                else if(this.state.set<0){
+                    next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
+                    <div className="dialog"  id="answer">단품</div>
+                    </>
+                    ifset=<HowMany price={this.state.single_price} menu={this.state.name} drinkOrSide={"burgers"}></HowMany>
+                }
+                else if(this.state.set==0){
+                    next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
+                    <div id="set" ><button className='button11' onClick={this.singlemenu.bind(this)}>단품</button><button className='button11' onClick={this.setmenu.bind(this)}>세트</button></div></>
+                }
+            }
+            else{
                 confirm=<button id="select" onClick={this.confirm.bind(this)}>확인</button>
                 options=<>
                 <div className='dialog2'>
@@ -304,15 +343,30 @@ class OptionChange extends React.Component {
                 </div>
                 
             </>
+        }
+        }
+        if(!(this.state.yes) && this.state.clicked){
+            if(this.state.set>0){
+                next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
+                <div className="dialog" id="answer">세트</div>
+                </>
+                ifset=<Setmenu set_price={this.state.set_price} name={this.state.name}></Setmenu>
+            }
+            else if(this.state.set<0){
+                next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
+                <div className="dialog"  id="answer">단품</div>
+                </>
+                ifset=<HowMany price={this.state.single_price} menu={this.state.name} drinkOrSide={"burgers"}></HowMany>
+            }
+            else if(this.state.set==0){
+                next_step= <><div  className='dialog'>단품과 세트 중에 무엇을 고르시겠습니까?</div>
+                <div id="set" ><button className='button11' onClick={this.singlemenu.bind(this)}>단품</button><button className='button11' onClick={this.setmenu.bind(this)}>세트</button></div></>
             }
         }
-        
-        
-        
-        
+
         return(
             <div>
-                {intro}
+                {ask}
                 {options}
                 {confirm}
                 {next_step}
